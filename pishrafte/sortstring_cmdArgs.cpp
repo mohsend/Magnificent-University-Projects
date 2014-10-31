@@ -13,6 +13,11 @@ void output(string[], unsigned int);
 
 int main(int argc, char* argv[])
 {
+	if (argc < 2) {
+		cout << "I need at least 1 argument (string) to do anything.\n";
+		return 0;
+	}
+	
 	// convert commandline arguments to strings
 	unsigned int stringsc = argc - 1;
 	string argstring[stringsc];
