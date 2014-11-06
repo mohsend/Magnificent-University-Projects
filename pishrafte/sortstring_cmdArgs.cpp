@@ -13,7 +13,9 @@ void output(string[], unsigned int);
 
 int main(int argc, char* argv[])
 {
-	if (argc < 2) {
+	
+	if (argc < 2)
+	{
 		cerr << "I need at least 1 argument (string) to do anything.\n";
 		return 0;
 	}
@@ -40,11 +42,13 @@ void mohsen_sort(string A[], unsigned int n)
 	for (unsigned int i = 0; i < n; i++)
 	{
 		for (unsigned int j = 0; j < end; j++)
-		if (A[j] > A[end])
 		{
-			temp = A[end];
-			A[end] = A[j];
-			A[j] = temp;
+			if (A[j] > A[end])
+			{
+				temp = A[end];
+				A[end] = A[j];
+				A[j] = temp;
+			}
 		}
 		end--;
 	}
