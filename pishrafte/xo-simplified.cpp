@@ -4,19 +4,17 @@
 
 #include <iostream>
 
-#define ROWS	3
-#define COLS	3
 using namespace std;
 
-void show(char x[ROWS][COLS]);
-void init(char x[ROWS][COLS]);
-bool check(char x[ROWS][COLS]);
-void get(char x[ROWS][COLS], int);
+void show(char x[3][3]);
+void init(char x[3][3]);
+bool check(char x[3][3]);
+void get(char x[3][3], int);
 bool result(int sum);
 
 int main()
 {
-	char x[ROWS][COLS];
+	char x[3][3];
 	int round = 0;
 	init(x);
 	show(x);
@@ -29,19 +27,19 @@ int main()
 	return 0;
 }
 
-void show(char x[ROWS][COLS])
+void show(char x[3][3])
 {
 	// print table head
 	cout << "    ";
-	for (int i = 0; i < COLS; i++)
+	for (int i = 0; i < 3; i++)
 		cout << i + 1 << "   ";
 	cout << "\n";
 	
 	// print table
-	for (int i = 0; i < ROWS; i++)
+	for (int i = 0; i < 3; i++)
 	{
 		cout << i + 1 << " |";
-		for (int j = 0; j < COLS; j++)
+		for (int j = 0; j < 3; j++)
 		{
 			cout << ' ' << x[i][j] << " |";
 		}
@@ -49,59 +47,43 @@ void show(char x[ROWS][COLS])
 	}
 }
 
-void init(char x[ROWS][COLS])
+void init(char x[3][3])
 {
-	for (int i = 0; i < ROWS; i++)
-		for (int j = 0; j < COLS; j++)
+	for (int i = 0; i < 3; i++)
+		for (int j = 0; j < 3; j++)
 			x[i][j] = ' ';
 }
 
-bool check(char x[ROWS][COLS])
+bool check(char x[3][3])
 {
-	int sum = 0;
+	int sum;
 
 	// check horisontal (-) lines
-	for (int i = 0; i < ROWS; i++)
+	for (int i = 0; i < 3; i++)
 	{
-		for (int j = 0; j < COLS; j++)
-		{
-			sum += x[i][j];
-		}
+		sum = x[i][0] + x[i][1] + x[i][2];
 		if (result(sum)) return true;
-		sum = 0;
 	}
 	
 	// check vertical (|) lines
-	for (int j = 0; j < COLS; j++)
+	for (int j = 0; j < 3; j++)
 	{
-		for (int i = 0; i < ROWS; i++)
-		{
-			sum += x[i][j];
-		}
+		sum = x[0][j] + x[1][j] + x[2][j];
 		if (result(sum)) return true;
-		sum = 0;
 	}
 	
 	// check left-to-right crossed (\) lines
-	for (int i = 0; i < ROWS; i++)
-	{
-		sum += x[i][i];
-	}
+	sum = x[0][0] + x[1][1] + x[2][2];
 	if (result(sum)) return true;
-	sum = 0;
 	
 	// check right-to-left crossed (/) lines
-	for (int i = (ROWS - 1); i > -1; i--)
-	{
-		sum += x[i][i];
-	}
+	sum = x[0][2] + x[1][1] + x[2][0];
 	if (result(sum)) return true;
-	sum = 0;
 	
 	// check if game ended as a draw
 	sum = -1;
-	for (int i = 0; i < ROWS; i++)
-		for (int j = 0; j < COLS; j++)
+	for (int i = 0; i < 3; i++)
+		for (int j = 0; j < 3; j++)
 			sum += (x[i][j] == ' ');
 	if (result(sum)) return true;
 	
@@ -110,12 +92,12 @@ bool check(char x[ROWS][COLS])
 
 bool result(int sum)
 {
-	if (sum == ROWS * 'X')
+	if (sum == 3 * 'X')
 	{
 		cout << "\n\tX Won!" << endl;
 		return true;
 	}
-	else if (sum == ROWS * 'O')
+	else if (sum == 3 * 'O')
 	{
 		cout << "\n\tO Won!" << endl;
 		return true;
@@ -128,7 +110,7 @@ bool result(int sum)
 	return false;
 }
 
-void get(char x[ROWS][COLS], int round)
+void get(char x[3][3], int round)
 {
 	int i, j;
 	if (round % 2)
