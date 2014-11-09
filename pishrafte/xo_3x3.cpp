@@ -1,5 +1,6 @@
 /*
- * XO game
+ * simple 3x3 XO game.
+ * source available at http://dstjrd.ir/s/cppx (MIT licence)
 */
 
 #include <iostream>
