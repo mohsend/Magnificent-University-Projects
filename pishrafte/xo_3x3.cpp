@@ -120,7 +120,7 @@ void get(char x[3][3], int round)
 	cout << "i) "; cin >> j;
 	cout << "j) "; cin >> i;
 	
-	if ( (x[i-1][j-1] == 'X') || (x[i-1][j-1] == 'O') )
+	if (x[i-1][j-1] != ' ')
 	{
 		cout << "Already set. try another:" << endl;
 		get(x, round);
