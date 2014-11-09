@@ -113,21 +113,24 @@ bool result(int sum)
 void get(char x[3][3], int round)
 {
 	int i, j;
-	if (round % 2)
-		cout << "X's turn, Place X:" << endl;
-	else
-		cout << "O's turn, Place O:" << endl;
-		
+	char ch = (round % 2) ? 'X' : 'O';
+	
+	cout << ch << "'s turn, Place " << ch << ":" << endl;
 	cout << "i) "; cin >> j;
 	cout << "j) "; cin >> i;
 	
 	if ( (x[i-1][j-1] == 'X') || (x[i-1][j-1] == 'O') )
 	{
 		cout << "Already set. try another:" << endl;
-		get (x, round);
+		get(x, round);
+	}
+	else if ( (i > 3) || (i < 1) || (j > 3) || (j < 1) )
+	{
+		cout << "1,2 and 3 are the only acceptable values for i and j." << endl;
+		get(x, round);
 	}
 	else
 	{
-		x[i-1][j-1] = (round % 2) ? 'X' : 'O';
+		x[i-1][j-1] = ch;
 	}
 }
