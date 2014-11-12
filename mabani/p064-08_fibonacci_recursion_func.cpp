@@ -9,7 +9,7 @@ int main()
 {
 	long unsigned int fibonacci (unsigned int);
 	unsigned int input;
-	cout << "how many fibonacci numbers you disire? ";
+	cout << "how many fibonacci numbers you want? ";
 	cin >> input;
 	for (unsigned int i = 0; i < input; i++)
 		cout << fibonacci(i) << "\t";
