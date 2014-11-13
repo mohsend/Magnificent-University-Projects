@@ -7,28 +7,28 @@
 
 using namespace std;
 
-void show(char x[3][3]);
-void init(char x[3][3]);
-bool check(char x[3][3]);
-void get(char x[3][3], int);
+void show(char xo[3][3]);
+void init(char xo[3][3]);
+bool check(char xo[3][3]);
+void get(char xo[3][3], int);
 bool result(int sum);
 
 int main()
 {
-	char x[3][3];
+	char xo[3][3];
 	int round = 0;
-	init(x);
-	show(x);
+	init(xo);
+	show(xo);
 	
-	while (!check(x))
+	while (!check(xo))
 	{
-		get(x, round++);
-		show(x);
+		get(xo, round++);
+		show(xo);
 	}
 	return 0;
 }
 
-void show(char x[3][3])
+void show(char xo[3][3])
 {
 	// print table head
 	cout << "    ";
@@ -42,50 +42,50 @@ void show(char x[3][3])
 		cout << i + 1 << " |";
 		for (int j = 0; j < 3; j++)
 		{
-			cout << ' ' << x[i][j] << " |";
+			cout << ' ' << xo[i][j] << " |";
 		}
 		cout << "\n  -------------" << endl;
 	}
 }
 
-void init(char x[3][3])
+void init(char xo[3][3])
 {
 	for (int i = 0; i < 3; i++)
 		for (int j = 0; j < 3; j++)
-			x[i][j] = ' ';
+			xo[i][j] = ' ';
 }
 
-bool check(char x[3][3])
+bool check(char xo[3][3])
 {
 	int sum;
 
 	// check horisontal (-) lines
 	for (int i = 0; i < 3; i++)
 	{
-		sum = x[i][0] + x[i][1] + x[i][2];
+		sum = xo[i][0] + xo[i][1] + xo[i][2];
 		if (result(sum)) return true;
 	}
 	
 	// check vertical (|) lines
 	for (int j = 0; j < 3; j++)
 	{
-		sum = x[0][j] + x[1][j] + x[2][j];
+		sum = xo[0][j] + xo[1][j] + xo[2][j];
 		if (result(sum)) return true;
 	}
 	
 	// check left-to-right crossed (\) lines
-	sum = x[0][0] + x[1][1] + x[2][2];
+	sum = xo[0][0] + xo[1][1] + xo[2][2];
 	if (result(sum)) return true;
 	
 	// check right-to-left crossed (/) lines
-	sum = x[0][2] + x[1][1] + x[2][0];
+	sum = xo[0][2] + xo[1][1] + xo[2][0];
 	if (result(sum)) return true;
 	
 	// check if game ended as a draw
 	sum = -1;
 	for (int i = 0; i < 3; i++)
 		for (int j = 0; j < 3; j++)
-			sum += (x[i][j] == ' ');
+			sum += (xo[i][j] == ' ');
 	if (result(sum)) return true;
 	
 	return false;
@@ -111,7 +111,7 @@ bool result(int sum)
 	return false;
 }
 
-void get(char x[3][3], int round)
+void get(char xo[3][3], int round)
 {
 	int i, j;
 	char ch = (round % 2) ? 'X' : 'O';
@@ -120,18 +120,18 @@ void get(char x[3][3], int round)
 	cout << "i) "; cin >> j;
 	cout << "j) "; cin >> i;
 	
-	if (x[i-1][j-1] != ' ')
+	if (xo[i-1][j-1] != ' ')
 	{
 		cout << "Already set. try another:" << endl;
-		get(x, round);
+		get(xo, round);
 	}
 	else if ( (i > 3) || (i < 1) || (j > 3) || (j < 1) )
 	{
 		cout << "1,2 and 3 are the only acceptable values for i and j." << endl;
-		get(x, round);
+		get(xo, round);
 	}
 	else
 	{
-		x[i-1][j-1] = ch;
+		xo[i-1][j-1] = ch;
 	}
 }
