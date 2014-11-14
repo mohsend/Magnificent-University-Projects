@@ -8,6 +8,9 @@
 
 #include <iostream>
 
+#ifndef SevenSegment_h
+#define SevenSegment_h
+
 using namespace std;
 
 class xoGame
@@ -34,15 +37,7 @@ xoGame::xoGame()
 
 void xoGame::show()
 {
-	// print table head
-	cout << "    ";
-	for (int i = 0; i < 3; i++)
-	{
-		cout << i + 1 << "   ";
-	}
-	cout << "\n";
-	
-	// print table
+	cout << "    1   2   3\n"; // table head
 	for (int i = 0; i < 3; i++)
 	{
 		cout << i + 1 << " |";
@@ -146,3 +141,5 @@ void xoGame::play()
 		show();
 	}
 }
+
+#endif
