@@ -32,7 +32,9 @@ void show(char xo[3][3])
 	// print table head
 	cout << "    ";
 	for (int i = 0; i < 3; i++)
+	{
 		cout << i + 1 << "   ";
+	}
 	cout << "\n";
 	
 	// print table
@@ -51,7 +53,9 @@ void init(char xo[3][3])
 {
 	char *ptr = &xo[0][0];
 	for (int i = 0; i < 9; i++)
+	{
 		*(ptr + i) = ' ';
+	}
 }
 
 bool check(char xo[3][3])
@@ -84,7 +88,9 @@ bool check(char xo[3][3])
 	sum = -1;
 	char *ptr = &xo[0][0];
 	for (int i = 0; i < 9; i++)
+	{
 		sum += (*(ptr + i) == ' ');
+	}
 	if (result(sum)) return true;
 	
 	return false;
