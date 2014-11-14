@@ -1,7 +1,9 @@
 /*
  * simple 3x3 XO game.
- * Object Oriented.
- * source available at http://dstjrd.ir/s/cppx (Github repo - MIT licence)
+ * Object Oriented version.
+ * source available at (Github repo - MIT licence):
+ * http://dstjrd.ir/s/cppx
+ * https://github.com/mohsend/cpp-examples
 */
 
 #include <iostream>
