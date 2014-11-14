@@ -42,10 +42,7 @@ xoGame::xoGame()
 
 void xoGame::show()
 {
-	// print table head
-	cout << "    1   2   3\n";
-	
-	// print table
+	cout << "    1   2   3\n"; // table head
 	for (int i = 0; i < 3; i++)
 	{
 		cout << i + 1 << " |";
