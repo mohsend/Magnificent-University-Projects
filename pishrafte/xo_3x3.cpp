@@ -18,12 +18,11 @@ int main()
 	char xo[3][3];
 	int round = 0;
 	init(xo);
-	show(xo);
 	
 	while (!check(xo))
 	{
-		get(xo, round++);
 		show(xo);
+		get(xo, round++);
 	}
 	return 0;
 }
