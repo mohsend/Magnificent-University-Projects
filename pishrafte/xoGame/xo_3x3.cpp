@@ -53,28 +53,29 @@ void init(char xo[3][3])
 bool check(char xo[3][3])
 {
 	int sum;
+	bool res = false;
 
 	// check horisontal (-) lines
 	for (int i = 0; i < 3; i++)
 	{
 		sum = xo[i][0] + xo[i][1] + xo[i][2];
-		if (result(sum)) return true;
+		res += result(sum);
 	}
 	
 	// check vertical (|) lines
 	for (int j = 0; j < 3; j++)
 	{
 		sum = xo[0][j] + xo[1][j] + xo[2][j];
-		if (result(sum)) return true;
+		res += result(sum);
 	}
 	
 	// check left-to-right crossed (\) lines
 	sum = xo[0][0] + xo[1][1] + xo[2][2];
-	if (result(sum)) return true;
+	res += result(sum);
 	
 	// check right-to-left crossed (/) lines
 	sum = xo[0][2] + xo[1][1] + xo[2][0];
-	if (result(sum)) return true;
+	res += result(sum);
 	
 	// check if game ended as a draw
 	sum = -1;
@@ -83,9 +84,9 @@ bool check(char xo[3][3])
 	{
 		sum += (*(ptr + i) == ' ');
 	}
-	if (result(sum)) return true;
+	res += result(sum);
 	
-	return false;
+	return res;
 }
 
 bool result(int sum)
