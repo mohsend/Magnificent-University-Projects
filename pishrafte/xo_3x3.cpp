@@ -10,7 +10,7 @@ using namespace std;
 void show(char xo[3][3]);
 void init(char xo[3][3]);
 bool check(char xo[3][3]);
-void get(char xo[3][3], int);
+void get(char xo[3][3], int round);
 bool result(int sum);
 
 int main()
@@ -50,9 +50,9 @@ void show(char xo[3][3])
 
 void init(char xo[3][3])
 {
-	for (int i = 0; i < 3; i++)
-		for (int j = 0; j < 3; j++)
-			xo[i][j] = ' ';
+	char *ptr = &xo[0][0];
+	for (int i = 0; i < 9; i++)
+		*(ptr + i) = ' ';
 }
 
 bool check(char xo[3][3])
@@ -83,9 +83,9 @@ bool check(char xo[3][3])
 	
 	// check if game ended as a draw
 	sum = -1;
-	for (int i = 0; i < 3; i++)
-		for (int j = 0; j < 3; j++)
-			sum += (xo[i][j] == ' ');
+	char *ptr = &xo[0][0];
+	for (int i = 0; i < 9; i++)
+		sum += (*(ptr + i) == ' ');
 	if (result(sum)) return true;
 	
 	return false;
@@ -93,14 +93,9 @@ bool check(char xo[3][3])
 
 bool result(int sum)
 {
-	if (sum == 3 * 'X')
+	if ( (sum == 3 * 'X') || (sum == 3 * 'O') )
 	{
-		cout << "\n\tX Won!" << endl;
-		return true;
-	}
-	else if (sum == 3 * 'O')
-	{
-		cout << "\n\tO Won!" << endl;
+		cout << "\n\t" << (char)(sum / 3) << " Won!" << endl;
 		return true;
 	}
 	else if (sum == -1)
