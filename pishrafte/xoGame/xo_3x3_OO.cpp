@@ -1,6 +1,7 @@
 /*
  * simple 3x3 XO game.
  * Object Oriented version.
+ * by Mohsen Dastjerdi Zade - mail@dstjrd.ir
  * source available at (Github repo - MIT licence):
  * http://dstjrd.ir/s/cppx
  * https://github.com/mohsend/cpp-examples
@@ -126,6 +127,7 @@ void xoGame::get(int round)
 	cout << "i) "; cin >> j;
 	cout << "j) "; cin >> i;
 	
+	// validate user input
 	if ( (i > 3) || (i < 1) || (j > 3) || (j < 1) )
 	{
 		cout << "1,2 and 3 are the only acceptable values for i and j." << endl;
