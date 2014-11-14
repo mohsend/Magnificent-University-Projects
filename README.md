@@ -7,6 +7,8 @@ You can help by commiting new code or improving the existing codes. just keep in
 
 ## Compiling
 I tested every file using GCC on Ubuntu. any compiler should be fine.
+
+To compile in Linux using GCC run this command in terminal:
 ```bash
 g++ -Wall -o "executable_file" "code_file.cpp"
 ```
