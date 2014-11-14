@@ -92,9 +92,10 @@ bool check(char xo[3][3])
 
 bool result(int sum)
 {
-	if ( (sum == 3 * 'X') || (sum == 3 * 'O') )
+	char ch = sum / 3;
+	if ( (ch == 'X') || (ch == 'O') )
 	{
-		cout << "\n\t" << (char)(sum / 3) << " Won!" << endl;
+		cout << "\n\t" << ch << " Won!" << endl;
 		return true;
 	}
 	else if (sum == -1)
@@ -110,7 +111,7 @@ void get(char xo[3][3], int round)
 	int i, j;
 	char ch = (round % 2) ? 'X' : 'O';
 	
-	cout << ch << "'s turn, Place " << ch << ":" << endl;
+	cout << ch << "'s turn, Place " << ch << " on:" << endl;
 	cout << "i) "; cin >> j;
 	cout << "j) "; cin >> i;
 	
