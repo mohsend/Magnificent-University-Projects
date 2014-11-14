@@ -1,7 +1,7 @@
 /*
  * simple 3x3 XO game.
  * Object Oriented.
- * source available at http://dstjrd.ir/s/cppx (MIT licence)
+ * source available at http://dstjrd.ir/s/cppx (Github repo - MIT licence)
 */
 
 #include <iostream>
@@ -62,28 +62,29 @@ void xoGame::show()
 bool xoGame::check()
 {
 	int sum;
+	bool res = false;
 
 	// check horisontal (-) lines
 	for (int i = 0; i < 3; i++)
 	{
 		sum = A[i][0] + A[i][1] + A[i][2];
-		if (result(sum)) return true;
+		res += result(sum);
 	}
 	
 	// check vertical (|) lines
 	for (int j = 0; j < 3; j++)
 	{
 		sum = A[0][j] + A[1][j] + A[2][j];
-		if (result(sum)) return true;
+		res += result(sum);
 	}
 	
 	// check left-to-right crossed (\) lines
 	sum = A[0][0] + A[1][1] + A[2][2];
-	if (result(sum)) return true;
+	res += result(sum);
 	
 	// check right-to-left crossed (/) lines
 	sum = A[0][2] + A[1][1] + A[2][0];
-	if (result(sum)) return true;
+	res += result(sum);
 	
 	// check if game ended as a draw
 	sum = -1;
@@ -91,14 +92,15 @@ bool xoGame::check()
 	{
 		sum += (*(ptr + i) == ' ');
 	}
-	if (result(sum)) return true;
+	res += result(sum);
 	
-	return false;
+	return res;
 }
 
 bool xoGame::result(int sum)
 {
 	char ch = sum / 3;
+	
 	if ( (ch == 'X') || (ch == 'O') )
 	{
 		cout << "\n\t" << ch << " Won!" << endl;
@@ -109,6 +111,7 @@ bool xoGame::result(int sum)
 		cout << "\n\tit's a Draw!" << endl;
 		return true;
 	}
+	
 	return false;
 }
 
