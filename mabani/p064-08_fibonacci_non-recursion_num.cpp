@@ -1,7 +1,7 @@
 ﻿/*
 تمرین کتاب: برنامه ای بنویسید که تعداد n جمله از سری فیبوناچی را تولید کند. (فصل دوم - ساختار های کنترلی - صفحه ۶۴ - تمرین ۸)
 */
-#include "stdafx.h"
+
 #include <iostream>
 using namespace std;
 void fibo(int);

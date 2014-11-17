@@ -1,7 +1,7 @@
 ﻿/*
 فاکتوریل یک عدد به صورت بازگشتی
 */
-#include "stdafx.h"
+
 #include <iostream>
 
 using namespace std;

@@ -1,6 +1,5 @@
 ﻿// فاکتوریل به روش غیر بازگشتی
 
-#include "stdafx.h"
 #include <iostream>
 
 using namespace std;

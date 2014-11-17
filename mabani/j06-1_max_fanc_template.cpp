@@ -3,7 +3,7 @@
 همچنین با اعداد اعشاری و کارکتر هم همین کار را انجام دهد.
 (Template )
 */
-#include "stdafx.h"
+
 #include <iostream>
 
 using namespace std;

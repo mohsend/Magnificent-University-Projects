@@ -2,7 +2,6 @@
 این برنامه یک عدد صحیح به توان یک عدد صحیح را حساب میکند.
 */
 
-#include "stdafx.h"
 #include <iostream>
 using namespace std;
 

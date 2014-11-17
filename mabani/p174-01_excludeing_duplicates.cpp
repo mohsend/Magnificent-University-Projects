@@ -4,7 +4,6 @@
 سپس این عناصر را به خروجی ببرد
 */
 
-#include "stdafx.h"
 #include <iostream>
 
 using namespace std;

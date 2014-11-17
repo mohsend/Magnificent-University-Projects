@@ -4,7 +4,6 @@ aaa to zzz
 را تولید میکند.
 */
 
-#include "stdafx.h"
 #include <iostream>
 // <fstream> hasn't been covered in the class. if you don't know what it is, don't worry.
 // it stands for "File Stream". it can create, open, write and manipulate files.

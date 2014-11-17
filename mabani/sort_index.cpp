@@ -2,7 +2,6 @@
 sort w/o touching the original array
 */
 
-#include "stdafx.h"
 #include <iostream>
 
 using namespace std;

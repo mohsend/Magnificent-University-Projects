@@ -2,7 +2,6 @@
 page 53, example 2-9.
 */
 
-#include "stdafx.h"
 #include <iostream>
 
 using namespace std;

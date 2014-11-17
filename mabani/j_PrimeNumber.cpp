@@ -1,6 +1,5 @@
 ﻿//برنامه ای بنویسید تمام اعداد اول بین دو تا صد را چاپ کند
 
-#include "stdafx.h"
 #include <iostream>
 using namespace std;
 

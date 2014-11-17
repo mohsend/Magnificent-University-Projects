@@ -4,7 +4,6 @@
 dynamic array, pointer, function
 */
 
-#include "stdafx.h"
 #include <iostream>
 
 using namespace std;

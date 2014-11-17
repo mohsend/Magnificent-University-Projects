@@ -8,7 +8,6 @@ gcd()
 سپس برنامه ای بنویسید که این تابع را برای چندین جفت از اعداد امتحان کند.
 */
 
-#include "stdafx.h"
 #include <iostream>
 
 using namespace std;

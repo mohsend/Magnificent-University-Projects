@@ -1,7 +1,7 @@
 ﻿// برنامه ای بنویسید که با استفاده از تابعی برگشتی مراحل حل بازی برج هانوی را برای تعداد اکس دیسک نمایش دهد.
 // http://fa.wikipedia.org/wiki/%D8%A8%D8%B1%D8%AC_%D9%87%D8%A7%D9%86%D9%88%DB%8C
 // http://www.mathsisfun.com/games/towerofhanoi.html
-#include "stdafx.h"
+
 #include <iostream>
 using namespace std;
 void hanoy(char, char, char, unsigned int);

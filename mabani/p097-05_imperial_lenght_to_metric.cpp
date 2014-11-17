@@ -1,7 +1,6 @@
 ﻿// imperial_lenght_to_metric.cpp : Defines the entry point for the console application.
 // pgae 95 - 5
 
-#include "stdafx.h"
 #include <iostream>
 using namespace std;
 

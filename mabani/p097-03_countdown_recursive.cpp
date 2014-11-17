@@ -1,7 +1,7 @@
 ﻿// countdown.cpp : Defines the entry point for the console application.
 // تمرین کتاب: برنامه ای بنویسید که عددی را از ورودی خوانده، به کمک تابع بازگشتی شمارش معکوس از آن عدد را به یک انجام دهد.
 // تمرین صفحه 97 شماره 3
-#include "stdafx.h"
+
 #include <iostream>
 using namespace std;
 

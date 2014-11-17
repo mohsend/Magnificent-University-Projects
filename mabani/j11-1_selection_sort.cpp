@@ -5,7 +5,6 @@ refrence
 http://en.wikipedia.org/wiki/Selection_sort
 */
 
-#include "stdafx.h"
 #include <iostream>
 
 using namespace std;

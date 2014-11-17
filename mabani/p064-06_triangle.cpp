@@ -1,5 +1,5 @@
 ﻿// page 64 #6
-#include "stdafx.h"
+
 #include <iostream>
 using namespace std;
 int height = 0;

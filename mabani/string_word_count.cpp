@@ -2,7 +2,6 @@
 Count Words in a String – Counts the number of individual words in a string.
 */
 
-#include "stdafx.h"
 #include <iostream>
 #include <string>
 using namespace std;

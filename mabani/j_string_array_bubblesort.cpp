@@ -1,6 +1,5 @@
 ﻿//برنامه ای بنویسید که پنج رشته را از کاربر دریافت کند، سورت کند و مقادیر را چاپ کند.
 
-#include "stdafx.h"
 #include <iostream>
 #include <string>
 

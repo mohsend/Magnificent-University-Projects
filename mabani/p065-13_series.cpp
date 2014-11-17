@@ -3,7 +3,6 @@
 1 + 1/2! + 1/3! + ... + 1/n! (n<10)
 */
 
-#include "stdafx.h"
 #include <iostream>
 
 using namespace std;

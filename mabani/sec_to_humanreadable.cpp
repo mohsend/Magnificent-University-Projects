@@ -1,7 +1,7 @@
 ﻿/*
 The aim of this program is to get seconds and give human readable time.
 */
-#include "stdafx.h"
+
 #include <iostream>
 using namespace std;
 

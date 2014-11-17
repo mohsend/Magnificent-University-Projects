@@ -4,7 +4,6 @@ aaa to zzz
 را تولید میکند.
 */
 
-#include "stdafx.h"
 #include <iostream>
 using namespace std;
 

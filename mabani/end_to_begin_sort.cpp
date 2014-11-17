@@ -1,7 +1,6 @@
 ﻿// mohsen_sort.cpp : Defines the entry point for the console application.
 // سورت با روش سورت من در آوردی.
 
-#include "stdafx.h"
 #include <iostream>
 using namespace std;
 

@@ -3,7 +3,6 @@
 برنامه ای بنویسید که سه عدد صحیح را از کاربر دریافت کند، حاصل جمع و میانگین را حساب کند و نتایج را نشان دهد.
 */
 // pre-prosessor commands
-#include "stdafx.h"
 #include <iostream>
 #include <iomanip>
 using namespace std;

@@ -3,7 +3,6 @@
 همچنین مجموع ارقام حاصل ضرب را نیز برمیگرداند.
 */
 
-#include "stdafx.h"
 #include <iostream>
 
 using namespace std;

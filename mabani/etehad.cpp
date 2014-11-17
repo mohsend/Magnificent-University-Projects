@@ -1,7 +1,6 @@
 ﻿// etehad.cpp : Defines the entry point for the console application.
 // درستی این اتحاد ریاضی را بررسی میکند
 
-#include "stdafx.h"
 #include <iostream>
 
 using namespace std;

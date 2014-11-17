@@ -4,7 +4,6 @@ page 210-5
 آن را به عدد اعشاری تبدیل میکند.
 */
 
-#include "stdafx.h"
 #include <iostream>
 using namespace std;
 
