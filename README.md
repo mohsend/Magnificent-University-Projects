@@ -6,6 +6,7 @@ I study CS in IAUCTB. I plan to share every practice and example C++ code I writ
 You can help by commiting new code or improving the existing codes. just keep in mind these have educational purpose so keep it simple please!
 
 ## Compiling
+### GNU Compiler Collection
 I tested every file using GCC on Ubuntu. any compiler should be fine.
 
 To compile in Linux using GCC run this command in terminal:
@@ -13,7 +14,8 @@ To compile in Linux using GCC run this command in terminal:
 g++ -Wall -o "executable_file" "code_file.cpp"
 ```
 
-some files have a Visual Studio specific line. simply delete the line if you want to complie using another compliler. or add it if you want to compile in VS.
+### Microsoft Visual Studio
+Add this line on top of the code if you want to compile in Visual Studio:
 ```c++
 #include "stdafx.h"
 ```
