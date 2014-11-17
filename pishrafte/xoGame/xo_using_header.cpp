@@ -7,7 +7,7 @@
 */
 
 #include <iostream>
-#include "xoGame.h"
+#include "xoGame.hpp"
 
 using namespace std;
 
