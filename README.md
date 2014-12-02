@@ -14,8 +14,8 @@ To compile in Linux using GCC run this command in terminal:
 g++ -Wall -o "executable_file" "code_file.cpp"
 ```
 
-### Microsoft Visual Studio
-Add this line on top of the code if you want to compile in Visual Studio:
+### Microsoft Visual Studio .net
+Add this line on top of the code if you want to compile in Visual Studio .net:
 ```c++
 #include "stdafx.h"
 ```
