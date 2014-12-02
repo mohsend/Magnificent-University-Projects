@@ -26,7 +26,7 @@ class CSlist
 int main()
 {
 	CSlist students;
-	while (students.userInteract())	
+	while (students.userInteract())
 	{
 		cout << '\n';
 	}
@@ -36,7 +36,6 @@ int main()
 CSlist::CSlist()
 {
 	howMany = 0;
-	fill_n(list, 20, 0); // sets all array values to 0
 }
 
 void CSlist::shiftList(unsigned int index)
