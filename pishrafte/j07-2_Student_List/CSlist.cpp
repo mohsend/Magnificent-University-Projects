@@ -146,13 +146,11 @@ int CSlist::userInteract(void)
 		case 'b':
 			batchAdd();
 			return 1;
-			break;
 		case '2':
 		case 'S':
 		case 's':
 			show();
 			return 2;
-			break;
 		case '3':
 		case 'R':
 		case 'r':
@@ -161,14 +159,12 @@ int CSlist::userInteract(void)
 			cin >> stuid;
 			cout << "There are " << remove(stuid) << " students in the list." << endl;
 			return 3;
-			break;
 		case '4':
 		case 'X':
 		case 'x':
 		case 'Q':
 		case 'q':
 			return 0;
-			break;
 		default:
 			userInteract();
 	}
