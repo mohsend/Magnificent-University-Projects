@@ -2,8 +2,8 @@
  * 
 */
 
-#ifndef Cstudent_hpp
-#define Cstudent_hpp
+#ifndef CSTUDENT_HPP
+#define CSTUDENT_HPP
 
 #include <string>
 #include "Clesson.hpp"

@@ -2,8 +2,8 @@
  * 
 */
 
-#ifndef Clesson_hpp
-#define Clesson_hpp
+#ifndef CLESSON_HPP
+#define CLESSON_HPP
 
 #include <string>
 
