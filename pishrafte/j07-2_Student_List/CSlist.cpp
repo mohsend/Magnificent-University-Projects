@@ -26,12 +26,9 @@ class CSlist
 int main()
 {
 	CSlist students;
-	while (true)
+	while (students.userInteract())	
 	{
-		if (students.userInteract() == 0)
-		{
-			return 0;
-		}
+		cout << '\n';
 	}
 	return 0;
 }
@@ -163,12 +160,14 @@ int CSlist::userInteract(void)
 			long unsigned int stuid;
 			cout << "Enter a student ID to remove:" << endl; 
 			cin >> stuid;
-			cout << "There are " << remove(stuid) << "students in the list." << endl;
+			cout << "There are " << remove(stuid) << " students in the list." << endl;
 			return 3;
 			break;
 		case '4':
 		case 'X':
 		case 'x':
+		case 'Q':
+		case 'q':
 			return 0;
 			break;
 		default:
