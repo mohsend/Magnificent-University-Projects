@@ -168,5 +168,5 @@ int CSlist::userInteract(void)
 		default:
 			userInteract();
 	}
-	return 0;
+	return 0; // never happens. it's here to avoid compiler warning.
 }
