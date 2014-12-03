@@ -1,14 +1,14 @@
 /*
  * convey's game of life
-*/
+ */
 
 #include <iostream>
 #include "GoL.hpp"
 
-int main(int arg, char* args[])
+int main(int argc, char* args[])
 {
 	gameOfLife gol;
-	if (arg == 2) // if argument passed use the file to initialize 'gol'
+	if (argc == 2) // if argument passed use the file to initialize 'gol'
 	{
 		gol.init_file(args[1]);
 	}
