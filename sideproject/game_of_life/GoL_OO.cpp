@@ -1,6 +1,6 @@
 /*
-convey's game of life
-*/
+ *convey's game of life
+ */
 
 #include <iostream>
 #include <fstream>
