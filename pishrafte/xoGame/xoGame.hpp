@@ -8,8 +8,8 @@
 
 #include <iostream>
 
-#ifndef SEVENSEGMENT_HPP
-#define SEVENSEGMENT_HPP	1
+#ifndef XOGAME_HPP
+#define XOGAME_HPP	1
 
 using namespace std;
 
