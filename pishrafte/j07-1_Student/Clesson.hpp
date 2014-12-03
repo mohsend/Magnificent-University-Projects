@@ -3,7 +3,7 @@
 */
 
 #ifndef CLESSON_HPP
-#define CLESSON_HPP
+#define CLESSON_HPP	1
 
 #include <string>
 

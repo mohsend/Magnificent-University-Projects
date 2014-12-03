@@ -3,7 +3,7 @@
 */
 
 #ifndef CSTUDENT_HPP
-#define CSTUDENT_HPP
+#define CSTUDENT_HPP	1
 
 #include <string>
 #include "Clesson.hpp"

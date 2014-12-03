@@ -8,8 +8,8 @@
 
 #include <iostream>
 
-#ifndef SevenSegment_hpp
-#define SevenSegment_hpp
+#ifndef SEVENSEGMENT_HPP
+#define SEVENSEGMENT_HPP	1
 
 using namespace std;
 
