@@ -3,7 +3,7 @@
 I study CS in IAUCTB. I plan to share every practice and example C++ code I write here. these code are not very peractical. they have educational purpose.
 
 ## Contributing
-You can help by commiting new code or improving the existing codes. just keep in mind these have educational purpose so keep it simple please!
+You can help by commiting new code or improving the existing codes. just keep in mind these have educational purpose so keep it simple please! contributing to the wiki is also very much appreciated.
 
 ## Compiling
 ### GNU Compiler Collection
