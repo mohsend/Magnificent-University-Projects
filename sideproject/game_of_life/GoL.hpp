@@ -39,8 +39,8 @@ void gameOfLife::show()
 
 void gameOfLife::nextgen()
 {
-	// analyze each pixel
-	int neighbors[GOL_WIDTH][GOL_HEIGHT];
+	// count every pixel's neighbors and store them in an array
+	short int neighbors[GOL_WIDTH][GOL_HEIGHT];
 	for (int i = 1; i < GOL_WIDTH - 1; i++)
 	{
 		for (int j = 1; j < GOL_HEIGHT - 1; j++)
@@ -112,7 +112,7 @@ void gameOfLife::play()
 		cout << "Generation: " << gen << '\n';
 		show();
 		nextgen();
-		// intrupt to let the user see the results
+		// intrupt to let the user see the results. enter 'q' to end the game.
 		if (cin.get() == 'q') break;
 	}
 }
