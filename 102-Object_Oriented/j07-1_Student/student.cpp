@@ -1,6 +1,9 @@
 /*
- * 
-*/
+ * Demo for Cstudent.hpp
+ * source available at (Github repo - MIT licence):
+ * http://dstjrd.ir/s/cppx
+ * https://github.com/mohsend/cpp-examples
+ */
 
 #include <string>
 #include <iostream>

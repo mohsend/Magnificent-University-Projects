@@ -1,6 +1,9 @@
 /*
- * 
-*/
+ * Class to store students.
+ * source available at (Github repo - MIT licence):
+ * http://dstjrd.ir/s/cppx
+ * https://github.com/mohsend/cpp-examples
+ */
 
 #ifndef CSTUDENT_HPP
 #define CSTUDENT_HPP	1

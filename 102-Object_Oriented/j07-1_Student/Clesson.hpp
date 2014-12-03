@@ -1,6 +1,9 @@
 /*
- * 
-*/
+ * Class to store lessons.
+ * source available at (Github repo - MIT licence):
+ * http://dstjrd.ir/s/cppx
+ * https://github.com/mohsend/cpp-examples
+ */
 
 #ifndef CLESSON_HPP
 #define CLESSON_HPP	1
