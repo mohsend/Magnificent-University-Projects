@@ -1,6 +1,9 @@
 /*
- * 
-*/
+ * Class to store student IDs of 20 students.
+ * source available at (Github repo - MIT licence):
+ * http://dstjrd.ir/s/cppx
+ * https://github.com/mohsend/cpp-examples
+ */
 
 #include <iostream>
 #include <iomanip>
