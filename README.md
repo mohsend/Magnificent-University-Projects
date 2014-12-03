@@ -7,9 +7,9 @@ You can help by commiting new code or improving the existing codes. just keep in
 
 ## Compiling
 ### GNU Compiler Collection
-I tested every file using [GCC](/wiki/GNU-Compiler-Collection) on Ubuntu. any compiler should be fine.
+I tested every file using [GCC](https://github.com/mohsend/cpp-examples/wiki/GNU-Compiler-Collection) on Ubuntu. any compiler should be fine.
 
-To [compile in *nix](/wiki/Compiling-using-GCC) (Linux, OS X, freeBSD,...) using GCC run this command in terminal:
+To [compile in *nix](https://github.com/mohsend/cpp-examples/wiki/Compiling-using-GCC) (Linux, OS X, freeBSD,...) using GCC run this command in terminal:
 ```bash
 g++ -Wall -o "executable_file" "code_file.cpp"
 ```
