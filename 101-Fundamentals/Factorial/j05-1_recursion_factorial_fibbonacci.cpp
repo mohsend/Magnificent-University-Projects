@@ -6,8 +6,8 @@
 using namespace std;
 
 unsigned int fibo(unsigned int n);
-unsigned long int factorial(register unsigned long int n);
-unsigned long int factorial_for(register unsigned long int n);
+unsigned long int factorial(unsigned long int n);
+unsigned long int factorial_for(unsigned long int n);
 unsigned int fibo_for(unsigned int n);
 
 int main()
@@ -25,14 +25,14 @@ int main()
 	return 0;
 }
 
-unsigned long int factorial(register unsigned long int n)
+unsigned long int factorial(unsigned long int n)
 {
 	if (n == 0)
 		return 1;
 		return n * factorial(n - 1);
 }
 
-unsigned long int factorial_for(register unsigned long int n)
+unsigned long int factorial_for(unsigned long int n)
 {
 	unsigned long int f = 1;
 	for (int i = 2; i <= n; i++)

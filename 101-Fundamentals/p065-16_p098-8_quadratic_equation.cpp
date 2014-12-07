@@ -30,7 +30,11 @@ int main()
 void quad(float a, float b, float c)
 {
 	float x1, x2, delta, temp;
+	
 	delta = (b * b) - (4 * a * c);
+	
+	cout << "\n(" << a << ")*X^2 + (" << b << ")*X + (" << c << ") = 0" << endl;
+	
 	if (delta == 0)
 	{
 		x1 = - b / (2 * a);
@@ -44,5 +48,7 @@ void quad(float a, float b, float c)
 		cout << "I solved it!\nDelta = " << delta << "\nX = " << x1 << ", " << x2 << '\n';
 	}
 	else
-		cout << "This equation has no answers!\n";
+	{
+		cout << "This equation has no answers!\nDelta = " << delta;
+	}
 }
