@@ -1,5 +1,5 @@
 ##This project is incomplete
-and wont work.
+abandoned and wont work.
 
 because I decided it is pointless.
 
