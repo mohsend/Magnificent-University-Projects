@@ -18,52 +18,76 @@ class Cstudent
 	private:
 		string name;
 		string id; // string or double. it's a long decimal. should be a decimal in a database (e.g. mySQL)
-		Clesson lessons[3];
+		unsigned int numLessons;
+		Clesson lessons[12];
 	
 	public:
 		Cstudent (string pName = "", string pId = "")
 		{
 			name = pName;
 			id = pId;
+			numLessons = 0;
 		}
-		unsigned int setName(string param)
-		{
-			name = param;
-			return name.length();
-		}
-		unsigned int setId(string param)
-		{
-			id = param;
-			return id.length();
-		}
-		string getId(void)
-		{
-			return id;
-		}
-		string getName(void)
-		{
-			return name;
-		}
-		unsigned int setLesson (unsigned int pIndex, string pName, unsigned int pHours, unsigned int pScore)
-		{
-			lessons[pIndex].setName(pName);
-			lessons[pIndex].setHours(pHours);
-			lessons[pIndex].setScore(pScore);
-			return lessons[pIndex].getHours();
-		}
-		Clesson getLesson (unsigned int pIndex)
-		{
-			return lessons[pIndex];
-		}
-		float getMeanScore (void)
-		{
-			unsigned int scoreSum = 0;
-			for (int i = 0; i < 3; i++)
-			{
-				scoreSum += lessons[i].getScore();
-			}
-			return scoreSum / 3.0;
-		}
+		unsigned int setName(string param);
+		unsigned int setId(string param);
+		string getId(void);
+		string getName(void);
+		unsigned int removeLesson (unsigned int pIndex);
+		unsigned int addLessonObj (Clesson);
+		Clesson getLesson (unsigned int);
+		float getMeanScore (void);
 };
+
+unsigned int Cstudent::setName(string param)
+{
+	name = param;
+	return name.length();
+}
+
+unsigned int Cstudent::setId(string param)
+{
+	id = param;
+	return id.length();
+}
+
+string Cstudent::getId(void)
+{
+	return id;
+}
+
+string Cstudent::getName(void)
+{
+	return name;
+}
+
+unsigned int Cstudent::removeLesson (unsigned int pIndex)
+{
+	for (unsigned int i = pIndex; i < numLessons; i++)
+	{
+		lessons[i] = lessons[(i + 1)];
+	}
+	return --numLessons;
+}
+
+unsigned int Cstudent::addLessonObj (Clesson pLesson)
+{
+	lessons[numLessons] = pLesson;
+	return ++numLessons;
+}
+
+Clesson Cstudent::getLesson (unsigned int pIndex)
+{
+	return lessons[pIndex];
+}
+
+float Cstudent::getMeanScore (void)
+{
+	unsigned int scoreSum = 0;
+	for (unsigned int i = 0; i < numLessons; i++)
+	{
+		scoreSum += lessons[i].getScore();
+	}
+	return (float)(scoreSum / numLessons);
+}
 
 #endif
