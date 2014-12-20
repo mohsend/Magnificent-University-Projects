@@ -41,7 +41,7 @@ string to_lowercase (string in)
 	{
 		if(in[i] <= 'Z' && in[i] >= 'A')
 		{
-			in[i] = in[i]-('Z'-'z');
+			in[i] = in[i] - ('Z' - 'z');
 		}
 	}
 	return in;
