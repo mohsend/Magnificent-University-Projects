@@ -18,6 +18,7 @@ int main()
 		cout << "Enter name: ";
 		cin >> name;
 		name = to_lowercase(name);
+		
 		for (int i = 0; name[i]; i++)
 		{
 			sum += (int)(name[i] - 'a' + 1);
