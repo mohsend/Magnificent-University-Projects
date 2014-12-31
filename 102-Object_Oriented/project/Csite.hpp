@@ -73,7 +73,12 @@ void Csite::lessonsMenu()
 }
 void Csite::reportMenu()
 {
-  
+  cout << "Here is your report card:" << endl;
+  for (unsigned int i = 0; i < student.getNumOfLessons(); i++)
+  {
+    Clesson temp = student.getLesson(i);
+    cout << i + 1 << ") " << temp.getName() << ": " << temp.getScore() << " * " << temp.getHours() << endl;
+  }
 }
 void Csite::balanceMenu()
 {
