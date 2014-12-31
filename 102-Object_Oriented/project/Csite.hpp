@@ -23,7 +23,7 @@ class Csite
     Csite(Cstudent);
     void mainMenu();
     void lessonsMenu();
-    void reportMenu();
+    void printReport();
     void balanceMenu();
     void userInfoMenu();
     void listLessons();
@@ -46,7 +46,7 @@ void Csite::mainMenu ()
       lessonsMenu();
       break;
     case '2':
-      reportMenu();
+      printReport();
       break;
     case '3':
       balanceMenu();
@@ -71,7 +71,7 @@ void Csite::lessonsMenu()
       
   }
 }
-void Csite::reportMenu()
+void Csite::printReport()
 {
   cout << "Here is your report card:" << endl;
   for (unsigned int i = 0; i < student.getNumOfLessons(); i++)
@@ -79,6 +79,7 @@ void Csite::reportMenu()
     Clesson temp = student.getLesson(i);
     cout << i + 1 << ") " << temp.getName() << ": " << temp.getScore() << " * " << temp.getHours() << endl;
   }
+  cout << "Your mean score is " << student.getMeanScore() << endl;
 }
 void Csite::balanceMenu()
 {
