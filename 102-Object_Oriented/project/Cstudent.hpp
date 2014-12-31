@@ -36,6 +36,7 @@ class Cstudent
 		unsigned int addLessonObj (Clesson);
 		Clesson getLesson (unsigned int);
 		float getMeanScore (void);
+		unsigned int getNumOfLessons(void);
 };
 
 unsigned int Cstudent::setName(string param)
@@ -90,4 +91,8 @@ float Cstudent::getMeanScore (void)
 	return (float)(scoreSum / numLessons);
 }
 
+unsigned int Cstudent::getNumOfLessons(void)
+{
+	return numLessons;
+}
 #endif
