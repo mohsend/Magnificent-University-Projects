@@ -28,6 +28,7 @@ class Cstudent
 			name = pName;
 			id = pId;
 			numLessons = 0;
+			moneyBalance = 0;
 		}
 		unsigned int setName(string param);
 		unsigned int setId(string param);
