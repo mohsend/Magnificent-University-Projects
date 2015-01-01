@@ -15,7 +15,7 @@ using namespace std;
 int main()
 {
 	Clesson lessons[5];
-	Cstudent stu("Mohsen Dastjedi Zade", "90259100270");
+	Cstudent stu("Mohsen Dastjedi Zade", "90000001");
 	
 	stu.addLessonObj();
 	Csite site(stu);
