@@ -7,10 +7,19 @@
 
 #include <iostream>
 #include "Csite.hpp"
+#include "Cstudent.hpp"
+#include "Clesson.hpp"
+
 using namespace std;
 
 int main()
 {
+	Clesson lessons[5];
+	Cstudent stu("Mohsen Dastjedi Zade", "90259100270");
+	
+	stu.addLessonObj();
+	Csite site(stu);
+	site.mainMenu();
 	
 	return 0;
 }
