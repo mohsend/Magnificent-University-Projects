@@ -33,6 +33,7 @@ class Cstudent
 		Clesson getLesson (unsigned int);
 		float getMeanScore (void);
 		unsigned int getNumOfLessons(void);
+		int currentBalance(void);
 		int payedMoney(int);
 };
 
@@ -99,6 +100,11 @@ float Cstudent::getMeanScore (void)
 unsigned int Cstudent::getNumOfLessons(void)
 {
 	return numLessons;
+}
+
+int Cstudent::currentBalance(void)
+{
+	return moneyBalance;
 }
 
 int Cstudent::payedMoney(int howMuch)
