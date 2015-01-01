@@ -83,7 +83,19 @@ void Csite::printReport()
 }
 void Csite::balanceMenu()
 {
+  char response;
+  unsigned int howMuch;
   
+  cout << "Your current balance is " << student.currentBalance() << endl;
+  
+  cout << "\tPay more to add to balance? (y/N) ";
+  cin >> response;
+  if (response == 'y' || response == 'Y')
+  {
+    cout << "How much? ";
+    cin >> howMuch;
+    cout << "Your new balance is " << student.payedMoney(howMuch);
+  }
 }
 void Csite::userInfoMenu()
 {
