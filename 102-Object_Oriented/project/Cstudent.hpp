@@ -19,6 +19,7 @@ class Cstudent
 		string name;
 		string id; // string or double. it's a long decimal. should be a decimal in a database (e.g. mySQL)
 		unsigned int numLessons;
+		int moneyBalance;
 		Clesson lessons[12];
 	
 	public:
@@ -37,6 +38,7 @@ class Cstudent
 		Clesson getLesson (unsigned int);
 		float getMeanScore (void);
 		unsigned int getNumOfLessons(void);
+		int payedMoney(int);
 };
 
 unsigned int Cstudent::setName(string param)
@@ -95,4 +97,10 @@ unsigned int Cstudent::getNumOfLessons(void)
 {
 	return numLessons;
 }
+
+int Cstudent::payedMoney(int howMuch)
+{
+	return moneyBalance += howMuch;
+}
+
 #endif
