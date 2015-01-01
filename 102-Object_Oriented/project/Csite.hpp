@@ -99,12 +99,12 @@ void Csite::balanceMenu()
 }
 void Csite::userInfoMenu()
 {
-  
+  cout << "Name: " << student.getName() << "\nID: " << student.getId();
 }
 
 void Csite::listLessons()
 {
-  
+  printReport();
 }
 
 #endif
