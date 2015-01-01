@@ -23,13 +23,7 @@ class Cstudent
 		Clesson lessons[12];
 	
 	public:
-		Cstudent (string pName = "", string pId = "")
-		{
-			name = pName;
-			id = pId;
-			numLessons = 0;
-			moneyBalance = 0;
-		}
+		Cstudent (string, string);
 		unsigned int setName(string param);
 		unsigned int setId(string param);
 		string getId(void);
@@ -41,6 +35,14 @@ class Cstudent
 		unsigned int getNumOfLessons(void);
 		int payedMoney(int);
 };
+
+Cstudent::Cstudent (string pName = "", string pId = "")
+{
+	name = pName;
+	id = pId;
+	numLessons = 0;
+	moneyBalance = 0;
+}
 
 unsigned int Cstudent::setName(string param)
 {
