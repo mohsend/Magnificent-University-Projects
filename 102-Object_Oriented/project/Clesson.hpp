@@ -16,7 +16,7 @@ class Clesson
 {
 	private:
 		string name;
-		unsigned int hours;
+		unsigned int units;
 		unsigned int score;
 		bool theory;
 		
@@ -29,7 +29,7 @@ class Clesson
 		void setDetails (string pName = "", unsigned int pHours = 0, unsigned int pScore = 0, bool pTheory = true)
 		{
 			name = pName;
-			hours = pHours;
+			units = pHours;
 			score = pScore;
 			theory = pTheory;
 		}
@@ -41,8 +41,8 @@ class Clesson
 		}
 		unsigned int setHours (unsigned int param)
 		{
-			hours = param;
-			return hours;
+			units = param;
+			return units;
 		}
 		unsigned int setScore (unsigned int param)
 		{
@@ -56,7 +56,7 @@ class Clesson
 		}
 		unsigned int getHours (void)
 		{
-			return hours;
+			return units;
 		}
 		unsigned int getScore (void)
 		{
@@ -64,17 +64,17 @@ class Clesson
 		}
 		unsigned int getWeightedScore (void)
 		{
-			return hours * score;
+			return units * score;
 		}
 		unsigned int getCost (void)
 		{
 			if (theory)
 			{
-				return hours * 10;
+				return units * 10;
 			}
 			else
 			{
-				return hours * 30;
+				return units * 30;
 			}
 		}
 };

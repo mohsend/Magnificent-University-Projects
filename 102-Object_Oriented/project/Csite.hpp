@@ -154,7 +154,7 @@ unsigned int Csite::addLesson(void)
   }
   else
   {
-    cout << "You have reached your maximum hours." << endl;
+    cout << "You have reached your maximum units." << endl;
     return student.getNumOfLessons();
   }
 }

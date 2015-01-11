@@ -41,7 +41,7 @@ void listOfLessons::listAll()
 {
   for (unsigned int i = 0; i < 10; i++)
   {
-    cout << i + 1 << ") " << lessons[i].getName() << " (" << lessons[i].getHours() << " hours)" << endl;
+    cout << i + 1 << ") " << lessons[i].getName() << " (" << lessons[i].getHours() << " units)" << endl;
   }
 }
 

@@ -106,12 +106,12 @@ unsigned int Cstudent::getNumOfLessons(void)
 
 unsigned int Cstudent::getHours(void)
 {
-	unsigned int hours = 0;
+	unsigned int units = 0;
 	for (unsigned int i = 0; i < numLessons; i++)
 	{
-		hours += lessons[i].getHours();
+		units += lessons[i].getHours();
 	}
-	return hours;
+	return units;
 }
 
 int Cstudent::currentBalance(int howMuch = 0)
