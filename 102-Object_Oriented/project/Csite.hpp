@@ -33,8 +33,6 @@ Csite::Csite(Cstudent pStudent)
 {
   // should load student's class from a database in real life application
   student = pStudent;
-  theoryUnitCost = 20;
-  labUnitCost = 40;
 }
 
 void Csite::mainMenu ()
