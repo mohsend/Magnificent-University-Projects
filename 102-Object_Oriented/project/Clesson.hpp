@@ -29,6 +29,14 @@ class Clesson
 			theory = pTheory;
 		}
 		
+		set (string pName = "", unsigned int pHours = 0, unsigned int pScore = 0, bool pTheory = true)
+		{
+			name = pName;
+			hours = pHours;
+			score = pScore;
+			theory = pTheory;
+		}
+		
 		unsigned int setName (string param)
 		{
 			name = param;
