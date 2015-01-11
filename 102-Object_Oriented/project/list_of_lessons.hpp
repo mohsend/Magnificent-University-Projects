@@ -1,5 +1,5 @@
 /*
- * Class to do site-like functionality.
+ * Class to make list of available lessons.
  * source available at (Github repo - MIT licence):
  * http://dstjrd.ir/s/cppx
  * https://github.com/mohsend/cpp-examples
