@@ -8,7 +8,6 @@
 #include <iostream>
 #include "Csite.hpp"
 #include "Cstudent.hpp"
-#include "Clesson.hpp"
 
 using namespace std;
 
