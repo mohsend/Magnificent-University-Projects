@@ -12,6 +12,7 @@
 #include <iostream>
 #include "Clesson.hpp"
 #include "Cstudent.hpp"
+#include "list_of_lessons.hpp"
 
 using namespace std;
 
@@ -19,6 +20,7 @@ class Csite
 {
   private:
     Cstudent student;
+    listOfLessons lessonsAvailabe;
   public:
     Csite(Cstudent);
     void mainMenu();
@@ -65,13 +67,13 @@ void Csite::mainMenu ()
 
 void Csite::lessonsMenu()
 {
-  cout << "\n\t1. Show lessons list\n\t2. Show your lessons\n\t3. Add lesson\n\t4. Remove lesson" << endl;
+  cout << "\n\t1. Show available lessons list\n\t2. Show your lessons\n\t3. Add lesson\n\t4. Remove lesson" << endl;
   char response;
   cin >> response;
   switch(response)
   {
     case '1':
-      listLessons();
+      lessonsAvailabe.listAll();
       break;
     case '2':
       
