@@ -23,10 +23,7 @@ class Clesson
 	public:
 		Clesson (string pName = "", unsigned int pHours = 0, unsigned int pScore = 0, bool pTheory = true)
 		{
-			name = pName;
-			hours = pHours;
-			score = pScore;
-			theory = pTheory;
+			setDetails(pName, pHours, pScore, pTheory);
 		}
 		
 		void setDetails (string pName = "", unsigned int pHours = 0, unsigned int pScore = 0, bool pTheory = true)

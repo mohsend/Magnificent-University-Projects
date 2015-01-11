@@ -32,7 +32,7 @@ listOfLessons::listOfLessons()
   lessons[4].setDetails("physics 1", 3, 0, true);
   lessons[5].setDetails("physics 2", 3, 0, true);
   lessons[6].setDetails("phy lab 1", 1, 0, false);
-  lessons[7].setDetails("phy lab 2", 3, 0, false);
+  lessons[7].setDetails("phy lab 2", 1, 0, false);
   lessons[8].setDetails("history", 2, 0, true);
   lessons[9].setDetails("C++ object oriented", 3, 0, true);
 }
