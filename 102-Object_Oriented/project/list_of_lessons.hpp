@@ -19,30 +19,34 @@ class listOfLessons
     Clesson lessons[10];
   public:
     listOfLessons();
-    void listLessons();
+    Clesson getLessonByCode(unsigned int);
+    void listAll();
 };
 
 listOfLessons::listOfLessons()
 {
-  lessons[0].set("Persian literature", 2, 0, true);
-  lessons[1].set("C++ fundamentals", 4, 0, true);
-  lessons[2].set("maths 1", 3, 0, true);
-  lessons[3].set("maths 2", 3, 0, true);
-  lessons[4].set("physics 1", 3, 0, true);
-  lessons[5].set("physics 2", 3, 0, true);
-  lessons[6].set("phy lab 1", 1, 0, false);
-  lessons[7].set("phy lab 2", 3, 0, false);
-  lessons[8].set("history", 2, 0, true);
-  lessons[9].set("C++ object oriented", 3, 0, true);
+  lessons[0].setDetails("Persian literature", 2, 0, true);
+  lessons[1].setDetails("C++ fundamentals", 4, 0, true);
+  lessons[2].setDetails("maths 1", 3, 0, true);
+  lessons[3].setDetails("maths 2", 3, 0, true);
+  lessons[4].setDetails("physics 1", 3, 0, true);
+  lessons[5].setDetails("physics 2", 3, 0, true);
+  lessons[6].setDetails("phy lab 1", 1, 0, false);
+  lessons[7].setDetails("phy lab 2", 3, 0, false);
+  lessons[8].setDetails("history", 2, 0, true);
+  lessons[9].setDetails("C++ object oriented", 3, 0, true);
 }
 
 void listOfLessons::listAll()
 {
-  for (unsigned int i = 0; i < student.getNumOfLessons(); i++)
+  for (unsigned int i = 0; i < 10; i++)
   {
-    Clesson temp = student.getLesson(i);
-    cout << i + 1 << ") " << temp.getName() << " * " << temp.getHours() << endl;
+    cout << i + 1 << ") " << lessons[i].getName() << " (" << lessons[i].getHours() << " hours)" << endl;
   }
 }
 
+Clesson listOfLessons::getLessonByCode(unsigned int code)
+{
+  return lessons[(code - 1)];
+}
 #endif

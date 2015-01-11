@@ -29,7 +29,7 @@ class Clesson
 			theory = pTheory;
 		}
 		
-		set (string pName = "", unsigned int pHours = 0, unsigned int pScore = 0, bool pTheory = true)
+		void setDetails (string pName = "", unsigned int pHours = 0, unsigned int pScore = 0, bool pTheory = true)
 		{
 			name = pName;
 			hours = pHours;

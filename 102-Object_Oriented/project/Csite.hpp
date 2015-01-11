@@ -21,14 +21,16 @@ class Csite
   private:
     Cstudent student;
     listOfLessons lessonsAvailabe;
-  public:
-    Csite(Cstudent);
-    void mainMenu();
     void lessonsMenu();
     void printReport();
     void balanceMenu();
     void userInfoMenu();
     void listLessons();
+    unsigned int addLesson(); 
+    unsigned int removeLesson(); 
+  public:
+    Csite(Cstudent);
+    void mainMenu();
 };
 
 Csite::Csite(Cstudent pStudent)
@@ -50,12 +52,15 @@ void Csite::mainMenu ()
       break;
     case '2':
       printReport();
+      mainMenu();
       break;
     case '3':
       balanceMenu();
+      mainMenu();
       break;
     case '4':
       userInfoMenu();
+      mainMenu();
       break;
     case '5':
       // returns to main() and executes 'return 0;'
@@ -67,22 +72,29 @@ void Csite::mainMenu ()
 
 void Csite::lessonsMenu()
 {
-  cout << "\n\t1. Show available lessons list\n\t2. Show your lessons\n\t3. Add lesson\n\t4. Remove lesson" << endl;
+  cout << "\n\t1. Show available lessons list\n\t2. Show your lessons\n\t3. Add lesson\n\t4. Remove lesson\n\t5. Back to main menu" << endl;
   char response;
   cin >> response;
   switch(response)
   {
     case '1':
       lessonsAvailabe.listAll();
+      lessonsMenu();
       break;
     case '2':
-      
+      listLessons();
+      lessonsMenu();
       break;
     case '3':
-      
+      addLesson();
+      lessonsMenu();
       break;
     case '4':
-      
+      removeLesson();
+      lessonsMenu();
+      break;
+    case '5':
+      mainMenu();
       break;
     default:
       lessonsMenu();
@@ -90,6 +102,8 @@ void Csite::lessonsMenu()
 }
 void Csite::printReport()
 {
+  if (student.getNumOfLessons() == 0) return;
+  
   cout << "Here is your report card:" << endl;
   for (unsigned int i = 0; i < student.getNumOfLessons(); i++)
   {
@@ -114,16 +128,43 @@ void Csite::balanceMenu()
     cin >> howMuch;
     cout << "Your new balance is " << student.currentBalance(howMuch) << endl;
   }
-  mainMenu();
+  else
+  {
+    mainMenu();
+  }
 }
 void Csite::userInfoMenu()
 {
-  cout << "Name: " << student.getName() << "\nID: " << student.getId();
+  cout << "Name: " << student.getName() << "\nID: " << student.getId() << endl;
 }
 
 void Csite::listLessons()
 {
   printReport();
+}
+
+unsigned int Csite::addLesson(void)
+{
+  if (student.getHours() <= 20)
+  {
+    unsigned int code;
+    cout << "enter code of the lesson (from available lessons list): ";
+    cin >> code;
+    return student.addLessonObj(lessonsAvailabe.getLessonByCode(code));
+  }
+  else
+  {
+    cout << "You have reached your maximum hours." << endl;
+    return student.getNumOfLessons();
+  }
+}
+
+unsigned int Csite::removeLesson(void)
+{
+    unsigned int code;
+    cout << "enter code of the lesson (from your lessons list): ";
+    cin >> code;
+    return student.removeLesson(code - 1);
 }
 
 #endif
