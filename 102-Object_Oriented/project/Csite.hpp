@@ -19,8 +19,6 @@ class Csite
 {
   private:
     Cstudent student;
-    int theoryUnitCost;
-    int labUnitCost;
   public:
     Csite(Cstudent);
     void mainMenu();

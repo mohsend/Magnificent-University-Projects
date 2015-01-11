@@ -68,16 +68,18 @@ string Cstudent::getName(void)
 
 unsigned int Cstudent::removeLesson (unsigned int pIndex)
 {
+	moneyBalance += lessons[pIndex].getCost();
 	for (unsigned int i = pIndex; i < numLessons; i++)
 	{
 		lessons[i] = lessons[(i + 1)];
-	}
+	} 
 	return --numLessons;
 }
 
 unsigned int Cstudent::addLessonObj (Clesson pLesson)
 {
 	lessons[numLessons] = pLesson;
+	moneyBalance -= lessons[numLessons].getCost();
 	return ++numLessons;
 }
 

@@ -18,13 +18,15 @@ class Clesson
 		string name;
 		unsigned int hours;
 		unsigned int score;
+		bool theory;
 		
 	public:
-		Clesson (string pName = "", unsigned int pHours = 0, unsigned int pScore = 0)
+		Clesson (string pName = "", unsigned int pHours = 0, unsigned int pScore = 0, bool pTheory = true)
 		{
 			name = pName;
 			hours = pHours;
 			score = pScore;
+			theory = pTheory;
 		}
 		
 		unsigned int setName (string param)
@@ -58,6 +60,17 @@ class Clesson
 		unsigned int getWeightedScore (void)
 		{
 			return hours * score;
+		}
+		unsigned int getCost (void)
+		{
+			if (theory)
+			{
+				return hours * 10;
+			}
+			else
+			{
+				return hours * 30;
+			}
 		}
 };
 
