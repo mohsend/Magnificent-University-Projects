@@ -33,8 +33,7 @@ class Cstudent
 		Clesson getLesson (unsigned int);
 		float getMeanScore (void);
 		unsigned int getNumOfLessons(void);
-		int currentBalance(void);
-		int payedMoney(int);
+		int currentBalance(int);
 };
 
 Cstudent::Cstudent (string pName = "", string pId = "")
@@ -102,12 +101,7 @@ unsigned int Cstudent::getNumOfLessons(void)
 	return numLessons;
 }
 
-int Cstudent::currentBalance(void)
-{
-	return moneyBalance;
-}
-
-int Cstudent::payedMoney(int howMuch)
+int Cstudent::currentBalance(int howMuch = 0)
 {
 	return moneyBalance += howMuch;
 }

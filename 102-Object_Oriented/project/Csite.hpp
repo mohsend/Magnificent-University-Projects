@@ -19,6 +19,8 @@ class Csite
 {
   private:
     Cstudent student;
+    int theoryUnitCost;
+    int labUnitCost;
   public:
     Csite(Cstudent);
     void mainMenu();
@@ -33,12 +35,14 @@ Csite::Csite(Cstudent pStudent)
 {
   // should load student's class from a database in real life application
   student = pStudent;
+  theoryUnitCost = 20;
+  labUnitCost = 40;
 }
 
 void Csite::mainMenu ()
 {
-  cout << "Welcome " << student.getName();
-  cout << "Menu:\n\t1. Add/Remove Courses\n\t2. View report card\n\t3. Check balance\n\t4. View your info" << endl;
+  cout << "Welcome " << student.getName() << endl;
+  cout << "Menu:\n\t1. Add/Remove Courses\n\t2. View report card\n\t3. Check balance\n\t4. View your info\n\t5. exit" << endl;
   char response;
   cin >> response;
   switch(response)
@@ -54,6 +58,9 @@ void Csite::mainMenu ()
       break;
     case '4':
       userInfoMenu();
+      break;
+    case '5':
+      // returns to main() and executes 'return 0;'
       break;
     default:
       mainMenu();
@@ -73,6 +80,12 @@ void Csite::lessonsMenu()
     case '2':
       
       break;
+    case '3':
+      
+      break;
+    case '4':
+      
+      break;
     default:
       lessonsMenu();
   }
@@ -86,6 +99,7 @@ void Csite::printReport()
     cout << i + 1 << ") " << temp.getName() << ": " << temp.getScore() << " * " << temp.getHours() << endl;
   }
   cout << "Your mean score is " << student.getMeanScore() << endl;
+  lessonsMenu();
 }
 void Csite::balanceMenu()
 {
@@ -100,8 +114,9 @@ void Csite::balanceMenu()
   {
     cout << "How much? ";
     cin >> howMuch;
-    cout << "Your new balance is " << student.payedMoney(howMuch);
+    cout << "Your new balance is " << student.currentBalance(howMuch) << endl;
   }
+  mainMenu();
 }
 void Csite::userInfoMenu()
 {
