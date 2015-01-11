@@ -14,10 +14,9 @@ using namespace std;
 
 int main()
 {
-	Clesson lessons[5];
 	Cstudent stu("Mohsen Dastjedi Zade", "90000001");
 	
-	stu.addLessonObj();
+	//stu.addLessonObj();
 	Csite site(stu);
 	site.mainMenu();
 	

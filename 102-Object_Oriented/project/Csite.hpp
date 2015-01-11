@@ -37,6 +37,7 @@ Csite::Csite(Cstudent pStudent)
 
 void Csite::mainMenu ()
 {
+  cout << "Welcome " << student.getName();
   cout << "Menu:\n\t1. Add/Remove Courses\n\t2. View report card\n\t3. Check balance\n\t4. View your info" << endl;
   char response;
   cin >> response;
@@ -54,6 +55,8 @@ void Csite::mainMenu ()
     case '4':
       userInfoMenu();
       break;
+    default:
+      mainMenu();
   }
 }
 
@@ -69,6 +72,9 @@ void Csite::lessonsMenu()
       break;
     case '2':
       
+      break;
+    default:
+      lessonsMenu();
   }
 }
 void Csite::printReport()
