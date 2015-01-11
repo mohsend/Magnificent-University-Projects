@@ -21,15 +21,15 @@ class Clesson
 		bool theory;
 		
 	public:
-		Clesson (string pName = "", unsigned int pHours = 0, unsigned int pScore = 0, bool pTheory = true)
+		Clesson (string pName = "", unsigned int pUnits = 0, unsigned int pScore = 0, bool pTheory = true)
 		{
-			setDetails(pName, pHours, pScore, pTheory);
+			setDetails(pName, pUnits, pScore, pTheory);
 		}
 		
-		void setDetails (string pName = "", unsigned int pHours = 0, unsigned int pScore = 0, bool pTheory = true)
+		void setDetails (string pName = "", unsigned int pUnits = 0, unsigned int pScore = 0, bool pTheory = true)
 		{
 			name = pName;
-			units = pHours;
+			units = pUnits;
 			score = pScore;
 			theory = pTheory;
 		}
@@ -39,7 +39,7 @@ class Clesson
 			name = param;
 			return name.length();
 		}
-		unsigned int setHours (unsigned int param)
+		unsigned int setUnits (unsigned int param)
 		{
 			units = param;
 			return units;
@@ -54,7 +54,7 @@ class Clesson
 		{
 			return name;
 		}
-		unsigned int getHours (void)
+		unsigned int getUnits (void)
 		{
 			return units;
 		}

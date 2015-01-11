@@ -34,7 +34,7 @@ class Cstudent
 		float getMeanScore (void);
 		unsigned int getNumOfLessons(void);
 		int currentBalance(int);
-		unsigned int getHours(void);
+		unsigned int getUnits(void);
 };
 
 Cstudent::Cstudent (string pName = "", string pId = "")
@@ -104,12 +104,12 @@ unsigned int Cstudent::getNumOfLessons(void)
 	return numLessons;
 }
 
-unsigned int Cstudent::getHours(void)
+unsigned int Cstudent::getUnits(void)
 {
 	unsigned int units = 0;
 	for (unsigned int i = 0; i < numLessons; i++)
 	{
-		units += lessons[i].getHours();
+		units += lessons[i].getUnits();
 	}
 	return units;
 }

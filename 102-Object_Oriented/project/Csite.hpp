@@ -108,7 +108,7 @@ void Csite::printReport()
   for (unsigned int i = 0; i < student.getNumOfLessons(); i++)
   {
     Clesson temp = student.getLesson(i);
-    cout << i + 1 << ") " << temp.getName() << ": " << temp.getScore() << " * " << temp.getHours() << endl;
+    cout << i + 1 << ") " << temp.getName() << ": " << temp.getScore() << " * " << temp.getUnits() << endl;
   }
   cout << "Your mean score is " << student.getMeanScore() << endl;
   lessonsMenu();
@@ -145,7 +145,7 @@ void Csite::listLessons()
 
 unsigned int Csite::addLesson(void)
 {
-  if (student.getHours() <= 20)
+  if (student.getUnits() <= 20)
   {
     unsigned int code;
     cout << "enter code of the lesson (from available lessons list): ";
