@@ -5,6 +5,8 @@
  * https://github.com/mohsend/cpp-examples
  */
 
+// این کلاس فقط برای این ساخته شده که لیستی از دروس ارایه شده را در اختیار کد اصلی بگذارد
+// در یک مثال واقعی این اطلاعات در دیتابیس ذخیره میشوند و از آنجا لود میشوند. نه از یک فایل هدر
 #ifndef LIST_OF_LESSONS_HPP
 #define LIST_OF_LESSONS_HPP 1
 
@@ -16,6 +18,7 @@ using namespace std;
 class listOfLessons
 {
   private:
+    // یک آرایه از کلاس درس برای ذخیره واحد های ارایه شده
     Clesson lessons[10];
   public:
     listOfLessons();
@@ -23,6 +26,7 @@ class listOfLessons
     void listAll();
 };
 
+// مقدار دهی به اجزای آرایه
 listOfLessons::listOfLessons()
 {
   lessons[0].setDetails("Persian literature", 2, 0, true);
@@ -37,6 +41,7 @@ listOfLessons::listOfLessons()
   lessons[9].setDetails("C++ object oriented", 3, 0, true);
 }
 
+// لیست کردن تمام درس های ارایه شده.
 void listOfLessons::listAll()
 {
   for (unsigned int i = 0; i < 10; i++)
@@ -45,6 +50,7 @@ void listOfLessons::listAll()
   }
 }
 
+// متد ای برای گرفتن درس ارایه شده به صورت یک نمونه از کلاس درس با استفاده از کد درس
 Clesson listOfLessons::getLessonByCode(unsigned int code)
 {
   return lessons[(code - 1)];
