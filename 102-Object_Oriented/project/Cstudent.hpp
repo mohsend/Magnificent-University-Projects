@@ -110,10 +110,10 @@ float Cstudent::getMeanScore (void)
 	unsigned int scoreSum = 0;
 	for (unsigned int i = 0; i < numLessons; i++)
 	{
-		scoreSum += lessons[i].getScore();
+		scoreSum += lessons[i].getWeightedScore();
 	}
-	// مقدار نمرات جمع زده تقسیم بر تعداد درس ها میشود و این مقدار برگردانده میشود
-	return (float)(scoreSum / numLessons);
+	// مقدار جمع زده شده ی نمرات وزنی به تعداد واحد های برداشته شده تقسیم و برگردانده میشود
+	return (float)(scoreSum / getUnits());
 }
 
 // متد برای گرفتن تعداد درس های برداشته شده توسط دانشجو
