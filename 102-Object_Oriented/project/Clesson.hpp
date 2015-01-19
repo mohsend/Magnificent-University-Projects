@@ -15,17 +15,20 @@ using namespace std;
 class Clesson
 {
 	private:
-		string name;
-		unsigned int units;
-		unsigned int score;
-		bool theory;
+		// صفات
+		string name; // نام
+		unsigned int units; // چند واحد
+		unsigned int score; // نمره
+		bool theory; // آیا تئوری است یا عملی
 		
 	public:
+		// کانستراکتور همان کار تابع بعدی را میکند
 		Clesson (string pName = "", unsigned int pUnits = 0, unsigned int pScore = 0, bool pTheory = true)
 		{
 			setDetails(pName, pUnits, pScore, pTheory);
 		}
 		
+		// تمام صفات را میتوان با همین یک متد ست کرد
 		void setDetails (string pName = "", unsigned int pUnits = 0, unsigned int pScore = 0, bool pTheory = true)
 		{
 			name = pName;
@@ -34,6 +37,7 @@ class Clesson
 			theory = pTheory;
 		}
 		
+		// متد های ست کردن مقادیر به متد ها
 		unsigned int setName (string param)
 		{
 			name = param;
@@ -50,6 +54,7 @@ class Clesson
 			return score;
 		}
 		
+		// توابع گرفتن مقادیر صفات
 		string getName (void)
 		{
 			return name;
@@ -62,10 +67,13 @@ class Clesson
 		{
 			return score;
 		}
+		// گرفتن نمره ی وزنی
 		unsigned int getWeightedScore (void)
 		{
+			// ضرب نمره در تعداد واحد های درس
 			return units * score;
 		}
+		// محاسبه ی هزینه ی درس با توجه به عملی بودن یا نبودن آن
 		unsigned int getCost (void)
 		{
 			if (theory)
