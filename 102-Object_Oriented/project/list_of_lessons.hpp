@@ -20,6 +20,7 @@ class listOfLessons
   private:
     // یک آرایه از کلاس درس برای ذخیره واحد های ارایه شده
     Clesson lessons[14];
+    unsigned int index;
   public:
     listOfLessons();
     Clesson getLessonByCode(unsigned int);
@@ -29,7 +30,7 @@ class listOfLessons
 // مقدار دهی به اجزای آرایه
 listOfLessons::listOfLessons()
 {
-  int index = 0;
+  index = 0;
   lessons[index++].setDetails("Persian literature", "Daemi", 2, 0, true);
   lessons[index++].setDetails("C++ fundamentals", "Pur ganji", 4, 0, true);
   lessons[index++].setDetails("maths 1", "Reza", 3, 0, true);
@@ -47,7 +48,7 @@ listOfLessons::listOfLessons()
 // لیست کردن تمام درس های ارایه شده.
 void listOfLessons::listAll()
 {
-  for (unsigned int i = 0; i < 10; i++)
+  for (unsigned int i = 0; i < index; i++)
   {
     string theory = (lessons[i].getTheory()) ? "Theory" : "Applied";
     cout << i + 1 << ") " << lessons[i].getName() << " by Prof. " << lessons[i].getLecturer() << " (" << lessons[i].getUnits()  << ' ' << theory << " units)" << endl;
