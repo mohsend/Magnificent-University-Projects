@@ -9,17 +9,6 @@ Menu:
 	3. Check balance
 	4. View your info
 	5. exit
--> 4
-
-Name: Mohsen Dastjedi Zade
-ID: 90000001
-Welcome Mohsen Dastjedi Zade
-Menu:
-	1. Add/Remove Courses
-	2. View report card
-	3. Check balance
-	4. View your info
-	5. exit
 -> 1
 
 	1. Show available lessons list
@@ -29,16 +18,18 @@ Menu:
 	5. Back to main menu
 -> 1
 
-1) Persian literature (2 units)
-2) C++ fundamentals (4 units)
-3) maths 1 (3 units)
-4) maths 2 (3 units)
-5) physics 1 (3 units)
-6) physics 2 (3 units)
-7) phy lab 1 (1 units)
-8) phy lab 2 (1 units)
-9) history (2 units)
-10) C++ object oriented (3 units)
+1) Persian literature by Prof. Daemi (2 Theory units)
+2) C++ fundamentals by Prof. Pur ganji (4 Theory units)
+3) maths 1 by Prof. Reza (3 Theory units)
+4) maths 1 by Prof. Zia manesh (3 Theory units)
+5) maths 2 by Prof. Reza (3 Theory units)
+6) maths 2 by Prof. Zia manesh (3 Theory units)
+7) physics 1 by Prof. Ghafari (3 Theory units)
+8) physics 2 by Prof. Ghafari (3 Theory units)
+9) phy lab 1 by Prof.  (1 Applied units)
+10) phy lab 2 by Prof. Salehi (1 Applied units)
+11) history by Prof.  (2 Theory units)
+12) object oriented programming by Prof. Farhadi (3 Theory units)
 
 	1. Show available lessons list
 	2. Show your lessons
@@ -46,26 +37,8 @@ Menu:
 	4. Remove lesson
 	5. Back to main menu
 -> 3
+enter code of the lesson (from available lessons list): -> 12
 
-enter code of the lesson (from available lessons list): -> 3
-	1. Show available lessons list
-	2. Show your lessons
-	3. Add lesson
-	4. Remove lesson
-	5. Back to main menu
-enter code of the lesson (from available lessons list): -> 4
-	1. Show available lessons list
-	2. Show your lessons
-	3. Add lesson
-	4. Remove lesson
-	5. Back to main menu
-enter code of the lesson (from available lessons list): -> 10
-	1. Show available lessons list
-	2. Show your lessons
-	3. Add lesson
-	4. Remove lesson
-	5. Back to main menu
-enter code of the lesson (from available lessons list): -> 7
 	1. Show available lessons list
 	2. Show your lessons
 	3. Add lesson
@@ -74,10 +47,7 @@ enter code of the lesson (from available lessons list): -> 7
 -> 2
 
 Here is your report card:
-1) maths 1: 0 * 3
-2) maths 2: 0 * 3
-3) C++ object oriented: 0 * 3
-4) phy lab 1: 0 * 1
+1) object oriented programming by Prof. Farhadi: 0 * 3
 Your mean score is 0
 
 	1. Show available lessons list
@@ -85,8 +55,17 @@ Your mean score is 0
 	3. Add lesson
 	4. Remove lesson
 	5. Back to main menu
+-> 4
+
+enter code of the lesson (from your lessons list): -> 1
+
+	1. Show available lessons list
+	2. Show your lessons
+	3. Add lesson
+	4. Remove lesson
+	5. Back to main menu
 -> 5
-	
+
 Welcome Mohsen Dastjedi Zade
 Menu:
 	1. Add/Remove Courses
@@ -94,9 +73,23 @@ Menu:
 	3. Check balance
 	4. View your info
 	5. exit
-Your current balance is -120
-	Pay more to add to balance? (y/N) How much? -> 150
-	Your new balance is 30
+-> 3
+
+Your current balance is 0
+	Pay more to add to balance? (y/N) -> y
+	How much? -> 50
+	Your new balance is 50
+Welcome Mohsen Dastjedi Zade
+Menu:
+	1. Add/Remove Courses
+	2. View report card
+	3. Check balance
+	4. View your info
+	5. exit
+-> 4
+
+Name: Mohsen Dastjedi Zade
+ID: 90000001
 Welcome Mohsen Dastjedi Zade
 Menu:
 	1. Add/Remove Courses
