@@ -115,7 +115,7 @@ void Csite::printReport()
   for (unsigned int i = 0; i < student.getNumOfLessons(); i++)
   {
     Clesson temp = student.getLesson(i);
-    cout << i + 1 << ") " << temp.getName() << ": " << temp.getScore() << " * " << temp.getUnits() << endl;
+    cout << i + 1 << ") " << temp.getName() << " by Prof. " << temp.getLecturer() << ": " << temp.getScore() << " * " << temp.getUnits() << endl;
   }
   // معدل را چاپ میکند
   cout << "Your mean score is " << student.getMeanScore() << endl;

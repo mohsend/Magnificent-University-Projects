@@ -19,7 +19,7 @@ class listOfLessons
 {
   private:
     // یک آرایه از کلاس درس برای ذخیره واحد های ارایه شده
-    Clesson lessons[10];
+    Clesson lessons[14];
   public:
     listOfLessons();
     Clesson getLessonByCode(unsigned int);
@@ -29,16 +29,19 @@ class listOfLessons
 // مقدار دهی به اجزای آرایه
 listOfLessons::listOfLessons()
 {
-  lessons[0].setDetails("Persian literature", 2, 0, true);
-  lessons[1].setDetails("C++ fundamentals", 4, 0, true);
-  lessons[2].setDetails("maths 1", 3, 0, true);
-  lessons[3].setDetails("maths 2", 3, 0, true);
-  lessons[4].setDetails("physics 1", 3, 0, true);
-  lessons[5].setDetails("physics 2", 3, 0, true);
-  lessons[6].setDetails("phy lab 1", 1, 0, false);
-  lessons[7].setDetails("phy lab 2", 1, 0, false);
-  lessons[8].setDetails("history", 2, 0, true);
-  lessons[9].setDetails("C++ object oriented", 3, 0, true);
+  int index = 0;
+  lessons[index++].setDetails("Persian literature", "Daemi", 2, 0, true);
+  lessons[index++].setDetails("C++ fundamentals", "Pur ganji", 4, 0, true);
+  lessons[index++].setDetails("maths 1", "Reza", 3, 0, true);
+  lessons[index++].setDetails("maths 1", "Zia manesh", 3, 0, true);
+  lessons[index++].setDetails("maths 2", "Reza", 3, 0, true);
+  lessons[index++].setDetails("maths 2", "Zia manesh", 3, 0, true);
+  lessons[index++].setDetails("physics 1", "Ghafari", 3, 0, true);
+  lessons[index++].setDetails("physics 2", "Ghafari", 3, 0, true);
+  lessons[index++].setDetails("phy lab 1", "", 1, 0, false);
+  lessons[index++].setDetails("phy lab 2", "Salehi", 1, 0, false);
+  lessons[index++].setDetails("history", "", 2, 0, true);
+  lessons[index++].setDetails("object oriented programming", "Farhadi", 3, 0, true);
 }
 
 // لیست کردن تمام درس های ارایه شده.
@@ -46,7 +49,8 @@ void listOfLessons::listAll()
 {
   for (unsigned int i = 0; i < 10; i++)
   {
-    cout << i + 1 << ") " << lessons[i].getName() << " (" << lessons[i].getUnits() << " units)" << endl;
+    string theory = (lessons[i].getTheory()) ? "Theory" : "Applied";
+    cout << i + 1 << ") " << lessons[i].getName() << " by Prof. " << lessons[i].getLecturer() << " (" << lessons[i].getUnits()  << ' ' << theory << " units)" << endl;
   }
 }
 
