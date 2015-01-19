@@ -1,5 +1,6 @@
 خروجی یک اجرای برنامه. با استفاده از کامند
 ./site-like | tee example-output.txt
+روی دستگاه لینوکسی ساخته شده.
 ورودی های کیبورد با -> مشخص شده
 
 Welcome Mohsen Dastjedi Zade
