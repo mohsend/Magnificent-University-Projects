@@ -6,10 +6,10 @@
 #include "maze.hpp"
 using namespace std;
 
-int main()
+int main(int argc, char **argv)
 {
 	maze maz;
-	maz.init_with_file("first_maze_15x15.txt");
+	maz.init_with_file(argv[1]);
 	maz.start();
 	while (!maz.move())
 	{

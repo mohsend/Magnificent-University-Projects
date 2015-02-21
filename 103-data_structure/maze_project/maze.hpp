@@ -106,6 +106,8 @@ bool maze::move()
     return true;
   else
     move_back();
+    
+  return false;
 }
 
 void maze::move_back()
