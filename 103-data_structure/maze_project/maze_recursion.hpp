@@ -16,9 +16,7 @@ using namespace std;
 class maze
 {
   private:
-    char array[15][15];
-    int cmax;
-    int rmax;
+    char array[LINS][COLS];
   public:
     maze();
     void init_with_file (char*);
@@ -59,26 +57,9 @@ void maze::init_with_file (char* filename)
   char ch;
   cout << "Initialized with " << filename << ":\n";
   fstream fin(filename, fstream::in);
-  /*
-  for (int j = 0; j < 15; j++)
+  for (int j = 0; j < LINS; j++)
   {
-    for (int i = 0; ch != '\n'; i++)
-    {
-      fin >> ch;
-      //cout << ch;
-      cmax = i;
-    }
-    rmax = j;
-  }
-  */
-  cmax = 15; rmax = 15;
-  cout << cmax << ' ' << rmax << endl;
-  
-  //array = new char[rmax][cmax];
-  
-  for (int j = 0; j < rmax; j++)
-  {
-    for (int i = 0; ch < cmax; i++)
+    for (int i = 0; ch < COLS; i++)
     {
       fin >> skipws >> ch;
       array[i][j] = ch;

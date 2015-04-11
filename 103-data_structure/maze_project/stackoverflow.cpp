@@ -16,7 +16,7 @@ char Maze[MazeHeight][MazeWidth + 1] =
     "#   # # #",
     "# ### # #",
     "#   #   #",
-    "####### #",
+    "## ######",
 };
 
 const char Wall = '#';
