@@ -34,7 +34,7 @@ maze::maze()
 
 void maze::show()
 {
-  cout << "Steps: "<< steps++ << endl;
+  cout << "Steps: " << steps++ << endl;
   char ch;
   for (int j = 0; j < LINS; j++)
   {
@@ -72,12 +72,22 @@ void maze::start()
 {
   // left line
   for (int j = 0; j < LINS; j++)
+  {
     if (array[0][j] == '.')
+    {
       solve(j, 0);
+      return;
+    }
+  }
   // right line
   for (int j = 0; j < LINS; j++)
+  {
     if (array[0][j] == '.')
+    {
       solve(j, COLS);
+      return;
+    }
+  }
 }
 
 bool maze::solve(int X, int Y)

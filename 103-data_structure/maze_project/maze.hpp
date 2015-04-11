@@ -73,16 +73,16 @@ void maze::init_with_file (char* filename)
 void maze::start()
 {
   for (int j = 0; j < LINS; j++)
-	{
-		for (int i = 0; i < COLS; i++)
-		{
-      if (array[i][j] == '*')
-      {
-        last_col = i;
-        last_line = j;
-      }
-		}
-	}
+  {
+    for (int i = 0; i < COLS; i++)
+    {
+    if (array[i][j] == '*')
+    {
+      last_col = i;
+      last_line = j;
+    }
+    }
+  }
 }
 
 bool maze::move()
