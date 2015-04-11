@@ -17,6 +17,7 @@ class maze
 {
   private:
     char array[LINS][COLS];
+    int steps;
   public:
     maze();
     void init_with_file (char*);
@@ -27,27 +28,28 @@ class maze
 
 maze::maze()
 {
-  
+  steps = 0;
 }
+
 
 void maze::show()
 {
-  //cout << "line: " << y << "\tcol: " << x << endl;
+  cout << "Steps: "<< steps++ << endl;
   char ch;
   for (int j = 0; j < LINS; j++)
+  {
+    for (int i = 0; i < COLS; i++)
     {
-      for (int i = 0; i < COLS; i++)
-      {
-	ch = array[i][j];
-	if (ch == '.')
-	  cout << "  ";
-	else if (ch == '#')
-	  cout << "##";
-	else
-	  cout << ch << ' ';
-      }
-    cout << endl;
+      ch = array[i][j];
+      if (ch == '.')
+	cout << "  ";
+      else if (ch == '#')
+	cout << "##";
+      else
+	cout << ch << ' ';
     }
+  cout << endl;
+  }
 }
 
 void maze::init_with_file (char* filename)
@@ -58,18 +60,24 @@ void maze::init_with_file (char* filename)
   fstream fin(filename, fstream::in);
   for (int j = 0; j < LINS; j++)
   {
-    for (int i = 0; ch < COLS; i++)
+    for (int i = 0; i < COLS; i++)
     {
       fin >> skipws >> ch;
       array[i][j] = ch;
     }
   }
-  show();
 }
 
 void maze::start()
 {
-  solve(0,3);
+  // left line
+  for (int j = 0; j < LINS; j++)
+    if (array[0][j] == '.')
+      solve(j, 0);
+  // right line
+  for (int j = 0; j < LINS; j++)
+    if (array[0][j] == '.')
+      solve(j, COLS);
 }
 
 bool maze::solve(int X, int Y)
@@ -82,7 +90,7 @@ bool maze::solve(int X, int Y)
     cin.get();
 
     // Check if we have reached our goal.
-    if (array[X][Y] == 'G')
+    if (array[X][Y] == 'G' || array[X+1][Y] == 'G' || array[X-1][Y] == 'G' || array[X][Y+1] == 'G' || array[X][Y]-1 == 'G')
     {
         return true;
     }
@@ -106,10 +114,7 @@ bool maze::solve(int X, int Y)
 
     // Otherwise we need to backtrack and find another solution.
     array[Y][X] = '.';
-
-    // If you want progressive update, uncomment these lines...
-    //PrintDaarray();
-    //Sleep(50);
+    
     return false;
 }
 #endif
