@@ -22,7 +22,7 @@ class maze
     void init_with_file (char*);
     void show();
     void start();
-    void mfree(int x, int y);
+    void solve(int x, int y);
     bool japa(int x, int y);
 };
 
@@ -69,16 +69,16 @@ void maze::init_with_file (char* filename)
 
 void maze::start()
 {
-  for (int j = 0; j <= rmax; j++)
+  for (int j = 0; j <= LINS; j++)
   {
     if (array[0][j] == '.')
     {
-      mfree(0, j);
+      solve(0, j);
     }
   }
 }
 
-void maze::mfree(int x, int y)
+void maze::solve(int x, int y)
 {
   show();
   cin.get();
@@ -92,22 +92,22 @@ void maze::mfree(int x, int y)
     // right
     if (japa(x + 1, y))
     {
-      mfree(x + 1, y);
+      solve(x + 1, y);
     }
     // down
     if (japa(x, y + 1))
     {
-      mfree(x, y + 1);
+      solve(x, y + 1);
     }
     // up
     if (japa(x, y - 1))
     {
-      mfree(x, y - 1);
+      solve(x, y - 1);
     }
     // left
     if (japa(x - 1, y))
     {
-      mfree(x - 1, y);
+      solve(x - 1, y);
     }
     array[x][y] = '.';
   }
