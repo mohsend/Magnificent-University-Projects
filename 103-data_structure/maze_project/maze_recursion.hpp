@@ -22,8 +22,7 @@ class maze
     void init_with_file (char*);
     void show();
     void start();
-    void solve(int x, int y);
-    bool japa(int x, int y);
+    bool solve(int x, int y);
 };
 
 maze::maze()
@@ -65,64 +64,52 @@ void maze::init_with_file (char* filename)
       array[i][j] = ch;
     }
   }
+  show();
 }
 
 void maze::start()
 {
-  for (int j = 0; j <= LINS; j++)
-  {
-    if (array[0][j] == '.')
-    {
-      solve(0, j);
-    }
-  }
+  solve(0,3);
 }
 
-void maze::solve(int x, int y)
+bool maze::solve(int X, int Y)
 {
-  show();
-  cin.get();
-  if (array[x][y] == 'G')
-  {
-    cout << "Found it!" << endl;
-  }
-  else
-  {
-    array[x][y] = '*';
-    // right
-    if (japa(x + 1, y))
-    {
-      solve(x + 1, y);
-    }
-    // down
-    if (japa(x, y + 1))
-    {
-      solve(x, y + 1);
-    }
-    // up
-    if (japa(x, y - 1))
-    {
-      solve(x, y - 1);
-    }
-    // left
-    if (japa(x - 1, y))
-    {
-      solve(x - 1, y);
-    }
-    array[x][y] = '.';
-  }
-}
+// Make the move (if it's wrong, we will backtrack later.
+    array[Y][X] = '*';
 
-bool maze::japa(int x, int y)
-{
-  if (array[x][y] == '#')
-  {
+    // If you want progressive update, uncomment these lines...
+    show();
+    cin.get();
+
+    // Check if we have reached our goal.
+    if (array[X][Y] == 'G')
+    {
+        return true;
+    }
+  // Recursively search for our goal.
+    if (X > 0 && array[Y][X - 1] == '.' && solve(X - 1, Y))
+    {
+        return true;
+    }
+    if (X < COLS && array[Y][X + 1] == '.' && solve(X + 1, Y))
+    {
+        return true;
+    }
+    if (Y > 0 && array[Y - 1][X] == '.' && solve(X, Y - 1))
+    {
+        return true;
+    }
+    if (Y < LINS && array[Y + 1][X] == '.' && solve(X, Y + 1))
+    {
+        return true;
+    }
+
+    // Otherwise we need to backtrack and find another solution.
+    array[Y][X] = '.';
+
+    // If you want progressive update, uncomment these lines...
+    //PrintDaarray();
+    //Sleep(50);
     return false;
-  }
-  else if (array[x][y] == '.')
-  {
-    return true;
-  }
 }
-
 #endif
