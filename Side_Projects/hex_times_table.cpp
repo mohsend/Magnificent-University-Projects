@@ -7,11 +7,11 @@ using namespace std;
 
 int main()
 {
-	for (int i = 0; i < 0xf; i++)
+	for (int i = 0x1; i < 0x10; i++)
 	{
-		for (int j = 0; j < 0xf; j++)
+		for (int j = 0x1; j < 0x10; j++)
 		{
-			cout << hex <<(i + 1)*(j + 1) << '\t';
+			cout << hex << i * j << '\t';
 		}
 		cout << endl;
 	}
