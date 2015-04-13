@@ -6,7 +6,7 @@
 #define MAZE_HPP 1
 
 #define COLS  15
-#define LINS  15
+#define ROWS  15
 
 
 #include <iostream>
@@ -16,7 +16,7 @@ using namespace std;
 class maze
 {
   private:
-    char array[LINS][COLS];
+    char array[ROWS][COLS];
     int steps;
   public:
     maze();
@@ -36,7 +36,7 @@ void maze::show()
 {
   cout << "Steps: " << steps++ << endl;
   char ch;
-  for (int j = 0; j < LINS; j++)
+  for (int j = 0; j < ROWS; j++)
   {
     for (int i = 0; i < COLS; i++)
     {
@@ -58,7 +58,7 @@ void maze::init_with_file (char* filename)
   char ch;
   cout << "Initialized with " << filename << ":\n";
   fstream fin(filename, fstream::in);
-  for (int j = 0; j < LINS; j++)
+  for (int j = 0; j < ROWS; j++)
   {
     for (int i = 0; i < COLS; i++)
     {
@@ -71,7 +71,7 @@ void maze::init_with_file (char* filename)
 void maze::start()
 {
   // left line
-  for (int j = 0; j < LINS; j++)
+  for (int j = 0; j < ROWS; j++)
   {
     if (array[0][j] == '.')
     {
@@ -80,7 +80,7 @@ void maze::start()
     }
   }
   // right line
-  for (int j = 0; j < LINS; j++)
+  for (int j = 0; j < ROWS; j++)
   {
     if (array[0][j] == '.')
     {
@@ -100,11 +100,11 @@ bool maze::solve(int X, int Y)
     cin.get();
 
     // Check if we have reached our goal.
-    if (array[X][Y] == 'G' || array[X+1][Y] == 'G' || array[X-1][Y] == 'G' || array[X][Y+1] == 'G' || array[X][Y]-1 == 'G')
+    if (array[X][Y] == 'G' || array[X+1][Y] == 'G' || array[X-1][Y] == 'G' || array[X][Y+1] == 'G' || array[X][Y-1] == 'G')
     {
         return true;
     }
-  // Recursively search for our goal.
+    // Recursively search for our goal.
     if (X > 0 && array[Y][X - 1] == '.' && solve(X - 1, Y))
     {
         return true;
@@ -117,7 +117,7 @@ bool maze::solve(int X, int Y)
     {
         return true;
     }
-    if (Y < LINS && array[Y + 1][X] == '.' && solve(X, Y + 1))
+    if (Y < ROWS && array[Y + 1][X] == '.' && solve(X, Y + 1))
     {
         return true;
     }
