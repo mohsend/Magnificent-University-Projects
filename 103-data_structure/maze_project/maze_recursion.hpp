@@ -92,39 +92,38 @@ void maze::start()
 
 bool maze::solve(int X, int Y)
 {
-// Make the move (if it's wrong, we will backtrack later.
-    array[Y][X] = '*';
+  // foot-print
+  array[Y][X] = '*';
 
-    // If you want progressive update, uncomment these lines...
-    show();
-    cin.get();
+  show();
+  cin.get();
 
-    // Check if we have reached our goal.
-    if (array[X][Y] == 'G' || array[X+1][Y] == 'G' || array[X-1][Y] == 'G' || array[X][Y+1] == 'G' || array[X][Y-1] == 'G')
-    {
-        return true;
-    }
-    // Recursively search for our goal.
-    if (X > 0 && array[Y][X - 1] == '.' && solve(X - 1, Y))
-    {
-        return true;
-    }
-    if (X < COLS && array[Y][X + 1] == '.' && solve(X + 1, Y))
-    {
-        return true;
-    }
-    if (Y > 0 && array[Y - 1][X] == '.' && solve(X, Y - 1))
-    {
-        return true;
-    }
-    if (Y < ROWS && array[Y + 1][X] == '.' && solve(X, Y + 1))
-    {
-        return true;
-    }
+  // Check if we have reached Ganj
+  if (array[X][Y] == 'G' || array[X+1][Y] == 'G' || array[X-1][Y] == 'G' || array[X][Y+1] == 'G' || array[X][Y-1] == 'G')
+  {
+      return true;
+  }
+  // Recursive search
+  if (X > 0 && array[Y][X - 1] == '.' && solve(X - 1, Y)) //left
+  {
+      return true;
+  }
+  if (X < COLS && array[Y][X + 1] == '.' && solve(X + 1, Y)) // right
+  {
+      return true;
+  }
+  if (Y > 0 && array[Y - 1][X] == '.' && solve(X, Y - 1)) // top
+  {
+      return true;
+  }
+  if (Y < ROWS && array[Y + 1][X] == '.' && solve(X, Y + 1)) // down
+  {
+      return true;
+  }
 
-    // Otherwise we need to backtrack and find another solution.
-    array[Y][X] = '.';
-    
-    return false;
+  // goes back
+  array[Y][X] = '.';
+  
+  return false;
 }
 #endif
