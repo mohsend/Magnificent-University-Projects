@@ -9,6 +9,7 @@ g++ -Wall -o "executable_file" "code_file.cpp" -lGL -lGLU -lglut
 
 ### Microsoft Visual Studio .net
 First of all install GLUT libraries for VS.net
+
 Add this line on top of the code if you want to compile in Visual Studio .net:
 ```c++
 #include "stdafx.h"
