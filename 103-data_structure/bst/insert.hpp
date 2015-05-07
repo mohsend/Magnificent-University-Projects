@@ -4,7 +4,7 @@ typedef struct treenode
 {
   int data;
   ptree lc, rc;
-} ptree;
+} *ptree;
 
 bool BSTinsert (ptree t, int x)
 {
