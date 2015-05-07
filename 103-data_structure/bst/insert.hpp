@@ -1,5 +1,11 @@
 namespace BST
 {
+typedef struct treenode
+{
+  int data;
+  ptree lc, rc;
+} ptree;
+
 bool BSTinsert (ptree t, int x)
 {
   if (x == t->data)
