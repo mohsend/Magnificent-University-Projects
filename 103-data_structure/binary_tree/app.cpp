@@ -3,12 +3,11 @@
  */
 
 #include <iostream>
-#include "BinaryTree.hpp"
 #include "BST.hpp"
 
 using namespace std;
-using namespace BST;
 using namespace BinaryTree;
+using namespace BST;
 
 int main(int argc, char **argv)
 {
