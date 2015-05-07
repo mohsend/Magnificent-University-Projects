@@ -10,6 +10,11 @@
  * 6. postOrder
  */
 
+#ifndef BINARYTREE_HPP
+#define BINARYTREE_HPP 1
+
+#include <iostream>
+
 namespace BinaryTree
 {
 
@@ -17,7 +22,8 @@ namespace BinaryTree
 typedef struct treenode
 {
   int data;
-  ptree lc, rc;
+  treenode* lc;
+  treenode* rc;
 } *ptree;
 
 // Function to make new node
@@ -73,8 +79,10 @@ bool equal (ptree t1, ptree t2)
 
 // Prints the tree pre-order
 // Traverse the root, left sub-tree, right sub-tree
-void preOrder(ptree t) {
-	if (t) {
+void preOrder(ptree t)
+{
+	if (t)
+	{
 		std::cout << t->data << '\t';
 		preOrder(t->lc);
 		preOrder(t->rc);
@@ -83,8 +91,10 @@ void preOrder(ptree t) {
 
 // Prints the tree in-order
 // Traverse the left sub-tree, root, right sub-tree
-void inOrder(ptree t) {
-	if (t) {
+void inOrder(ptree t)
+{
+	if (t)
+	{
 	  inOrder(t->lc);
 	  std::cout << t->data << '\t';
 	  inOrder(t->rc);
@@ -93,8 +103,10 @@ void inOrder(ptree t) {
 
 // Prints the tree post-order
 // Traverse left sub-tree, right sub-tree, root
-void postOrder(ptree t) {
-	if (t) {
+void postOrder(ptree t)
+{
+	if (t)
+	{
 	  inOrder(t->lc);
 	  inOrder(t->rc);
 	  std::cout << t->data << '\t';
@@ -102,3 +114,5 @@ void postOrder(ptree t) {
 }
 
 }
+
+#endif

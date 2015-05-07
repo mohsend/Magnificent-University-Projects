@@ -4,8 +4,11 @@
  * 1. BSTinsert
  * 2. BSTsearch
  */
+ 
+#ifndef BST_HPP
+#define BST_HPP 1
 
-#include <BinaryTree.hpp>
+#include "BinaryTree.hpp"
 
 using namespace BinaryTree;
 
@@ -34,7 +37,7 @@ ptree BSTinsert (ptree t, int x)
   }
   else
   {
-    if (x->rc == NULL)
+    if (t->rc == NULL)
     {
       //insert
       t->rc = newNode(x);
@@ -72,3 +75,4 @@ ptree BSTsearch(ptree t, int q)
 }
 
 }
+#endif
