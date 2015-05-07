@@ -1,5 +1,8 @@
 /*
- * 
+ * Binary Search Tree
+ * Functions:
+ * 1. BSTinsert
+ * 2. BSTsearch
  */
 
 #include <BinaryTree.hpp>
@@ -10,11 +13,11 @@ namespace BST
 {
 
 // Insert a new value to the BST
-bool BSTinsert (ptree t, int x)
+ptree BSTinsert (ptree t, int x)
 {
   if (x == t->data)
   {
-    return false;
+    return NULL;
   }
   else if (x < t->data)
   {
@@ -22,11 +25,11 @@ bool BSTinsert (ptree t, int x)
     {
       //insert
       t->lc = newNode(x);
-      return true;
+      return t->lc;
     }
     else
     {
-      BSTinsert(t->lc, x);
+      return BSTinsert(t->lc, x);
     }
   }
   else
@@ -35,11 +38,11 @@ bool BSTinsert (ptree t, int x)
     {
       //insert
       t->rc = newNode(x);
-      return true;
+      return t->rc;
     }
     else
     {
-      BSTinsert(t->rc, x);
+      return BSTinsert(t->rc, x);
     }
   }
 }

@@ -1,7 +1,14 @@
 /*
- * 
+ * Binary Tree
+ * Includes the node structure
+ * Functions:
+ * 1. newNode
+ * 2. copy
+ * 3. equal
+ * 4. preOrder
+ * 5. inOrder
+ * 6. postOrder
  */
-
 
 namespace BinaryTree
 {
@@ -62,6 +69,36 @@ bool equal (ptree t1, ptree t2)
 		}
 	}
 	return false;
+}
+
+// Prints the tree pre-order
+// Traverse the root, left sub-tree, right sub-tree
+void preOrder(ptree t) {
+	if (t) {
+		std::cout << t->data << '\t';
+		preOrder(t->lc);
+		preOrder(t->rc);
+	}
+}
+
+// Prints the tree in-order
+// Traverse the left sub-tree, root, right sub-tree
+void inOrder(ptree t) {
+	if (t) {
+	  inOrder(t->lc);
+	  std::cout << t->data << '\t';
+	  inOrder(t->rc);
+	}
+}
+
+// Prints the tree post-order
+// Traverse left sub-tree, right sub-tree, root
+void postOrder(ptree t) {
+	if (t) {
+	  inOrder(t->lc);
+	  inOrder(t->rc);
+	  std::cout << t->data << '\t';
+	}
 }
 
 }
