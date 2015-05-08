@@ -12,6 +12,9 @@ void write(GLubyte text[]);
 void star();
 void star2();
 
+const int c1 = 3, c2 = 2;
+
+
 void display()
 {
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -41,33 +44,33 @@ void par(GLfloat hx, GLfloat hy, GLfloat lx, GLfloat ly, int colornum)
 
 void star2()
 {
-  par(1.0, 0.0, 0.2, 0.2, 3);
-  par(0.0, 1.0, 0.2, 0.2, 2);
-  par(0.0, 1.0, -0.2, 0.2, 3);
-  par(-1.0, 0.0, -0.2, 0.2, 2);
-  par(-1.0, 0.0, -0.2, -0.2, 3);
-  par(0.0, -1.0, -0.2, -0.2, 2);
-  par(0.0, -1.0, 0.2, -0.2, 3);
-  par(1.0, 0.0, 0.2, -0.2, 2);
+  par(1.0, 0.0, 0.2, 0.2, c1);
+  par(0.0, 1.0, 0.2, 0.2, c2);
+  par(0.0, 1.0, -0.2, 0.2, c1);
+  par(-1.0, 0.0, -0.2, 0.2, c2);
+  par(-1.0, 0.0, -0.2, -0.2, c1);
+  par(0.0, -1.0, -0.2, -0.2, c2);
+  par(0.0, -1.0, 0.2, -0.2, c1);
+  par(1.0, 0.0, 0.2, -0.2, c2);
 }
 
 void star()
 {  
   glBegin(GL_TRIANGLE_FAN);
-    glColor3fv(color[3]);
+    glColor3fv(color[c1]);
     glVertex2f(0.0, 0.0);
     glVertex2f(1.0, 0.0);
     glVertex2f(0.2, 0.2);
     
-    glColor3fv(color[2]);
+    glColor3fv(color[c2]);
     glVertex2f(0.0, 1.0);
     glVertex2f(-0.2, 0.2);
     
-    glColor3fv(color[3]);
+    glColor3fv(color[c1]);
     glVertex2f(-1.0, 0.0);
     glVertex2f(-0.2, -0.2);
     
-    glColor3fv(color[2]);
+    glColor3fv(color[c2]);
     glVertex2f(0.0, -1.0);
     glVertex2f(0.2, -0.2);
     glVertex2f(1.0, 0.0);
@@ -78,8 +81,6 @@ void star()
 void init()
 {
   glClearColor(0.0 ,0.0 ,0.0 ,0.0);
-	glColor4f(1.0, 0.0, 1.0, 0.0);
-	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 }
 
@@ -91,13 +92,13 @@ int main(int argc, char **argv)
   // window one
   glutInitWindowSize(500, 500);
   glutInitWindowPosition(0,0);
-  glutCreateWindow("Star");
+  glutCreateWindow("Star fade color");
   glutDisplayFunc(display);
   
   // window two
   glutInitWindowSize(500, 500);
   glutInitWindowPosition(600, 0);
-  glutCreateWindow("Star2");
+  glutCreateWindow("Star solid color");
   glutDisplayFunc(display2); 
   
   init();

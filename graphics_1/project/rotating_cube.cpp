@@ -65,25 +65,24 @@ void keyboard(unsigned char key, int a, int b)
     case('a'):
     case('A'):
     //case(GLUT_KEY_LEFT):
-      z_axes += 0.1;
+      x_axes -= 0.1;
     break;
     case('d'):
     case('D'):
     //case(GLUT_KEY_RIGHT):
-      z_axes -= 0.1;
+      x_axes += 0.1;
     break;
     case('w'):
     case('W'):
     //case(GLUT_KEY_LEFT):
-      x_axes += 0.1;
+      z_axes -= 0.1;
     break;
     case('s'):
     case('S'):
     //case(GLUT_KEY_RIGHT):
-      x_axes -= 0.1;
+      z_axes += 0.1;
     break;
     case(' '):
-    //case(GLUT_KEY_RIGHT):
       theta += 2.0;
     break;
   }
