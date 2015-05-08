@@ -2,28 +2,8 @@
 #include <GL/gl.h>
 #include <GL/glu.h>
 #include <GL/glut.h>
+#include "common.hpp"
 
-GLfloat vertices[][3] = {
-  {-1.0, -1.0, -1.0},
-  {-1.0, 1.0, -1.0},
-  {1.0, 1.0, -1.0},
-  {1.0, -1.0, -1.0},
-  {-1.0, -1.0, 1.0},
-  {-1.0, 1.0, 1.0},
-  {1.0, 1.0, 1.0},
-  {1.0, -1.0, 1.0}
-  };
-  
-GLfloat color[][3] = {
-  {0.0, 0.0, 0.0},
-  {0.0, 1.0, 0.0},
-  {1.0, 1.0, 0.0},
-  {1.0, 0.0, 0.0},
-  {0.0, 0.0, 1.0},
-  {0.0, 1.0, 1.0},
-  {1.0, 1.0, 1.0},
-  {1.0, 0.0, 1.0}
-  };
 
 GLfloat theta = 0.0, x_axes = 1.0, y_axes = 1.0, z_axes = 1.0;
 
@@ -107,21 +87,6 @@ void keyboard(unsigned char key, int a, int b)
       theta += 2.0;
     break;
   }
-  //test();
-  glutPostRedisplay();
-}
-
-void test()
-{
-  //theta += 2.0;
-  if (theta == 180.0)
-    x_axes = -1 * x_axes;
-  if (theta == 360.0)
-    y_axes = -1 * y_axes;
-  if (theta == 540.0)
-    z_axes = -1 * z_axes;
-  if (theta == 720.0)
-    theta == -1 * theta;
   glutPostRedisplay();
 }
 
@@ -142,9 +107,10 @@ int main(int argc, char **argv)
   glutInitWindowSize(500, 500);
   glutInitWindowPosition(0,0);
   glutCreateWindow("Rotating Cube");
+  
   glutKeyboardFunc(keyboard);
-  //glutIdleFunc(test);
   glutDisplayFunc(display);
+  
   init();
   glutMainLoop();
 }
