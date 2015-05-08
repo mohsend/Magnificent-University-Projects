@@ -29,6 +29,6 @@ int main(int argc, char **argv)
 	preOrder(head);
 	cout << "\nThe tree Traversed post-order: " << endl;
 	postOrder(head);
-	
+	cout << endl;
 	return 0;
 }
