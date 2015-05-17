@@ -1,7 +1,3 @@
-/*
- * 
- */
-
 #ifndef COMMON_HPP
 #define COMMON_HPP 1
 
