@@ -8,6 +8,7 @@
 #ifndef CSTUDENT_HPP
 #define CSTUDENT_HPP	1
 
+#include <inttypes.h>
 #include <string>
 #include "Clesson.hpp"
 
@@ -18,17 +19,17 @@ class Cstudent
 	private:
 		// صفات دانشجو از قبیل نام، شماره دانشجویی، تراز مالی، و آرایه ای از واحد های انتخاب شده.
 		string name;
-		string id; // string or double. it's a long decimal. should be a decimal in a database (e.g. mySQL)
+		uint64_t id; // Student ID
 		unsigned int numLessons;
 		int moneyBalance;
-		Clesson lessons[12];
+		Clesson lessons[14];
 	
 	public:
 		// متد ها
-		Cstudent (string, string);
+		Cstudent (string, uint64_t);
 		unsigned int setName(string param);
-		unsigned int setId(string param);
-		string getId(void);
+		uint64_t setId(uint64_t param);
+		uint64_t getId(void);
 		string getName(void);
 		unsigned int removeLesson (unsigned int pIndex);
 		unsigned int addLessonObj (Clesson);
@@ -40,7 +41,7 @@ class Cstudent
 };
 
 // کانستراکتور نام و شماره دانشجویی را میگیرد و ست میکند
-Cstudent::Cstudent (string pName = "", string pId = "")
+Cstudent::Cstudent (string pName = "", uint64_t pId = 0)
 {
 	name = pName;
 	id = pId;
@@ -55,14 +56,14 @@ unsigned int Cstudent::setName(string param)
 	return name.length();
 }
 
-unsigned int Cstudent::setId(string param)
+uint64_t Cstudent::setId(uint64_t param)
 {
 	id = param;
-	return id.length();
+	return id;
 }
 
 // متد های گرفتن مقادیر صفت ها
-string Cstudent::getId(void)
+uint64_t Cstudent::getId(void)
 {
 	return id;
 }

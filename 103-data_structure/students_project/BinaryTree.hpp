@@ -14,6 +14,7 @@
 #define BINARYTREE_HPP 1
 
 #include <iostream>
+#include "Cstudent.hpp"
 
 namespace BinaryTree
 {
@@ -21,13 +22,13 @@ namespace BinaryTree
 // The Node structure itself
 typedef struct treenode
 {
-  int data;
+  Cstudent data;
   treenode* lc;
   treenode* rc;
 } *ptree;
 
 // Function to make new node
-ptree newNode(int x)
+ptree newNode(Cstudent x)
 {
   ptree temp;
   temp = new(treenode);
@@ -63,7 +64,7 @@ bool equal (ptree t1, ptree t2)
 	}
 	else if ((t1 != NULL) && (t2 != NULL))
 	{
-		if (t1->data == t2->data)
+		if (t1->data.getId() == t2->data.getId())
 		{
 			if (equal(t1->lc, t2->lc))
 			{
@@ -83,7 +84,7 @@ void preOrder(ptree t)
 {
 	if (t)
 	{
-		std::cout << t->data << '\t';
+		std::cout << t->data.getId() << '\t';
 		preOrder(t->lc);
 		preOrder(t->rc);
 	}
@@ -96,7 +97,7 @@ void inOrder(ptree t)
 	if (t)
 	{
 	  inOrder(t->lc);
-	  std::cout << t->data << '\t';
+	  std::cout << t->data.getId() << '\t';
 	  inOrder(t->rc);
 	}
 }
@@ -109,7 +110,7 @@ void postOrder(ptree t)
 	{
 	  inOrder(t->lc);
 	  inOrder(t->rc);
-	  std::cout << t->data << '\t';
+	  std::cout << t->data.getId() << '\t';
 	}
 }
 
