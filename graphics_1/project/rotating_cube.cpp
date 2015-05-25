@@ -58,6 +58,32 @@ void polygon(int a, int b, int c, int d)
   glEnd();
 }
 
+void init()
+{
+  glEnable(GL_DEPTH_TEST);
+  glClearColor(0.0, 0.0, 0.0, 0.0);
+  glMatrixMode(GL_PROJECTION);
+  glLoadIdentity();
+  glOrtho(-4.0, 4.0, -4.0, 4.0, -4.0, 4.0);
+  glMatrixMode(GL_MODELVIEW);
+}
+
+int main(int argc, char **argv)
+{
+  glutInit(&argc, argv);
+  glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
+  glutInitWindowSize(500, 500);
+  glutInitWindowPosition(0,0);
+  glutCreateWindow("Rotating Cube");
+  
+  glutKeyboardFunc(keyboard);
+  glutDisplayFunc(display);
+  
+  init();
+  glutMainLoop();
+}
+
+
 void keyboard(unsigned char key, int a, int b)
 {
   switch (key)
@@ -83,33 +109,17 @@ void keyboard(unsigned char key, int a, int b)
       z_axes += 0.1;
     break;
     case(' '):
+    case('.'):
+    case('>'):
       theta += 2.0;
+    break;
+    case(','):
+    case('<'):
+      theta -= 2.0;
+    break;
+    case 27:			// Escape key
+      exit(0);
     break;
   }
   glutPostRedisplay();
-}
-
-void init()
-{
-  glEnable(GL_DEPTH_TEST);
-  glClearColor(0.0, 0.0, 0.0, 0.0);
-  glMatrixMode(GL_PROJECTION);
-  glLoadIdentity();
-  glOrtho(-4.0, 4.0, -4.0, 4.0, -4.0, 4.0);
-  glMatrixMode(GL_MODELVIEW);
-}
-
-int main(int argc, char **argv)
-{
-  glutInit(&argc, argv);
-  glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
-  glutInitWindowSize(500, 500);
-  glutInitWindowPosition(0,0);
-  glutCreateWindow("Rotating Cube");
-  
-  glutKeyboardFunc(keyboard);
-  glutDisplayFunc(display);
-  
-  init();
-  glutMainLoop();
 }

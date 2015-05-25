@@ -68,7 +68,7 @@ void addPar(int no = 1)
 
 void init()
 {
-  glClearColor(0.0 ,0.0 ,0.0 ,0.0);
+  glClearColor(0.15 ,0.15 ,0.15 ,0.0);
 	glLoadIdentity();
 }
 
@@ -85,6 +85,7 @@ int main(int argc, char **argv)
   
   glutMouseFunc(Mouse);
   glutKeyboardFunc(keyboard);
+  init();
   
   // window two
   glutInitWindowSize(500, 500);
@@ -94,8 +95,8 @@ int main(int argc, char **argv)
   
   glutMouseFunc(Mouse);
   glutKeyboardFunc(keyboard);
-  
   init();
+  
   glutMainLoop();
 }
 
