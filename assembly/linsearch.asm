@@ -25,16 +25,16 @@ CDSEG SEGMENT
   ; main code starts here
   
   ; init
-  MOV CX, 127;
-  MOV BX, OFFSET random
-  MOV AH, [query]
+  MOV CX, 127 ; CX = 127
+  MOV BX, OFFSET random ; BX = 0010H (address of first byte of random data on RAM)
+  MOV AH, [query] ; AH = 01H
   
   ; loop and compare
-  compare: MOV AL, [BX]
-  CMP AL, AH
-  JZ tell
-  INC BX
-  LOOP compare
+  compare: MOV AL, [BX] ; AL = value of address of BX
+  CMP AL, AH ; AL - AH and set Zero Flag
+  JZ tell ; if (ZeroFlag == 0) goto tell 
+  INC BX ; BX++
+  LOOP compare ; CX--; if (CX != 0) goto compare
   ; dec cx
   ; jnz compare
   JMP terminate
