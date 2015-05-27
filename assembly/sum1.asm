@@ -24,18 +24,18 @@ CDSEG SEGMENT
   ; main code starts here
   
   ; initialize
-  MOV CX, 4
-  MOV BX, OFFSET INPUT
-  MOV AL, [BX]
+  MOV CX, 04 ; CX = 4
+  MOV BX, OFFSET INPUT ; BX = 0000H
+  MOV AL, [BX] ; AL = 10H
   
   ; loop and add the 5 inputs and store the sum in AL
-  TARGET1: INC BX
-  ADD AL, [BX]
-  LOOP TARGET1
+  TARGET1: INC BX ; BX++
+  ADD AL, [BX] ; AL = AL + [BX]
+  LOOP TARGET1 ; CX--; if (CX != 0) goto target1
   
   ; write AL (sum) to memory 
-  MOV BX, OFFSET SUM
-  MOV [BX], AL
+  MOV BX, OFFSET SUM ; BX = 05H
+  MOV [BX], AL ; [BX] = AL
   
   ; end program
   MOV AH, 4CH

@@ -31,16 +31,14 @@ CDSEG SEGMENT
   
   ; loop and compare
   compare: MOV AL, [BX] ; AL = value of address of BX
-  CMP AL, AH ; AL - AH and set Zero Flag
+  CMP AL, AH ; (AL - AH) and set Zero Flag accordingly
   JZ tell ; if (ZeroFlag == 0) goto tell 
   INC BX ; BX++
   LOOP compare ; CX--; if (CX != 0) goto compare
-  ; dec cx
-  ; jnz compare
-  JMP terminate
   
-  ; make the ans byte 1
-  tell: MOV [ans], 01H
+  JMP terminate ; goto terminate
+  
+  tell: MOV [ans], 01H ; make the ans byte 1
   
   ;end (terminate) program
   terminate: MOV AH, 4CH
