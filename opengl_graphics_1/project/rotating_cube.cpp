@@ -4,16 +4,24 @@
 #include <GL/glut.h>
 #include "common.hpp"
 
-
 GLfloat theta = 0.0, x_axes = 1.0, y_axes = 1.0, z_axes = 1.0;
 
-void display();
 void init();
+void display();
+void polygon(int a, int b, int c, int d);
 void cube();
 void axis();
-void polygon(int a, int b, int c, int d);
-void test();
 void keyboard(unsigned char, int, int);
+
+void init()
+{
+  glEnable(GL_DEPTH_TEST);
+  glClearColor(0.2, 0.2, 0.2, 0.0);
+  glMatrixMode(GL_PROJECTION);
+  glLoadIdentity();
+  glOrtho(-4.0, 4.0, -4.0, 4.0, -4.0, 4.0);
+  glMatrixMode(GL_MODELVIEW);
+}
 
 void display()
 {
@@ -23,6 +31,20 @@ void display()
   cube();
   axis();
   glutSwapBuffers();
+}
+
+void polygon(int a, int b, int c, int d)
+{
+  glBegin(GL_POLYGON);
+    glColor3fv(color[a]);
+    glVertex3fv(vertices[a]);
+    glColor3fv(color[b]);
+    glVertex3fv(vertices[b]);
+    glColor3fv(color[c]);
+    glVertex3fv(vertices[c]);
+    glColor3fv(color[d]);
+    glVertex3fv(vertices[d]);
+  glEnd();
 }
 
 void cube()
@@ -44,30 +66,6 @@ void axis()
   glEnd();
 }
 
-void polygon(int a, int b, int c, int d)
-{
-  glBegin(GL_POLYGON);
-    glColor3fv(color[a]);
-    glVertex3fv(vertices[a]);
-    glColor3fv(color[b]);
-    glVertex3fv(vertices[b]);
-    glColor3fv(color[c]);
-    glVertex3fv(vertices[c]);
-    glColor3fv(color[d]);
-    glVertex3fv(vertices[d]);
-  glEnd();
-}
-
-void init()
-{
-  glEnable(GL_DEPTH_TEST);
-  glClearColor(0.0, 0.0, 0.0, 0.0);
-  glMatrixMode(GL_PROJECTION);
-  glLoadIdentity();
-  glOrtho(-4.0, 4.0, -4.0, 4.0, -4.0, 4.0);
-  glMatrixMode(GL_MODELVIEW);
-}
-
 int main(int argc, char **argv)
 {
   glutInit(&argc, argv);
@@ -81,7 +79,7 @@ int main(int argc, char **argv)
   
   init();
   glutMainLoop();
-}
+} 
 
 
 void keyboard(unsigned char key, int a, int b)

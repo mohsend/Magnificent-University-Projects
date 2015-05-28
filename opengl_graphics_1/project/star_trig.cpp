@@ -68,14 +68,14 @@ void addPar(int no = 1)
 
 void init()
 {
-  glClearColor(0.15 ,0.15 ,0.15 ,0.0);
+  glClearColor(0.2 ,0.2 ,0.2 ,0.0);
 	glLoadIdentity();
 }
 
 int main(int argc, char **argv)
 {
   glutInit(&argc, argv);
-  glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
+  glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
   
   // window one
   glutInitWindowSize(500, 500);
@@ -160,7 +160,7 @@ void Mouse( int button, int state, int x, int y ) {
 
 void display()
 {
-  glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+  glClear(GL_COLOR_BUFFER_BIT);
   glLoadIdentity();
   star();
   glutSwapBuffers();
@@ -168,7 +168,7 @@ void display()
 
 void display2()
 {
-  glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+  glClear(GL_COLOR_BUFFER_BIT);
   glLoadIdentity();
   star2();
   glutSwapBuffers();
