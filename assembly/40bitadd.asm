@@ -10,11 +10,11 @@ STSEG ENDS
 ;------------
 DTSEG SEGMENT
   ; place program data here
-  first DT 1100A8C054H ; this is on 40bit number
+  first DQ 1100A8C054H ; this is on 40bit number
   ORG 10H
-  second DT 63917788D7H ; this is another
+  second DQ 63917788D7H ; this is another
   ORG 20H
-  random DB ? ; here we will store the result
+  result DQ ? ; here we will store the result
 DTSEG ENDS
 ;------------
 ; code segment
