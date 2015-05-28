@@ -27,7 +27,7 @@ CDSEG SEGMENT
   ; main code starts here
   
   ; init
-  MOV CX, 05 ; cx = 5
+  MOV CX, 03 ; cx = 3
   MOV BX, 00 ; will be used to move over words
   MOV SI, OFFSET first ; address of the first number
   
