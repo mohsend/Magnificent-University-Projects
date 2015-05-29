@@ -6,26 +6,12 @@
 #define OUTPUT_HPP 1
 
 #include <GL/glut.h>
-#include <unistd.h>
+
+bool first = true;
 
 void show_glut();
 void init_glut(int ac, char **av);
 void drawpixel(int j, int i, char ch);
-void pass_array(char **A);
-
-char mazearray[ROWS][COLS];
-
-void pass_array(char **A)
-{
-  for (int j = 0; j < ROWS; j++)
-  {
-    for (int i = 0; i < COLS; i++)
-    {
-      mazearray[i][j] = A[i][j];
-      cout << A[i][j];
-    }
-  }
-}
 
 void drawpixel(int i, int j, char ch)
 {
@@ -44,6 +30,10 @@ void drawpixel(int i, int j, char ch)
   else if (ch == '*')
   {
     glColor3f(0.0, 1.0, 0.0);
+  }
+  else if (ch == 'G')
+  {
+    glColor3f(1.0, 1.0, 0.0);
   }
   
   glPolygonMode(GL_FRONT, GL_FILL);
@@ -65,12 +55,10 @@ void show_glut()
   {
     for (int i = 0; i < COLS; i++)
     {
-      drawpixel(i, j, mazearray[i][j]);
+      drawpixel(i, j, array[i][j]);
     }
   }
-  
   glFlush();
-  sleep(1);
 }
 
 void init_glut(int ac, char **av)
@@ -82,11 +70,10 @@ void init_glut(int ac, char **av)
   glutInitWindowPosition(0,0);
   glutCreateWindow("MAZE");
   
-  glClearColor(0.2 ,0.2 ,0.2 ,0.0);
+  glClearColor(0.7 ,0.7 ,0.7 ,0.0);
 	glLoadIdentity();
   
   glutDisplayFunc(show_glut);
-  
   glutMainLoop();
 }
 

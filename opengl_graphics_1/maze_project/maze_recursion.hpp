@@ -11,48 +11,19 @@
 
 #include <iostream>
 #include <fstream>
+#include <unistd.h>
+
 using namespace std;
 
-class maze
-{
-  private:
-    char array[ROWS][COLS];
-    int steps;
-  public:
-    maze();
-    void init_with_file (char*);
-    void show();
-    void start();
-    bool solve(int x, int y);
-};
+int steps = 0;
+char array[ROWS][COLS];
 
-maze::maze()
-{
-  steps = 0;
-}
+void init_with_file (char*);
+void start();
+bool solve(int x, int y);
+void show_terminal();
 
-
-void maze::show()
-{
-  cout << "Steps: " << steps++ << endl;
-  char ch;
-  for (int j = 0; j < ROWS; j++)
-  {
-    for (int i = 0; i < COLS; i++)
-    {
-      ch = array[i][j];
-      if (ch == '.')
-	cout << "  ";
-      else if (ch == '#')
-	cout << "##";
-      else
-	cout << ch << ' ';
-    }
-  cout << endl;
-  }
-}
-
-void maze::init_with_file (char* filename)
+void init_with_file (char* filename)
 {
   // loop through every non-whitespace charecter in a file and initialize the char array
   char ch;
@@ -68,7 +39,7 @@ void maze::init_with_file (char* filename)
   }
 }
 
-void maze::start()
+void start()
 {
   // left line
   for (int j = 0; j < ROWS; j++)
@@ -90,14 +61,14 @@ void maze::start()
   }
 }
 
-bool maze::solve(int X, int Y)
+bool solve(int X, int Y)
 {
   // foot-print
   array[Y][X] = '*';
-
-  show();
-  cin.get();
-
+  
+  // show the maze progress in the terminal
+  // show_terminal();
+  
   // Check if we have reached Ganj
   if (array[X][Y] == 'G' || array[X+1][Y] == 'G' || array[X-1][Y] == 'G' || array[X][Y+1] == 'G' || array[X][Y-1] == 'G')
   {
@@ -126,4 +97,27 @@ bool maze::solve(int X, int Y)
   
   return false;
 }
+
+// function to show in terminal
+void show_terminal()
+{
+  cout << "Steps: " << steps++ << endl;
+  char ch;
+  for (int j = 0; j < ROWS; j++)
+  {
+    for (int i = 0; i < COLS; i++)
+    {
+      ch = array[i][j];
+      if (ch == '.')
+	cout << "  ";
+      else if (ch == '#')
+	cout << "##";
+      else
+	cout << ch << ' ';
+    }
+  cout << endl;
+  }
+  cin.get();
+}
+
 #endif

@@ -38,7 +38,7 @@ void radioactive()
 	glPolygonMode(GL_FRONT, GL_FILL);
 	for (double d = PI/2.0; d < 2.0*PI; d += 2*PI/3.0)
 	{
-		glBegin(GL_POLYGON);
+		glBegin(GL_TRIANGLE_FAN);
 			glVertex2d(0.0,0.0);
 			for (double dis = -PI/6; dis < PI/6; dis += 0.1)
 			{
