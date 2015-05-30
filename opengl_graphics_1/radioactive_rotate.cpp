@@ -41,7 +41,7 @@ void radioactive()
 	{
 		glBegin(GL_TRIANGLE_FAN);
 			glVertex2d(0.0,0.0);
-			for (double dis = -PI/6; dis < PI/6; dis += 0.1)
+			for (double dis = 0.0; dis < 2*PI/6; dis += 0.1)
 			{
 				glVertex2d(cos(d + dis), sin(d + dis));
 			}
