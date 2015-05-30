@@ -5,7 +5,7 @@
 
 using namespace std;
 
-double deg = 0.0;
+int deg = 0;
 
 void radioactive();
 void rotate();

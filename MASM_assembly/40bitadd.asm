@@ -10,7 +10,7 @@ STSEG ENDS
 ;------------
 DTSEG SEGMENT
   ; place program data here
-  first DQ 1100A8C054H ; this is on 40bit number
+  first DQ 1100A8C054H ; this is a 40bit number
   ORG 10H
   second DQ 63917788D7H ; this is another
   ORG 20H
