@@ -34,16 +34,15 @@ void init()
 void radioactive()
 {
 	glClear(GL_COLOR_BUFFER_BIT);
-	glColor3f((float)(deg/360), 0.0, 0.0);
-	glRotated(deg, 0.0, 0.0, 1.0);
-	glPolygonMode(GL_FRONT, GL_FILL);
+	glColor3f((deg/360.0), 0.0, 0.0);
+	glRotatef(deg, 0.0, 0.0, 1.0);
 	for (double d = PI/2.0; d < 2.0*PI; d += 2*PI/3.0)
 	{
 		glBegin(GL_TRIANGLE_FAN);
 			glVertex2d(0.0,0.0);
 			for (double dis = -PI/6; dis < PI/6; dis += 0.1)
 			{
-				glColor3f(0.0, 0.0, 0.0);
+				glColor3f((deg/360.0), 0.0, 0.0);
 				glVertex2d(cos(d + dis), sin(d + dis));
 			}
 		glEnd();
