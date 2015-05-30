@@ -1,6 +1,6 @@
-# C++ Example codes
+# Magnificent University Projects
 ## What is this?
-I study CS in IAUCTB. I plan to share every practice and example C++ code I write here. these code are not very practical. they have educational purpose.
+I study CS in IAUCTB and I plan to share every practice and example code (mostly C/C++) I write here. these code are not very practical. they have educational purpose.
 
 ## Contributing
 You can help by commiting new code or improving the existing codes. just keep in mind these have educational purpose so keep it simple please! contributing to the [wiki](https://github.com/mohsend/cpp-examples/wiki/) is also very much appreciated.
