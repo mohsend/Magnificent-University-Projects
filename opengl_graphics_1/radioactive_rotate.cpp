@@ -42,7 +42,6 @@ void radioactive()
 			glVertex2d(0.0,0.0);
 			for (double dis = -PI/6; dis < PI/6; dis += 0.1)
 			{
-				glColor3f((deg/360.0), 0.0, 0.0);
 				glVertex2d(cos(d + dis), sin(d + dis));
 			}
 		glEnd();
