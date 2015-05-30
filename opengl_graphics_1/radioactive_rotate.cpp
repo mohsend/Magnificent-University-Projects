@@ -14,7 +14,7 @@ void init();
 int main(int argc, char **argv)
 {
 	glutInit(&argc, argv);
-	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA);
+	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
 	glutInitWindowSize(500,500);
 	glutInitWindowPosition(0,0);
 	glutCreateWindow("radioactive");
@@ -34,7 +34,7 @@ void init()
 void radioactive()
 {
 	glClear(GL_COLOR_BUFFER_BIT);
-	glColor4f(0.0, 0.0, 0.0 , 0.0);
+	glColor3f(0.0, 0.0, 0.0);
 	glRotated(deg, 0.0, 0.0, 1.0);
 	glPolygonMode(GL_FRONT, GL_FILL);
 	for (double d = PI/2.0; d < 2.0*PI; d += 2*PI/3.0)
@@ -43,7 +43,7 @@ void radioactive()
 			glVertex2d(0.0,0.0);
 			for (double dis = -PI/6; dis < PI/6; dis += 0.1)
 			{
-				glColor4f(0.0, 0.0, 0.0 , 0.0);
+				glColor3f(0.0, 0.0, 0.0);
 				glVertex2d(cos(d + dis), sin(d + dis));
 			}
 		glEnd();
