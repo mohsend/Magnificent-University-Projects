@@ -9,10 +9,10 @@ void display()
 {
 	glClear(GL_COLOR_BUFFER_BIT);
 	//
-	gluLookAt(0.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0);
+	gluLookAt(0.0,1.0,1.0,0.0,0.0,0.0,0.0,0.0,1.0);
 	//
-	//glutWireCube(1.0);
-	glutWireTeapot(1.0);
+	glutWireSphere(0.5, 20, 20);
+	//glutWireTeapot(1.0);
 	glFlush();
 }
 
