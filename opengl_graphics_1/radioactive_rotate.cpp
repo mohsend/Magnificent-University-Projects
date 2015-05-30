@@ -36,7 +36,8 @@ void radioactive()
 	glClear(GL_COLOR_BUFFER_BIT);
 	glColor3f((deg/360.0), 0.0, 0.0);
 	glRotatef(deg, 0.0, 0.0, 1.0);
-	for (double d = PI/2.0; d < 2.0*PI; d += 2*PI/3.0)
+	
+	for (double d = 0.0; d < 2.0*PI; d += 2*PI/3.0)
 	{
 		glBegin(GL_TRIANGLE_FAN);
 			glVertex2d(0.0,0.0);
@@ -46,6 +47,7 @@ void radioactive()
 			}
 		glEnd();
 	}
+	
 	glLoadIdentity();
 	glutSwapBuffers();
 }
