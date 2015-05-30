@@ -17,7 +17,7 @@ int main(int argc, char **argv)
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
 	glutInitWindowSize(500,500);
 	glutInitWindowPosition(0,0);
-	glutCreateWindow("radioactive");
+	glutCreateWindow("Radioactive");
 	glutIdleFunc(rotate);
 	glutDisplayFunc(radioactive);
 	init();
