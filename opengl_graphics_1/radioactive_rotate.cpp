@@ -34,7 +34,7 @@ void init()
 void radioactive()
 {
 	glClear(GL_COLOR_BUFFER_BIT);
-	glColor3f(0.0, 0.0, 0.0);
+	glColor3f((float)(deg/360), 0.0, 0.0);
 	glRotated(deg, 0.0, 0.0, 1.0);
 	glPolygonMode(GL_FRONT, GL_FILL);
 	for (double d = PI/2.0; d < 2.0*PI; d += 2*PI/3.0)
@@ -55,5 +55,5 @@ void radioactive()
 void rotate()
 {
 	deg = (deg < 360) ? deg + 1 : 0;
-	 glutPostRedisplay();
+	glutPostRedisplay();
 }
