@@ -6,11 +6,11 @@
 
 using namespace std;
 
-double a = -10;
+double a = -17;
 double v = 0;
 double y = 0.0;
 double x = 0.0;
-double y00 = 5;
+double y00 = 0;
 double t = 0;
 
 void radioactive();
@@ -60,7 +60,7 @@ void time_pass()
 	if (y < 0.50)
 	{
 		y00 = 0.50;
-		v = -a * t * 0.83;
+		v = -a * t * 0.80;
 		t = 0;
 	}
 	glutPostRedisplay();
@@ -71,7 +71,7 @@ void Mouse( int button, int state, int xp, int yp ) {
 		x = (xp / 250.0d)*4.0 - 4.0d;
 		y00 = -((yp / 250.0d) - 1.0d)*4.0 + 4.0;
     t = 0;
-    v = 8;
+    v = 18;
     cout << x << '\t' << y00 << endl;
 	}
 }
