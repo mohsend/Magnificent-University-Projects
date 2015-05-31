@@ -10,7 +10,7 @@ double a = -17;
 double v = 0;
 double y = 0.0;
 double x = 0.0;
-double y00 = 0;
+double yzero = 0;
 double t = 0;
 
 void radioactive();
@@ -55,11 +55,11 @@ void radioactive()
 
 void time_pass()
 {
-	y = a * t * t + v * t + y00;
+	y = a * t * t + v * t + yzero;
 	t += 0.01;
 	if (y < 0.50)
 	{
-		y00 = 0.50;
+		yzero = 0.50;
 		v = -a * t * 0.80;
 		t = 0;
 	}
@@ -68,10 +68,10 @@ void time_pass()
 
 void Mouse( int button, int state, int xp, int yp ) {
 	if ( button==GLUT_LEFT_BUTTON && state==GLUT_DOWN ) {
-		x = (xp / 250.0d)*4.0 - 4.0d;
-		y00 = -((yp / 250.0d) - 1.0d)*4.0 + 4.0;
+		x = (xp / 250.0) * 4.0 - 4.0;
+		yzero = -((yp / 250.0) - 1.0) * 4.0 + 4.0;
     t = 0;
     v = 18;
-    cout << x << '\t' << y00 << endl;
+    cout << x << '\t' << yzero << endl;
 	}
 }
