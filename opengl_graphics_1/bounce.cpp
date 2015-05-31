@@ -74,7 +74,7 @@ void Mouse( int button, int state, int xp, int yp ) {
 		x = (xp / 250.0d) - 1.0d;
 		y00 = -((yp / 250.0d) - 1.0d);
     t = 0;
-    v = 5;
+    v = 8;
     cout << x << '\t' << y00 << endl;
 	}
 }
