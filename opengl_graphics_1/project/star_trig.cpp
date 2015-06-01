@@ -1,6 +1,5 @@
 // Draws 2D star
-#include <GL/gl.h>
-#include <GL/glu.h>
+#include <iostream>
 #include <GL/glut.h>
 #include <cmath>
 #include "common.hpp"
@@ -37,6 +36,7 @@ void star()
     glVertex2f(1.0, 0.0);
   glEnd();
   glLoadIdentity();
+  std::cout << "IncFactor: " << IncFactor / PI << " * PI" << std::endl;
 }
 
 void par(double hx, double hy, double lx, double ly, int colornum)
@@ -148,7 +148,6 @@ void keyboard(unsigned char key, int a, int b)
       exit(0);
     break;
   }
-  
   updateWindows();
 }
 
