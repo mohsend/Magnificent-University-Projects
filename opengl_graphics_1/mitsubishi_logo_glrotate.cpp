@@ -6,7 +6,7 @@
 
 using namespace std;
 
-double deg = 0.0;
+int deg = 0;
 
 void mitsubishi();
 void rotate();
@@ -38,15 +38,16 @@ void init()
 void mitsubishi()
 {
 	glClear(GL_COLOR_BUFFER_BIT);
+	glRotated(deg, 0.0, 0.0, 1.0);
 	glColor4d(0.0, 0.0, 0.0 , 0.0);
 	glPolygonMode(GL_FRONT, GL_FILL);
 	for (double d = PI/2.0; d < 2.0*PI; d += 2*PI/3.0)
 	{
 		glBegin(GL_POLYGON);
 			glVertex2d(0.0,0.0);
-			glVertex2d(ZARIB * cos(d + deg - PI/6.0), ZARIB * sin(d + deg - PI/6.0));
-			glVertex2d(cos(d + deg), sin(d + deg));
-			glVertex2d(ZARIB * cos(d + deg + PI/6.0), ZARIB * sin(d + deg + PI/6.0));
+			glVertex2d(ZARIB * cos(d - PI/6.0), ZARIB * sin(d - PI/6.0));
+			glVertex2d(cos(d), sin(d));
+			glVertex2d(ZARIB * cos(d + PI/6.0), ZARIB * sin(d + PI/6.0));
 		glEnd();
 	}
 	glLoadIdentity();
@@ -55,6 +56,6 @@ void mitsubishi()
 
 void rotate()
 {
-	deg = (deg < 2.0*PI/3.0) ? deg + 0.01 : 0;
+	deg = (deg < 120) ? deg + 1 : 0;
 	glutPostRedisplay();
 }

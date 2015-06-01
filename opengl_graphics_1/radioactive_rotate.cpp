@@ -19,7 +19,7 @@ int main(int argc, char **argv)
 	glutInitWindowSize(500,500);
 	glutInitWindowPosition(0,0);
 	glutCreateWindow("Radioactive");
-	glutIdleFunc(time_pass);
+	//glutIdleFunc(time_pass);
 	glutDisplayFunc(radioactive);
 	init();
 	glutMainLoop();
