@@ -1,41 +1,39 @@
+; sets (OV), and clears (NV) the overflow flag.
 ;------------
-; stack segment
-;------------
+; stack segment :
 STSEG SEGMENT
   DB 64 DUP (?)
 STSEG ENDS
 ;------------
-; data segment
-;------------
+; data segment :
 DTSEG SEGMENT
   ; place program data here
-  
 DTSEG ENDS
 ;------------
-; code segment
-;------------
+; code segment :
 CDSEG SEGMENT
   MAIN PROC FAR
   ASSUME CS:CDSEG, DS:DTSEG, SS:STSEG
   MOV AX, DTSEG
   MOV DS, AX
-  ; code here
+  ; main code starts here
   
-  ; set overflow falg
+  ; set overflow flag (OV)
   PUSHF
   POP AX
   OR AX, 0800H
   PUSH AX
   POPF
   
-  ; clear overflow flag
+  ; clear overflow flag (NV)
   PUSHF
   POP AX
   AND AX, 0F7FFH
   PUSH AX
   POPF
   
-  ;end (terminate) program
+  ; end (terminate) program
+  terminate:
   MOV AH, 4CH
   INT 21H
   MAIN ENDP

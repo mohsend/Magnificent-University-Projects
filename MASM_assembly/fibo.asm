@@ -1,19 +1,16 @@
 ;------------
-; stack segment
-;------------
+; stack segment :
 STSEG SEGMENT
   DB 64 DUP (?)
 STSEG ENDS
 ;------------
-; data segment
-;------------
+; data segment :
 DTSEG SEGMENT
   ; place program data here
   DW 20 DUP (0000H)
 DTSEG ENDS
 ;------------
-; code segment
-;------------
+; code segment :
 CDSEG SEGMENT
   MAIN PROC FAR
   ASSUME CS:CDSEG, DS:DTSEG, SS:STSEG
@@ -21,7 +18,7 @@ CDSEG SEGMENT
   MOV DS, AX
   ; main code starts here
   
-  ; init
+  ; initialize
   MOV CX, 10
   MOV DI, 00
   MOV AX, 00
@@ -37,7 +34,8 @@ CDSEG SEGMENT
   INC DI
   LOOP loop1
   
-  ;end (terminate) program
+  ; end (terminate) program
+  terminate:
   MOV AH, 4CH
   INT 21H
   MAIN ENDP

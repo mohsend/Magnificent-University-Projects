@@ -1,4 +1,6 @@
-; find minimum and maximum of 16 unsigned bytes, and write them to memmory.
+; read 16 bytes from data segment and write them on the next line
+; as is, if the byte is positive
+; the positive equvilant value, if the byte is negative 
 ;------------
 ; stack segment :
 STSEG SEGMENT
@@ -9,10 +11,8 @@ STSEG ENDS
 DTSEG SEGMENT
   ; place program data here
   array DB 73H, 82H, 10H, 7FH, 0D0H, 20H, 0B3H, 01DH, 94H, 0A2H, 71H, 50H, 11H, 0B0H, 17H, 99H
-  ORG 10H
-  maxi DB 00H
-  ORG 18H
-  mini DB 00H 
+  org 10H
+  output DB 10H DUP (00H)
 DTSEG ENDS
 ;------------
 ; code segment :
@@ -25,36 +25,20 @@ CDSEG SEGMENT
   
   ; initialize
   MOV BX, OFFSET array
-  MOV AL, [BX]
-  MOV DL, AL
-  MOV DH, AL
   MOV CX, 10H
   
   loop1:
     MOV AL, [BX]
-    CMP AL, DL
-    JB newmin ;  JB label Short Jump if first operand is Below second operand (as set by CMP instruction). Unsigned. 
-    CMP DH, AL
-    JB newmax
-    continue:
+    CMP AL, 00H
+    JG writeout ; JG label Short Jump if first operand is Greater then second operand (as set by CMP instruction). Signed. 
+    NOT AL ; toggle (NOT) AL bits
+    INC AL ; AL = AL + 1
+    writeout:
+    MOV [BX + 10H], AL
     INC BX
     LOOP loop1
-  
-  JMP writeout
-  
-  newmin:
-    MOV DL, AL
-    JMP continue
-  
-  newmax:
-    MOV DH, AL
-    JMP continue
     
-  writeout:
-    MOV [mini], DL
-    MOV [maxi], DH
-    
-  ; end (terminate) program
+  ;end (terminate) program
   terminate:
   MOV AH, 4CH
   INT 21H

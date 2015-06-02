@@ -1,18 +1,19 @@
-;stack segment
+; copies 6 bytes of data to another place in data segment
+;------------
+; stack segment :
 STSEG SEGMENT
   DB 64 DUP (?)
 STSEG ENDS
 ;------------
-;data segment
-;------------
+; data segment :
 DTSEG SEGMENT
   ; place program data here
   DATA_IN DB 10H, 20H, 30H, 40H, 50H, 60H ; 6 bytes of data
   ORG 10H
   DEST DB 6 DUP (?) ; allocate space to copy data into it
-  
 DTSEG ENDS
 ;-----------
+; code segment :
 CDSEG SEGMENT
   MAIN PROC FAR
   ASSUME CS:CDSEG, DS:DTSEG, SS:STSEG
@@ -26,15 +27,17 @@ CDSEG SEGMENT
   MOV DI, OFFSET DEST ; DI = adress of first byte of DEST
   
   ; loop to copy 2 bytes in each iteration, repeats 3 times
-  TARGET1: MOV AX, [SI] ; AX = 2bytes of DATA_IN
-  MOV [DI], AX ; 2bytes of DEST = AX
-  INC SI ; SI++
-  INC SI ; SI++
-  INC DI ; DI++
-  INC DI ; DI++
-  LOOP TARGET1
+  loop1:
+    MOV AX, [SI] ; AX = 2bytes of DATA_IN
+    MOV [DI], AX ; 2bytes of DEST = AX
+    INC SI ; SI++
+    INC SI ; SI++
+    INC DI ; DI++
+    INC DI ; DI++
+    LOOP loop1
   
-  ;end program
+  ; end (terminate) program
+  terminate:
   MOV AH, 4CH
   INT 21H
   MAIN ENDP
