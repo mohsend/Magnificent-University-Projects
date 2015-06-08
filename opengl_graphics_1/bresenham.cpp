@@ -1,5 +1,7 @@
 #include <GL/glut.h>
 
+// WARNING! HAS BUGS AND PROBLEMS!
+
 void draw_pixel(int x, int y)
 {
   float xf = (x / 250.0) - 1.0;
@@ -36,7 +38,7 @@ void display()
   glClearColor(1.0,1.0,1.0,0.0);
   glColor4f(0.0,0.0,1.0,0.0);
   
-  draw_line(1, 1, 300, 100);
+  draw_line(1, 1, 100, 300);
 }
 int main(int argc, char **argv)
 {
