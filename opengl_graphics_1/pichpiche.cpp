@@ -4,7 +4,7 @@
 
 #define DEG_TO_RAD 0.0174533
 
-#define ADAD 0.0174533
+#define ADAD 0.02
 
 #include <GL/glut.h>
 #include <cmath>
@@ -19,7 +19,7 @@ int main(int argc, char **argv)
 	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGBA);
 	glutInitWindowSize(500,500);
 	glutInitWindowPosition(0,0);
-	glutCreateWindow("Template");
+	glutCreateWindow("pichpiche");
 	glutDisplayFunc(display);
 	init();
 	glutMainLoop();
