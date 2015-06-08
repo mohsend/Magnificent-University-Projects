@@ -36,6 +36,7 @@ CDSEG SEGMENT
   
   ; end (terminate) program
   terminate:
+  MOV AH, 4CH
   INT 21H
   MAIN ENDP
 CDSEG ENDS

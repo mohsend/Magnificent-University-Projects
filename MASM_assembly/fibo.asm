@@ -24,15 +24,16 @@ CDSEG SEGMENT
   MOV AX, 00
   MOV DX, 01
   
-  loop1: ADD DX, AX
-  MOV [DI], DX
-  INC DI
-  INC DI
-  ADD AX, DX
-  MOV [DI], AX
-  INC DI
-  INC DI
-  LOOP loop1
+  loop1:
+    ADD DX, AX
+    MOV [DI], DX
+    INC DI
+    INC DI
+    ADD AX, DX
+    MOV [DI], AX
+    INC DI
+    INC DI
+    LOOP loop1
   
   ; end (terminate) program
   terminate:
