@@ -53,7 +53,7 @@ void display()
 		glBegin(GL_TRIANGLES);
 			for (int d = 0; d <= 60; d += 60)
 				for (int dd = 0; dd <= 240; dd += 120)
-					glVertex2d(sin((d + dd) * DEG_TO_RAD) * R, cos((d + dd) * DEG_TO_RAD) * R);
+					glVertex2d(sin((d + dd) * DEG_TO_RAD) * 1.0, cos((d + dd) * DEG_TO_RAD) * 1.0);
 		glEnd();
 		glLoadIdentity();
 	}
