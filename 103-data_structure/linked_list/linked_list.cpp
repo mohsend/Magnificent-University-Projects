@@ -106,19 +106,26 @@ void reverse_travese (LinkedList* x)
 
 int main(int argc, char **argv)
 {
-	LinkedList *first;
+	LinkedList *head;
 	LinkedList *pointer;
-	first = new LinkedList;
-	pointer = first;
+	head = new LinkedList;
+	pointer = head;
 	 
-	pointer->setData(1);
-	pointer = pointer->push(2);
-	pointer = pointer->push(3);
-	pointer = pointer->push(4);
+	pointer->setData(0);
+	for (int i = 1; i < 6; i++)
+	{
+		int in;
+		cout << i << ") ";
+		cin >> in;
+		pointer = pointer->push(in);
+	}
 	
-	print_all(first);
-	travese(first);
-	reverse_travese(first);
+	cout << "print all:" << endl;
+	print_all(head);
+	cout << "travese:" << endl;
+	travese(head);
+	cout << "reverse travese:" << endl;
+	reverse_travese(head);
 	
 	return 0;
 }

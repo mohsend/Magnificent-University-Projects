@@ -16,13 +16,16 @@ class matrixes
 		void add();
 		void print(int matrix[20][20], int, int);
 		void print_all();
-		void add();
+		void multiply();
 };
 
 int main(int argc, char **argv)
 {
 	matrixes mat;
 	mat.fill();
+	mat.add();
+	mat.print_all();
+	mat.multiply();
 	mat.print_all();
 	return 0;
 }
@@ -79,7 +82,7 @@ void matrixes::print_all()
 	cout << "A:" << endl;
 	print(B, Bm, Bn);
 	cout << "C:" << endl;
-	//print(C, Cm, Cn);
+	print(C, Cm, Cn);
 }
 
 void matrixes::add()
@@ -87,10 +90,32 @@ void matrixes::add()
 	if (Am == Bm && An == Bn)
 	{
 		Cm = Am; Cn = An;
-		for (int i = 0; )
+		for (int i = 0; i < Am; i++)
+		{
+			for (int j = 0; j < An; j++)
+			{
+				C[i][j] = A[i][j] + B[i][j];
+			}
+		}
 	}
 	else
 	{
 		return;
+	}
+}
+
+void matrixes::multiply()
+{
+	Cm = Am; Cn = Bn;
+	for (int i = 0; i < Am; i++)
+	{
+		for (int j = 0; j < Bn; j++)
+		{
+			C[i][j] = 0;
+			for (int k = 0; k < Bm; k++)
+			{
+				C[i][j] = A[i][k] * B[k][j] + C[i][j];
+			}
+		}
 	}
 }
