@@ -9,7 +9,7 @@ STSEG ENDS
 ; data segment :
 DTSEG SEGMENT
   ; place program data here
-  input DW 08H, 08H
+  input DW 04H, 08H
   ORG 08H
   output DW 00H
 DTSEG ENDS
@@ -26,15 +26,14 @@ CDSEG SEGMENT
   MOV BX, OFFSET input
   MOV CX, [BX]
   MOV AX, 00H
-  INC BL
-  INC BL
+  INC BX
+  INC BX
   
   loop1:
     ADD AX, [BX]
     LOOP loop1
   
-  MOV BX, OFFSET output
-  MOV [BX], AX
+  MOV [output], AX
   
   ; end (terminate) program
   terminate:
