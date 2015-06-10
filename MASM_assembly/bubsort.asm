@@ -1,4 +1,4 @@
-; this is the template of a 8086 MASM assembly code
+; bubble sort algorithm implemented in assembly
 ;------------
 ; stack segment :
 STSEG SEGMENT
@@ -9,7 +9,6 @@ STSEG ENDS
 DTSEG SEGMENT
   ; place program data here
   array DB 73H, 82H, 10H, 7FH, 0D0H, 20H, 0B3H, 01DH, 94H, 0A2H, 71H, 50H, 11H, 0B0H, 17H, 99H
-  DB 10H DUP (00H)
 DTSEG ENDS
 ;------------
 ; code segment :
