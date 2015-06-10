@@ -42,7 +42,7 @@ CDSEG SEGMENT
   JMP terminate ; goto terminate
   
   tell:
-    MOV [here], BX ; make the ans byte 1
+    MOV [here], BX ; make the ans the address
     
   ; end (terminate) program
   terminate:

@@ -1,0 +1,77 @@
+Microsoft (R) Macro Assembler Version 6.11		    06/04/15 14:35:21
+OF.ASM							     Page 1 - 1
+
+
+				; sets (OV), and clears (NV) the overflow flag.
+				;------------
+				; stack segment :
+ 0000				STSEG SEGMENT
+ 0000  0040 [			  DB 64 DUP (?)
+        00
+       ]
+ 0040				STSEG ENDS
+				;------------
+				; data segment :
+ 0000				DTSEG SEGMENT
+				  ; place program data here
+ 0000				DTSEG ENDS
+				;------------
+				; code segment :
+ 0000				CDSEG SEGMENT
+ 0000				  MAIN PROC FAR
+				  ASSUME CS:CDSEG, DS:DTSEG, SS:STSEG
+ 0000  B8 ---- R		  MOV AX, DTSEG
+ 0003  8E D8			  MOV DS, AX
+				  ; main code starts here
+				  
+				  ; set overflow flag (OV)
+ 0005  9C			  PUSHF
+ 0006  58			  POP AX
+ 0007  0D 0800			  OR AX, 0800H
+ 000A  50			  PUSH AX
+ 000B  9D			  POPF
+				  
+				  ; clear overflow flag (NV)
+ 000C  9C			  PUSHF
+ 000D  58			  POP AX
+ 000E  25 F7FF			  AND AX, 0F7FFH
+ 0011  50			  PUSH AX
+ 0012  9D			  POPF
+				  
+				  ; end (terminate) program
+ 0013				  terminate:
+ 0013  B4 4C			  MOV AH, 4CH
+ 0015  CD 21			  INT 21H
+ 0017				  MAIN ENDP
+ 0017				CDSEG ENDS
+				  END MAIN
+Microsoft (R) Macro Assembler Version 6.11		    06/04/15 14:35:21
+OF.ASM							     Symbols 2 - 1
+
+
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+CDSEG  . . . . . . . . . . . . .	16 Bit	 0017	  Para	  Private 
+DTSEG  . . . . . . . . . . . . .	16 Bit	 0000	  Para	  Private 
+STSEG  . . . . . . . . . . . . .	16 Bit	 0040	  Para	  Private 
+
+
+Procedures,  parameters and locals:
+
+                N a m e                 Type     Value    Attr
+
+MAIN . . . . . . . . . . . . . .	P Far	 0000	  CDSEG	Length= 0017 Private
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+terminate  . . . . . . . . . . .	L Near	 0013	  CDSEG	
+
+	   0 Warnings
+	   0 Errors

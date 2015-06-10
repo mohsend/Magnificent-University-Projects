@@ -39,7 +39,7 @@ CDSEG SEGMENT
     INC BX
     LOOP loop1
     
-  ;end (terminate) program
+  ; end (terminate) program
   terminate:
   MOV AH, 4CH
   INT 21H

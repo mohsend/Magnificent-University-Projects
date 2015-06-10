@@ -37,6 +37,8 @@ CDSEG SEGMENT
       JA loop2
     CMP CX, 01H
     JA loop1
+    
+  JMP terminate
   
   swapval:
     MOV [BX], AH

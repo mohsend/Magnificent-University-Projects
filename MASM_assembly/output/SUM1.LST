@@ -1,0 +1,81 @@
+Microsoft (R) Macro Assembler Version 6.11		    06/04/15 14:35:56
+SUM1.ASM						     Page 1 - 1
+
+
+				; adds 5 bytes and writes the sum on the 6th byte
+				;------------
+				;stack segment :
+ 0000				STSEG SEGMENT
+ 0000  0040 [			  DB 64 DUP (?)
+        00
+       ]
+ 0040				STSEG ENDS
+				;------------
+				;data segment :
+ 0000				DTSEG SEGMENT
+				  ; place program data here
+ 0000 10 20 30 40 00		  INPUT DB 10H, 20H, 30H, 40H, 00H
+ 0005 00			  SUM DB 00H
+ 0006				DTSEG ENDS
+				;-----------
+ 0000				CDSEG SEGMENT
+ 0000				  MAIN PROC FAR
+				  ASSUME CS:CDSEG, DS:DTSEG, SS:STSEG
+ 0000  B8 ---- R		  MOV AX, DTSEG
+ 0003  8E D8			  MOV DS, AX
+				  ; main code starts here
+				  
+				  ; initialize
+ 0005  B9 0004			  MOV CX, 04 ; CX = 4
+ 0008  BB 0000 R		  MOV BX, OFFSET INPUT ; BX = 0000H
+ 000B  8A 07			  MOV AL, [BX] ; AL = 10H
+				  
+				  ; loop and add the 5 inputs and store the sum in AL
+ 000D				  TARGET1:
+ 000D  43			    INC BX ; BX++
+ 000E  02 07			    ADD AL, [BX] ; AL = AL + [BX]
+ 0010  E2 FB			    LOOP TARGET1 ; CX--; if (CX != 0) goto target1
+				  
+				  ; write AL (sum) to memory 
+ 0012  43			  INC BX ; BX = 05H
+ 0013  88 07			  MOV [BX], AL ; [BX] = AL
+				  
+				  ; end (terminate) program
+ 0015				  terminate:
+ 0015  CD 21			  INT 21H
+ 0017				  MAIN ENDP
+ 0017				CDSEG ENDS
+				  END MAIN
+Microsoft (R) Macro Assembler Version 6.11		    06/04/15 14:35:56
+SUM1.ASM						     Symbols 2 - 1
+
+
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+CDSEG  . . . . . . . . . . . . .	16 Bit	 0017	  Para	  Private 
+DTSEG  . . . . . . . . . . . . .	16 Bit	 0006	  Para	  Private 
+STSEG  . . . . . . . . . . . . .	16 Bit	 0040	  Para	  Private 
+
+
+Procedures,  parameters and locals:
+
+                N a m e                 Type     Value    Attr
+
+MAIN . . . . . . . . . . . . . .	P Far	 0000	  CDSEG	Length= 0017 Private
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+INPUT  . . . . . . . . . . . . .	Byte	 0000	  DTSEG	
+SUM  . . . . . . . . . . . . . .	Byte	 0005	  DTSEG	
+TARGET1  . . . . . . . . . . . .	L Near	 000D	  CDSEG	
+terminate  . . . . . . . . . . .	L Near	 0015	  CDSEG	
+
+	   0 Warnings
+	   0 Errors
