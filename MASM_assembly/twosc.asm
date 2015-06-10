@@ -33,6 +33,7 @@ CDSEG SEGMENT
     JG writeout ; JG label Short Jump if first operand is Greater then second operand (as set by CMP instruction). Signed. 
     NOT AL ; toggle (NOT) AL bits
     INC AL ; AL = AL + 1
+    ; last two lines are the same as "NEG AL". NEG: Negate. Makes operand negative (two's complement). 
     writeout:
     MOV [BX + 10H], AL
     INC BX
