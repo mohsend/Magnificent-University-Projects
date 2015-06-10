@@ -1,7 +1,7 @@
-; linear search 128  bytes of random data previously residing in data segment (RAM)
+; linear search an array of bytes
 ; query is in the first byte of data segment
-; program checks every byte, if found one equal to query
-; write 01H to the 8th byte of data segment and end program
+; program checks every byte of array, if found one equal to query
+; writes the address to the 8th byte of data segment and end program
 ;------------
 ; stack segment :
 STSEG SEGMENT
@@ -11,11 +11,11 @@ STSEG ENDS
 ; data segment :
 DTSEG SEGMENT
   ; place program data here
-  query DB 01H
+  query DB 94H
   ORG 08H
-  ans DB 00H
+  here DW 00H
   ORG 10H
-  random DB ?
+  array DB 73H, 82H, 10H, 7FH, 0D0H, 20H, 0B3H, 01DH, 94H, 0A2H, 71H, 50H, 11H, 0B0H, 17H, 99H
 DTSEG ENDS
 ;------------
 ; code segment :
@@ -27,24 +27,23 @@ CDSEG SEGMENT
   ; main code starts here
   
   ; initialize
-  MOV CX, 127 ; CX = 127
-  MOV BX, OFFSET random ; BX = 0010H (address of first byte of random data on RAM)
-  MOV AH, [query] ; AH = [query]
+  MOV CX, 10H ; CX = 127
+  MOV BX, OFFSET array ; BX = 0010H (address of first byte of array data on RAM)
+  MOV AL, [query] ; AH = [query]
   
   ; loop and compare
   compare:
-    MOV AL, [BX] ; AL = value of address of BX
-    CMP AL, AH ; (AL - AH) and set Zero Flag accordingly
+    CMP AL, [BX] ; (AL - [BX]) and set Zero Flag accordingly
     JZ tell ; if (ZeroFlag == 0) goto tell 
-            ; JZ label Short Jump if Zero (equal). Set by CMP, SUB, ADD, TEST, AND, OR, XOR instructions.
+    ; JZ label Short Jump if Zero (equal). Set by CMP, SUB, ADD, TEST, AND, OR, XOR instructions.
     INC BX ; BX++
     LOOP compare ; CX--; if (CX != 0) goto compare
   
   JMP terminate ; goto terminate
   
   tell:
-    MOV [ans], 01H ; make the ans byte 1
-  
+    MOV [here], BX ; make the ans byte 1
+    
   ; end (terminate) program
   terminate:
   MOV AH, 4CH
