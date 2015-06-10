@@ -34,6 +34,8 @@ CDSEG SEGMENT
     MOV AL, [BX]
     CMP AL, DL
     JB newmin ;  JB label Short Jump if first operand is Below second operand (as set by CMP instruction). Unsigned. 
+    ; use JL if you wish to use signed bytes
+    ; JL label Short Jump if first operand is Less then second operand (as set by CMP instruction). Signed. 
     CMP DH, AL
     JB newmax
     continue:
