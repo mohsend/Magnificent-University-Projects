@@ -2,8 +2,6 @@
 #include <iostream>
 #include <cmath>
 
-#define DEG_TO_RAD 0.0174532925
-
 using namespace std;
 
 int deg = 0;
@@ -64,11 +62,12 @@ void time_pass()
 
 void arc(int startdeg, int enddeg, double radius)
 {
+	double toRad = 0.0174532925;
 	glBegin(GL_TRIANGLE_FAN);
 	glVertex2d(0.0,0.0);
 	for (int dis = startdeg; dis <= enddeg; dis++)
 	{
-		glVertex2d(cos(dis * DEG_TO_RAD) * radius, sin(dis * DEG_TO_RAD) * radius);
+		glVertex2d(cos(dis * toRad) * radius, sin(dis * toRad) * radius);
 	}
 	glEnd();
 }

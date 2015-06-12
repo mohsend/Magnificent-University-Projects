@@ -1,24 +1,22 @@
 ﻿//برنامه ای بنویسید تمام اعداد اول بین دو تا صد را چاپ کند
 
 #include <iostream>
-using namespace std;
+
+bool prime(int);
 
 int main()
 {
-	int i;
-	bool prime(int);
-	for (i = 2; i < 101; i++)
-	if (prime(i))
-		cout << i << '\t';
+	for (int i = 2; i <= 100; i++)
+		if (prime(i))
+			std::cout << i << '\t';
 		
-	cin.ignore();
-	cin.get();
 	return 0;
 }
+
 bool prime(int x)
 {
-	for (int z = 2; z<x/2+1;z++)
-	if (x % z == 0)
-		return false;
+	for (int z = 2; z <= x/2; z++)
+		if (x % z == 0)
+			return false;
 	return true;
 }
