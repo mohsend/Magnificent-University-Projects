@@ -1,5 +1,5 @@
 #MASM 8086 Assembly
-These files are simple tested 8086 assembly programs. 
+These files are simple tested 8086 assembly codes. 
 
 I wrote a [wiki page on how to assemble these files in Persian](https://github.com/mohsend/Magnificent-University-Projects/wiki/assembly).
 
@@ -17,7 +17,10 @@ Chances are you don't have a 16-bit MS-DOS PC handy. I used DOSBox the open sour
 [This page from Carleton University](http://www.scs.carleton.ca/sivarama/asm_book_web/free_MASM.html) provides you a download link for masm and a basic how-to for using it.
 
 ##DEBUG
-DOSBox doesn't have DEBUG program by default. you can download this excellent open source equivalent from the button of the linked page and place the DEBUG.COM or DEBUG.EXE file in your working directory (the one with MASM in it) and use it. 
-The page also has all the command this program uses. I personally only had to use "T", "D", and "Q".
+DOSBox doesn't have DEBUG program by default. you can download this excellent open source equivalent from the button of the linked page and place the ```DEBUG.COM``` file in your working directory (the one with MASM in it) and use it. 
+The page also has all the commands this program uses. I personally only had to use "T", "D", and "Q".
 
 [Enhanced DEBUG for PC DOS and MS-DOS](https://sites.google.com/site/pcdosretro/enhdebug) 
+
+##SETEDIT
+DOSBox doesn't have an editor neither. I found this open source editor for DOS very apealing. get it here: [SETEDIT download](http://setedit.sourceforge.net/#download)
