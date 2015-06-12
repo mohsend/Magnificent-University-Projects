@@ -15,3 +15,9 @@ Chances are you don't have a 16-bit MS-DOS PC handy. I used DOSBox the open sour
 
 ##MASM
 [This page from Carleton University](http://www.scs.carleton.ca/sivarama/asm_book_web/free_MASM.html) provides you a download link for masm and a basic how-to for using it.
+
+##DEBUG
+DOSBox doesn't have DEBUG program by default. you can download this excellent open source equivalent from the button of the linked page and place the DEBUG.COM or DEBUG.EXE file in your working directory (the one with MASM in it) and use it. 
+The page also has all the command this program uses. I personally only had to use "T", "D", and "Q".
+
+[Enhanced DEBUG for PC DOS and MS-DOS](https://sites.google.com/site/pcdosretro/enhdebug) 
