@@ -23,4 +23,6 @@ The page also has all the commands this program uses. I personally only had to u
 [Enhanced DEBUG for PC DOS and MS-DOS](https://sites.google.com/site/pcdosretro/enhdebug) 
 
 ##SETEDIT
-DOSBox doesn't have an editor neither. I found this open source editor for DOS very apealing. get it here: [SETEDIT download](http://setedit.sourceforge.net/#download)
+DOSBox doesn't have an editor neither. 
+you can use your favorite IDE or editor on the host OS.
+but I also found this open source editor (SETEDIT) for DOS. You can get it here: [SETEDIT download](http://setedit.sourceforge.net/#download)
