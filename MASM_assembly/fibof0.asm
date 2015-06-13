@@ -1,3 +1,4 @@
+; writes fibonacci series to data segment. starting from 0
 ;------------
 ; stack segment :
 STSEG SEGMENT

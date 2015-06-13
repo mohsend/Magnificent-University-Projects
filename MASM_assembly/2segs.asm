@@ -1,4 +1,5 @@
-; adds 5 bytes and writes the sum on the 6th byte. another algorithm.
+; sums 5 bytes from data segment and writes the sum on the 6th byte.
+; sums 10 bytes from extra segment and writes the sum on the 11th byte.
 ;------------
 ; stack segment :
 STSEG SEGMENT
