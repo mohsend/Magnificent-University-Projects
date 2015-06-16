@@ -9,7 +9,7 @@ using namespace std;
 int main(int argc, char **argv)
 {
 	uint64_t meh = 0xFFFFFFFFFFFFFFFF;
-	int age;
+	uint64_t age;
 	cout << "meh = " << meh << endl;
 	cout << "How old are you? ";
 	cin >> age;
