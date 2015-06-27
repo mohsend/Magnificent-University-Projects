@@ -2,6 +2,9 @@
  * 
  */
 
+#include <iostream>
+using namespace std;
+
 // factorial
 // n!
 // en.wikipedia.org/wiki/Factorial
@@ -98,8 +101,29 @@ int mul(int a, int b)
 	return a + mul(a, b-1);
 }
 
-#include <iostream>
-using namespace std;
+// Lowest common denominator
+// https://en.wikipedia.org/wiki/Lowest_common_denominator
+
+// Least common multiple
+// https://en.wikipedia.org/wiki/Least_common_multiple
+
+// Greatest common divisor
+// https://en.wikipedia.org/wiki/Greatest_common_divisor
+int GCD(int a, int b)
+{
+	if (b == 0)
+		return a;
+	return GCD(b, a%b);
+}
+
+// Convert bases
+// http://stackoverflow.com/questions/10375922/base-number-converter-from-10-base-with-recursive-function-c
+int baseconvert(int decimal, int base)
+{
+	if (decimal == 0)
+		return 0;
+	return (decimal % base) + 10 * baseconvert(decimal/base, base);
+}
 
 int main(int argc, char **argv)
 {
@@ -113,5 +137,8 @@ int main(int argc, char **argv)
 	cout << "c(5,2) = " << combination2(5,2) << endl;
 	cout << "10 + 12 = " << add(10, 12) << endl;
 	cout << "10 * 12 = " << mul(10, 12) << endl;
+	cout << "GCD(30, 15) = " << GCD(30, 15) << endl;
+	cout << "GCD(17, 5) = " << GCD(17, 5) << endl;
+	cout << "10 in base 7: " << baseconvert(10, 7) << endl;
 	return 0;
 }
