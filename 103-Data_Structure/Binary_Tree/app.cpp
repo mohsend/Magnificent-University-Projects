@@ -18,10 +18,9 @@ int main(int argc, char **argv)
 	int input, count = 1;
 	while (input)
 	{
-		cout << count << ") ";
+		cout << count++ << ") ";
 		cin >> input;
 		BSTinsert(head, input);
-		count++;
 	}
 	cout << "The tree Traversed in-order: " << endl;
 	inOrder(head);
