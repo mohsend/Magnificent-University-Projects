@@ -1,0 +1,12 @@
+# Executables
+*.out
+*.exe
+
+# Binary
+*.o
+
+# Backup
+*~
+
+# Sandbox Dir
+Sandbox/
