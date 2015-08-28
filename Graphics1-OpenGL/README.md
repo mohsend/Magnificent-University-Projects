@@ -1,10 +1,14 @@
 ## Compiling
 ### GNU Compiler Collection
-I tested every file using [GCC](https://github.com/mohsend/cpp-examples/wiki/GNU-Compiler-Collection) on Ubuntu. any compiler should be fine.
-
-To [compile in *nix](https://github.com/mohsend/cpp-examples/wiki/Compiling-using-GCC) (Linux, OS X, freeBSD,...) using GCC run this command in terminal:
+I tested every file using [GCC](https://github.com/mohsend/Magnificent-University-Projects/wiki/GNU-Compiler-Collection) on Ubuntu. any compiler should be fine.
+Since these codes use `freeglut3` libraries you should first install them.  
+On a Debian-based distro:  
 ```bash
-g++ -Wall -o "executable_file" "code_file.cpp" -lGL -lGLU -lglut
+$ sudo apt-get install freeglut3 freeglut3-dev
+```
+Then we should inform GCC to link our code to the libraries:  
+```bash
+$ g++ -Wall -o "code_file.cpp" -lGL -lGLU -lglut
 ```
 
 ### Microsoft Visual Studio .net
