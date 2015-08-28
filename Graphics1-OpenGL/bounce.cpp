@@ -13,7 +13,7 @@ double x = 0.0;
 double y00 = 5;
 double t = 0;
 
-void radioactive();
+void ball();
 void time_pass();
 void init();
 void Mouse( int button, int state, int x, int y);
@@ -26,7 +26,7 @@ int main(int argc, char **argv)
 	glutInitWindowPosition(0,0);
 	glutCreateWindow("Bounce");
 	glutIdleFunc(time_pass);
-	glutDisplayFunc(radioactive);
+	glutDisplayFunc(ball);
 	init();
 	glutMouseFunc(Mouse);
 	glutMainLoop();
@@ -39,7 +39,7 @@ void init()
 	glLoadIdentity();
 }
 
-void radioactive()
+void ball()
 {
 	glClear(GL_COLOR_BUFFER_BIT);
 	glColor3f(0.0, 0.0, 0.0);
