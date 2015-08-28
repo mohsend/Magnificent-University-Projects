@@ -17,7 +17,6 @@ int main(int argc, char* argv[])
 		std::cout << "Initilized pseudo-randomly.\nTip: You can pass a .gol file az an argument.\n";
 	}
 	init_glut(argc, argv);
-	//gol.play();
 	
 	return 0;
 }
