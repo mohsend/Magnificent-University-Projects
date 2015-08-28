@@ -11,11 +11,11 @@ I tested every file using [GCC](https://github.com/mohsend/Magnificent-Universit
 
 To [compile in *nix](https://github.com/mohsend/Magnificent-University-Projects/wiki/Compiling-using-GCC) (Linux, OS X, freeBSD,...) using GCC run this command in terminal:
 ```bash
-g++ -Wall code_file.cpp
+$ g++ -Wall code_file.cpp
 ```
 And then you can run the compiled executable by running:
 ```bash
-./a.out
+$ ./a.out
 ```
 
 ### Microsoft Visual Studio .net

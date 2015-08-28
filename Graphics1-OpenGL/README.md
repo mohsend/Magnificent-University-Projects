@@ -8,7 +8,7 @@ $ sudo apt-get install freeglut3 freeglut3-dev
 ```
 Then we should inform GCC to link our code to the libraries:  
 ```bash
-$ g++ -Wall -o "code_file.cpp" -lGL -lGLU -lglut
+$ g++ "code_file.cpp" -lGL -lGLU -lglut -Wall
 ```
 
 ### Microsoft Visual Studio .net
