@@ -2,7 +2,7 @@
 #include <GL/gl.h>
 #include <GL/glu.h>
 #include <GL/glut.h>
-#include "common.hpp"
+#include "common.h"
   
 void display();
 void display2();
