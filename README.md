@@ -11,7 +11,7 @@ I tested every file using [GCC](https://github.com/mohsend/Magnificent-Universit
 
 To [compile in *nix](https://github.com/mohsend/Magnificent-University-Projects/wiki/Compiling-using-GCC) (Linux, OS X, freeBSD,...) using GCC run this command in terminal:
 ```bash
-$ g++ -Wall code_file.cpp
+$ gcc -Wall code_file.cpp
 ```
 And then you can run the compiled executable by running:
 ```bash
@@ -25,4 +25,4 @@ Add this line on top of the C++ code if you want to compile in Visual Studio .ne
 ```
 
 ## Licence
-Copyright &copy; 2014 [Mohsen Dastjerdi Zade](https://github.com/mohsend) released on terms and coditions of [MIT licence](LICENSE).
+Copyright &copy; 2014 - 2015 [Mohsen Dastjerdi Zade](https://github.com/mohsend) released under the terms and coditions of [MIT licence](LICENSE).
