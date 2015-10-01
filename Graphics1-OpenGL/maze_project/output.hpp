@@ -5,7 +5,11 @@
 #ifndef OUTPUT_HPP
 #define OUTPUT_HPP 1
 
+#ifdef __APPLE__
+#include <GLUT/glut.h>
+#else
 #include <GL/glut.h>
+#endif
 
 bool first = true;
 

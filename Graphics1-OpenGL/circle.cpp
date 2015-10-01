@@ -2,7 +2,11 @@
  * homework of second session.
  */
 
+#ifdef __APPLE__
+#include <GLUT/glut.h>
+#else
 #include <GL/glut.h>
+#endif
 #include <cmath>
 #include <iostream>
 #define DEG_TO_RAD 0.0174533

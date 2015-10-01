@@ -1,7 +1,9 @@
 // Rotating Cube
-#include <GL/gl.h>
-#include <GL/glu.h>
+#ifdef __APPLE__
+#include <GLUT/glut.h>
+#else
 #include <GL/glut.h>
+#endif
 #include "common.hpp"
 
 GLfloat theta = 0.0, x_axes = 1.0, y_axes = 1.0, z_axes = 1.0;

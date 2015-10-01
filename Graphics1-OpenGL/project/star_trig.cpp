@@ -1,8 +1,13 @@
 // Draws 2D star
-#include <iostream>
+
+#ifdef __APPLE__
+#include <GLUT/glut.h>
+#else
 #include <GL/glut.h>
+#endif
 #include <cmath>
 #include "common.hpp"
+#include <iostream>
 
 #define PI 3.14159265359
 
