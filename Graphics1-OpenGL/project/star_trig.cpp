@@ -1,8 +1,8 @@
 // Draws 2D star
-#include <stdio.h>
+#include <iostream>
 #include <GL/glut.h>
-#include <math.h>
-#include "common.h"
+#include <cmath>
+#include "common.hpp"
 
 #define PI 3.14159265359
 
@@ -36,7 +36,7 @@ void star()
     glVertex2f(1.0, 0.0);
   glEnd();
   glLoadIdentity();
-  printf ("IncFactor: %f * PI\n", IncFactor / PI);
+  std::cout << "IncFactor: " << IncFactor / PI << " * PI" << std::endl;
 }
 
 void par(double hx, double hy, double lx, double ly, int colornum)
