@@ -87,7 +87,7 @@ void display_lines()
 void display_stipple()
 {
 	glEnable(GL_LINE_STIPPLE);
-	glLineStipple(,0x3C);
+	glLineStipple(1, 0x3C);
 	// glLineStipple(int factor, GLbyte pattern)
 	
 	glDisable(GL_LINE_STIPPLE);

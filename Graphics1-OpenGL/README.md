@@ -44,7 +44,7 @@ $ gcc "code_file.cpp" -framework GLUT -framework OpenGL
 I tested every file using [GCC](https://github.com/mohsend/Magnificent-University-Projects/wiki/GNU-Compiler-Collection) on Ubuntu. any compiler should be fine.
 
 ### Microsoft Visual Studio .net
-First of all install GLUT libraries for VS.net
+First of all [install freeGLUT3 libraries](http://freeglut.sourceforge.net/) for VS.net
 
 Add this line on top of the code if you want to compile in Visual Studio .net:
 

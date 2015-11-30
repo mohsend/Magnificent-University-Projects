@@ -46,3 +46,6 @@
 
 # Sandbox Dir
 Sandbox/
+
+# Sandbox Files
+donttrack*

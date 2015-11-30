@@ -37,7 +37,7 @@ void display()
 }
 
 
-{
+void drawsome () {
 	m = 6; // تعداد دور
 	n = 0.0; // parameter
 	
@@ -59,7 +59,7 @@ void display()
 	}
 }
 
-{
+void drawelse () {
 	glBegin(GL_LINE_LOOP);
 		glVertex2f(ax1,ay1);
 		glVertex2f(bx1,by1);
