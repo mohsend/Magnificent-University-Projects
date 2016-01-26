@@ -1,15 +1,16 @@
 ﻿/*
-این برنامه همه ی رشته های ممکن بین 
-aaa to zzz
-را تولید میکند.
-*/
+ * Prints all the 3 letter lowercase strings
+ * on standard out.
+ * From 'aaa' to 'zzz'
+ */
 
 #include <iostream>
+
 using namespace std;
 
 int main()
 {
-	// the character '`' is the one right before 'a' in ASCII table.
+	// The backtick character ('`') is the one right before 'a' in ASCII table.
 	char ch1 = '`', ch2 = '`', ch3 = '`';
 	for (int z = 0; z < 26; z++)
 	{
@@ -24,8 +25,6 @@ int main()
 				ch3++;
 				cout << ch1 << ch2 << ch3 << '\n';
 			}
-			cout << "Press Enter to continue.";
-			cin.get();
 		}
 	}
 	return 0;

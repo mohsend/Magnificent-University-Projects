@@ -5,6 +5,7 @@
 // pre-prosessor commands
 #include <iostream>
 #include <iomanip>
+
 using namespace std;
 // تعریف متغیر ها
 int x1, x2, x3;
