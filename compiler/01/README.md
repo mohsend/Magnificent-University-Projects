@@ -7,7 +7,8 @@ Write Assembly programs which use interrupts. Answers:
 - [my-mkdir](my-mkdir.asm)
 - [my-date](my-date.asm)
 
-[abridged list of DOS interrupts](http://spike.scu.edu.au/~barry/interrupts.html)
+See also: [Abridged list of DOS interrupts](http://spike.scu.edu.au/~barry/interrupts.html), [MASM 8086 Assembly](../../assembly/)
+
 
 ## for instead of conditional statements
 
