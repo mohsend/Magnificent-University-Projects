@@ -47,6 +47,9 @@
 # Sandbox Dir
 Sandbox/
 
+# Containing personal information
+Handins/
+
 # Sandbox Files
 donttrack*
 ignore*
