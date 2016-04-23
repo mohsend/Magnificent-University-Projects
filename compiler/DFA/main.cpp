@@ -1,7 +1,7 @@
 /*
- * A simple DFA automata
+ * A simple DFA (Deterministic finite automaton) implantation 
  * gets one string as a commanline argument
- * and checks if it fits the defined automata
+ * and checks if it fits the defined automaton
  */
 
 #include <iostream>
@@ -15,9 +15,15 @@ inline int in(char);
 
 int main(int argc, char **argv)
 {
-	string out = check(table, argv[1])? "Matches " : "Doesn't match ";
-	out += regex;
-	cout << out << endl;
+	if (argc < 2) {
+		cout << "This program takes a commandline argument and checks if it maches the \n" << regex << " \nregex pattern." << endl;
+	}
+	else
+	{
+		string out = check(table, argv[1])? "Matches " : "Doesn't match ";
+		out += regex;
+		cout << out << endl;
+	}
 	return 0;
 }
 
