@@ -22,7 +22,6 @@
 	<text x="161.5" y="30.5" font-family="Times New Roman" font-size="20">a</text>
 	<polygon fill="black" stroke-width="1" points="178.725,79.703 187.473,76.17 179.382,70.292"/>
 	<polygon stroke="black" stroke-width="1" points="272.5,240.5 272.5,240.5"/>
-	<polygon fill="black" stroke-width="1" points="272.5,240.5 267.5,248.5 277.5,248.5"/>
 	<path stroke="black" stroke-width="1" fill="none" d="M 296.975,193.354 A 22.5,22.5 0 1 1 300.996,219.497"/>
 	<text x="346.5" y="204.5" font-family="Times New Roman" font-size="20">a,b</text>
 	<polygon fill="black" stroke-width="1" points="300.996,219.497 305.819,227.605 310.398,218.715"/>

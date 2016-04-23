@@ -10,7 +10,7 @@
 	<text x="408.5" y="83.5" font-family="Times New Roman" font-size="20">2</text>
 	<ellipse stroke="black" stroke-width="1" fill="none" cx="413.5" cy="77.5" rx="24" ry="24"/>
 	<ellipse stroke="black" stroke-width="1" fill="none" cx="259.5" cy="197.5" rx="30" ry="30"/>
-	<text x="254.5" y="203.5" font-family="Times New Roman" font-size="20">3</text>
+	<text x="236.5" y="203.5" font-family="Times New Roman" font-size="20">3 trap</text>
 	<polygon stroke="black" stroke-width="1" points="73.5,76.5 109.5,76.5"/>
 	<text x="34.5" y="82.5" font-family="Times New Roman" font-size="20">start</text>
 	<polygon fill="black" stroke-width="1" points="109.5,76.5 101.5,71.5 101.5,81.5"/>
