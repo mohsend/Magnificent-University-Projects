@@ -1,12 +1,12 @@
 /*
  * A simple DFA (Deterministic finite automaton) implantation 
- * gets one string as a commanline argument
+ * Gets one string as a commanline argument
  * and checks if it fits the defined automaton
  */
 
 #include <iostream>
 #include <string>
-#include "dfa1.hpp" // change to "dfa2.hpp" for another automata
+#include "dfa1.hpp" // change to "dfa2.hpp" for another automaton
 
 using namespace std;
 
@@ -15,27 +15,31 @@ inline int in(char);
 
 int main(int argc, char **argv)
 {
-	if (argc < 2) {
-		cout << "This program takes a commandline argument and checks if it maches the \n" << regex << " \nregex pattern." << endl;
+	if (argc < 2) { // Prints instructions to use the program if no arguments passed
+		cout << "This program takes strings as commandline arguments and checks if they match the \n" << regex << " \nregex pattern." << endl;
 	}
 	else
 	{
-		string out = check(table, argv[1])? "Matches " : "Doesn't match ";
-		out += regex;
-		cout << out << endl;
+		for (int i = 1; i < argc; i++) // Check each passed string
+		{
+			cout << '"' << argv[i] << "\": " << endl;
+			string out = check(table, argv[i])? "Matches " : "Doesn't match ";
+			out += regex;
+			cout << out << '\n' << endl;
+		}
 	}
 	return 0;
 }
 
 bool check(int t [NO_STATES][NO_CHARS] , char* s)
 {
-	static int current_state = 0;
+	int current_state = 0;
 	for (int i = 0; *s; i++)
 	{
-		cout << *s << current_state << " -> ";
+		cout << '(' << current_state << ')' << " -" << *s << "-> ";
 		current_state = t[current_state][in(*s++)];	
 	}
-	cout << "eof" << current_state << endl;
+	cout << '(' << current_state << ')' << endl;
 	return (current_state == final_state);
 }
 
