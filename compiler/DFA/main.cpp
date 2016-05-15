@@ -31,13 +31,13 @@ int main(int argc, char **argv)
 	return 0;
 }
 
-bool check(int t [NO_STATES][NO_CHARS] , char* s)
+bool check(int t [NO_STATES][NO_CHARS], char* s)
 {
 	int current_state = 0;
 	for (int i = 0; *s; i++)
 	{
 		cout << '(' << current_state << ')' << " -" << *s << "-> ";
-		current_state = t[current_state][in(*s++)];	
+		current_state = t[current_state][in(*s++)];	// Goes to the next state
 	}
 	cout << '(' << current_state << ')' << endl;
 	return (current_state == final_state);
