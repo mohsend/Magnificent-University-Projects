@@ -27,7 +27,7 @@ class light: public object
 		model = mod;
 		for (int i = 0; i < 4; i++)
 		{
-			position[i] = 0.0;
+			position[i] = 10.0;
 			properties[i] = 0.5;
 		}
 		

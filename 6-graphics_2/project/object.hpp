@@ -16,8 +16,6 @@ class object
   protected:
     GLfloat position[4];
   public:
-    object();
-    ~object();
     // Set position
 	void setPosition(GLfloat p1, GLfloat p2, GLfloat p3, GLfloat p4)
 	{
