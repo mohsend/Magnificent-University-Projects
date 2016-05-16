@@ -27,12 +27,9 @@ class light: public object
 		model = mod;
 		for (int i = 0; i < 4; i++)
 		{
-			position[i] = 10.0;
+			position[i] = 2.0;
 			properties[i] = 0.5;
 		}
-		
-		glLightfv(num, model, properties); // set properties
-		glEnable(num); // enable this light
 	}
 	// distruct
     ~light()
@@ -60,6 +57,8 @@ class light: public object
 			glutWireSphere(0.05, 8, 8);
 		}
 		glPopMatrix();
+		glLightfv(number, model, properties); // set properties
+		glEnable(number); // enable this light
 	}
 };
   

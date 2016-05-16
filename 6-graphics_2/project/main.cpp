@@ -47,7 +47,12 @@ void drawScene()
 	
 	cam1.look();
 	light light01(GL_LIGHT1, GL_DIFFUSE);
-	light light02(GL_LIGHT2, GL_SPOT_DIRECTION);
+	light01.setProperties(1.0, 0.0, 0.0, 0.0);
+	light01.affect();
+	light light02(GL_LIGHT2, GL_AMBIENT);
+	light02.setProperties(0.0, 1.0, 0.0, 0.0);
+	light02.setPosition(1.0, 1.0, 1.0, 1.0);
+	light02.affect();
 	ball01.draw();
 
 	glutSwapBuffers();
