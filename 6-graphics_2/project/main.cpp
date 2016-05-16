@@ -14,12 +14,14 @@
 #include "floor.hpp"
 #include "io.hpp"
 
+void drawScene();
+
 // Main routine.
 int main(int argc, char **argv) 
 {
-   printInteraction();
+   printInteraction('r');
    glutInit(&argc, argv);
-   glutInitDisplayMode (GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH); 
+   glutInitDisplayMode (GLUT_DOUBLE | GLUT_RGBA | GLUT_DEPTH); 
    glutInitWindowSize (500, 500);
    glutInitWindowPosition (50, 50);
    glutCreateWindow ("Graphics II Project");
@@ -31,4 +33,9 @@ int main(int argc, char **argv)
    glutMainLoop();
    
    return 0;
+}
+
+void drawScene()
+{
+	
 }

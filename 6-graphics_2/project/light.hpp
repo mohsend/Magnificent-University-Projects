@@ -37,10 +37,10 @@ class light: public object
 	// distruct
     ~light()
     {
-		glDisable(num);
+		glDisable(number);
 	}
 	// Set properties
-	void setProperties(p1, p2, p3, p4)
+	void setProperties(GLfloat p1, GLfloat p2, GLfloat p3, GLfloat p4)
 	{
 		properties[0] = p1;
 		properties[1] = p2;

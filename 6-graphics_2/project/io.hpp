@@ -36,8 +36,8 @@ void printInteraction(char what)
 // Callback routine for non-ASCII key entry.
 void specialKeyInput(int key, int x, int y)
 {
-   if (key == GLUT_KEY_UP) zMove -= 0.1;
-   if (key == GLUT_KEY_DOWN) if (zMove < 3.0) zMove += 0.1;
+   if (key == GLUT_KEY_UP) ;
+   if (key == GLUT_KEY_DOWN) ;
    glutPostRedisplay();
 }
 
@@ -50,10 +50,11 @@ void keyInput(unsigned char key, int x, int y)
          exit(0);
          break;
 	  case 'a':
- 		 if (a > 0.0) a -= 0.05);
-		 break;
 	  case 'A':
- 		 if (a < 1.0) a += 0.05;
+		 break;
+	  case 'q':
+	  case 'Q':
+ 		 
 		 break;
       default:
          break;
@@ -61,11 +62,12 @@ void keyInput(unsigned char key, int x, int y)
    }
 }
 
-// Routine to convert floating point to char string.
-void floatToString(char * destStr, int precision, float val) 
-{
-   sprintf(destStr,"%f",val);
-   destStr[precision] = '\0';
+// Routine to draw a bitmap character string.
+void writeBitmapString(void *font, char *string)
+{  
+   char *c;
+
+   for (c = string; *c != '\0'; c++) glutBitmapCharacter(font, *c);
 }
 
 #endif
