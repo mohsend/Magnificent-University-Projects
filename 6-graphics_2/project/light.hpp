@@ -16,7 +16,6 @@
 class light: public object
 {
   private:
-    GLfloat properties[4];
     GLenum number, model;
   public:
 	// construct
@@ -28,7 +27,7 @@ class light: public object
 		for (int i = 0; i < 4; i++)
 		{
 			position[i] = 2.0;
-			properties[i] = 0.5;
+			color[i] = 0.0;
 		}
 	}
 	// distruct
@@ -36,28 +35,20 @@ class light: public object
     {
 		glDisable(number);
 	}
-	// Set properties
-	void setProperties(GLfloat p1, GLfloat p2, GLfloat p3, GLfloat p4)
-	{
-		properties[0] = p1;
-		properties[1] = p2;
-		properties[2] = p3;
-		properties[3] = p4;
-	}
 
 	// Use the lighting (affect the scene)
 	void affect(bool show = true)
 	{
 		glPushMatrix();
-		glLightfv(number, GL_POSITION, position);
 		if (show)
 		{
 			glTranslatef(position[0], position[1], position[2]);
-			glColor3f(0.0, 1.0, 0.0); 
+			glColor4f(1.0, 1.0, 1.0, 1.0); 
 			glutWireSphere(0.05, 8, 8);
 		}
 		glPopMatrix();
-		glLightfv(number, model, properties); // set properties
+		glLightfv(number, GL_POSITION, position);
+		glLightfv(number, model, color); // set properties
 		glEnable(number); // enable this light
 	}
 };

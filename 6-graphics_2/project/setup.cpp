@@ -2,18 +2,12 @@
  * 
  */
 
-#ifndef MAINHEADER_HPP
-#define MAINHEADER_HPP 1
-
-#ifdef __APPLE__
-#  include <GLUT/glut.h>
-#else
-#  include <GL/glut.h>
-#endif
+#include "common.hpp"
 
 // Initialization routine.
-void setup(void)
+void setup()
 {
+   current = &light01;
    glClearColor(0.0, 0.0, 0.0, 0.0);
    glEnable(GL_DEPTH_TEST); // Enable depth testing.
 
@@ -38,4 +32,3 @@ void resize (int w, int h)
    gluPerspective(60.0, (float)w/(float)h, 1.0, 20.0);
    glMatrixMode(GL_MODELVIEW);
 }
-#endif

@@ -17,12 +17,14 @@ class ball: public object
 {
   private:
     GLdouble radius;
+    GLfloat color[4];
   public:
     ball(GLdouble r = 1.0)
     {
 		for (int i = 0; i < 4; i++)
 		{
 			position[i] = 0.0;
+			color[i] = 1.0;
 		}
 		radius = r;
 	}
@@ -30,7 +32,7 @@ class ball: public object
     void draw()
     {
 		// Sphere.
-		glColor3f(0.0, 1.0, 0.0);
+		glColor4fv(color);
 		glTranslatef(position[0], position[1], position[2]); // Move the sphere.
 		glutSolidSphere(radius, 30, 30);
 	}
