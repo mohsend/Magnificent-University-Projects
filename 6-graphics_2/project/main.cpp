@@ -3,7 +3,7 @@
  * A dark background.
  * One or two movable light sources.
  * One movable camera.
- * One checkered plane (the floor).
+ * One checkered plane (the floor, preferably rotating).
  * One sphere (a ball preferably bouncing on the floor).
  */
  
@@ -19,7 +19,7 @@ ball ball01(1.0);
 // Main routine.
 int main(int argc, char **argv) 
 {
-   printInteraction('r');
+   printInteraction(0x80);
    glutInit(&argc, argv);
    glutInitDisplayMode (GLUT_DOUBLE | GLUT_RGBA | GLUT_DEPTH); 
    glutInitWindowSize (500, 500);

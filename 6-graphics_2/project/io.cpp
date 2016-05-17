@@ -7,24 +7,24 @@
 // Routine to output interaction instructions on the terminal
 void printInteraction(char what)
 {
-	if (what == 'o')
+	cout << "Interaction help:" << endl;
+	if (what & 0x01)
 	{
-		cout << "Interaction:" << endl;
-		cout << "use A & Q keys to change Red color value." << endl;
-		cout << "use S & W keys to change Green color value." << endl;
-		cout << "use D & E keys to change Blue color value." << endl;
-		cout << "-----------------" << endl;
+		cout << "use \033[31mA & Q\033[0m keys to change Red color value." << endl;
+		cout << "use \033[32mS & W\033[0m keys to change Green color value." << endl;
+		cout << "use \033[34mD & E\033[0m keys to change Blue color value." << endl;
+	}
+	if (what & 0x02)
+	{
 		cout << "use Y & H keys to move parallel to X axis." << endl;
-		cout << "use J & U keys to move parallel to X axis." << endl;
-		cout << "use K & I keys to move parallel to X axis." << endl;
-		cout << "=================" << endl;
+		cout << "use J & U keys to move parallel to Y axis." << endl;
+		cout << "use K & I keys to move parallel to Z axis." << endl;
 	}
-	else
+	if (what & 0x80)
 	{
-		cout << "Interaction:" << endl;
 		cout << "Right click on the window to select an object to modify." << endl;
-		cout << "=================" << endl;
 	}
+	cout << "///////////////////////////////" << endl;
 }
 
 // Callback routine for non-ASCII key entry.
@@ -124,19 +124,19 @@ void menu (int sel)
 		break;
 		case 2:
 			current = &ball01;
-			printInteraction('o');
+			printInteraction(0x02);
 		break;
 		case 3:
 			current = &light01;
-			printInteraction('o');
+			printInteraction(0x03);
 		break;
 		case 4:
 			current = &light02;
-			printInteraction('o');
+			printInteraction(0x03);
 		break;
 		default:
 			current = &light01;
-			printInteraction('o');
+			printInteraction(0x03);
 		break;
 	}
 }
