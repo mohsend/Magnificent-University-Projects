@@ -1,0 +1,31 @@
+/ sum of array
+     ORG 0
+/ load sum and add array val to it
+loop LDA sum / AC = sum
+     ADD pnt I / AC += *pointer
+     STA sum / sum = AC
+/ inc pointer val
+     LDA pnt / AC = pointer
+     INC / AC++
+     STA pnt / pointer = AC
+/ loop if counter is not zero
+     ISZ cnt / counter++, jump to next if counter == 0
+     BUN loop / jump to begining of loop
+/ output sum
+     LDA sum / AC = sum
+     OUT / print AC
+     
+/ halt
+     HLT / end program
+
+     ORG 10
+pnt  HEX arr
+cnt  DEC -5
+sum  DEC 0
+     ORG 14
+arr  DEC 3
+     DEC 4
+     DEC 5
+     DEC 6
+     DEC 7
+

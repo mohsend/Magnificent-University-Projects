@@ -1,0 +1,18 @@
+/ fibonacci sequence
+     ORG 0
+loop LDA vf1
+     ADD vf2
+     OUT
+     STA temp / temp = f1 + f2
+     LDA vf2
+     STA vf1 / f1 = f2
+     LDA temp
+     STA vf2 / f2 = temp
+     BUN loop     
+     HLT
+     
+     ORG 10
+vf1  DEC 0
+vf2  DEC 1
+temp DEC 0
+     END

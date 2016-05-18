@@ -1,0 +1,60 @@
+/ start of program
+/ multiplies 2 integers by a subroutine
+     ORG 10
+/ call subroutine
+     BSA mul
+     DEC 3
+     DEC 4
+ret  HEX 0   
+     
+/ print output
+     LDA ret
+     OUT
+     
+/ halt
+     HLT / end program
+
+/ multiply subroutine
+/ local variables
+ptr  HEX 0
+ans  HEX 0
+cnt  HEX 0
+/ body of subroutine
+     / get first parameter
+     / increament pointer
+     LDA ptr
+     INC
+     STA ptr / stored address of first param
+     LDA ptr I
+     / nagate first param to use as a counter
+     CMA / 1s complement
+     INC / 2s complement
+     / store as counter
+     STA cnt
+     
+     / get second param
+     LDA ptr
+     INC
+     STA ptr
+     LDA ptr I
+     / store as answer (temperory)
+     STA ans
+     / pointer to the return value of subroutine
+     LDA ptr
+     INC
+     STA ptr
+     
+     / loop for param1 times and add param2 with itself in each iteration
+     LDA ans
+loop ADD ans
+     SZA cnt
+     BUN loop
+     STA ans
+     STA ptr I
+     / pointer to the next instruction after call
+     LDA ptr
+     INC
+     STA ptr
+     BUN ptr I
+          
+     END
