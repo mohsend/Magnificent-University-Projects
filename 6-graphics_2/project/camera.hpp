@@ -1,5 +1,6 @@
 /*
- * 
+ * A camera class
+ * Inherits from object
  */
 
 #ifndef CAMERA_HPP
@@ -18,24 +19,28 @@ class camera: public object
   private:
     GLdouble angle;
   public:
+    // Constructor
     camera(GLdouble a)
     {
-		for (int i = 0; i < 4; i++)
-		{
-			position[i] = 0.0;
-		}
-		angle = a;
-	}
-    ~camera()
-    {
-		
-	}
+    	position[0] = 0.0;
+    	position[1] = 3.0;
+    	position[2] = 5.0;
+    	color[0] = 0.0;
+    	color[1] = 0.0;
+    	color[2] = 0.0;
+    	angle = a;
+    }
+
+    // Destructor
+    ~camera() { }
+
     void look()
     {
-		gluLookAt(0.0, 3.0, 5.0, 
-		          position[0], position[1], position[2], 
-		          0.0, 1.0, 0.0);
-	}
+    	// Pan and Tumble
+    	gluLookAt(position[0], position[1], position[2], // Eye coordinates (Tumble)
+    	          color[0], color[1], color[2], // Center coordinates (Pan)
+    	          0.0, 1.0, 0.0); // Up vector
+    }
 };
 
 #endif

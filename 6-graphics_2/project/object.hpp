@@ -1,5 +1,5 @@
 /*
- * 
+ * A parent class for light, ball, and camera
  */
 
 #ifndef OBJECT_HPP

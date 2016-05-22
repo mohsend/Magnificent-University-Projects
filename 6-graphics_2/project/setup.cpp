@@ -1,5 +1,5 @@
 /*
- * 
+ * Setup OpenGL and window resize routine
  */
 
 #include "common.hpp"
@@ -13,7 +13,7 @@ void setup()
 
    // Turn on OpenGL lighting.
    glEnable(GL_LIGHTING);
-   
+
    GLfloat globAmb[] = { 0.2, 0.2, 0.2, 1.0 };
    glLightModelfv(GL_LIGHT_MODEL_AMBIENT, globAmb); // Global ambient light.
    glLightModeli(GL_LIGHT_MODEL_LOCAL_VIEWER, GL_TRUE); // Enable local viewpoint

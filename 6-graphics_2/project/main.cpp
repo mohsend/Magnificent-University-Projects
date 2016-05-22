@@ -1,27 +1,32 @@
 /*
  * Project design:
  * A dark background.
- * One or two movable light sources.
+ * One movable diffuse light source.
+ * One ambient light source.
+ * One sphere (ball) to reflect lights.
  * One movable camera.
- * One checkered plane (the floor, preferably rotating).
- * One sphere (a ball preferably bouncing on the floor).
  */
- 
+
  #include "common.hpp"
- 
+
+// Pointer to the object currently being modified.
 object* current;
 
-camera cam(1.0);
+// Objects used in the scene
+camera cam(0.0);
 light light01(GL_LIGHT1, GL_DIFFUSE);
 light light02(GL_LIGHT2, GL_AMBIENT);
 ball ball01(1.0);
+// If true, animate scene
+bool doAnimate = false;
 
-// Main routine.
-int main(int argc, char **argv) 
+
+// Main
+int main(int argc, char **argv)
 {
    printInteraction(0x80);
    glutInit(&argc, argv);
-   glutInitDisplayMode (GLUT_DOUBLE | GLUT_RGBA | GLUT_DEPTH); 
+   glutInitDisplayMode (GLUT_DOUBLE | GLUT_RGBA | GLUT_DEPTH);
    glutInitWindowSize (500, 500);
    glutInitWindowPosition (50, 50);
    glutCreateWindow ("Graphics II Project");
@@ -32,31 +37,37 @@ int main(int argc, char **argv)
    glutReshapeFunc(resize);
    glutKeyboardFunc(keyInput);
    glutSpecialFunc(specialKeyInput);
-   //glutIdleFunc(animate);
+   glutIdleFunc(animate);
    glutMainLoop();
-   
+
    return 0;
 }
 
+// Draws the scene
 void drawScene()
 {
 	glClear (GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glLoadIdentity();
-	
+
+  // Camera
 	cam.look();
-
-	light01.affect();
-	light02.setPosition(1.0, 1.0, 1.0, 1.0);
-	light02.affect();
-	ball01.draw();
-
+	// Lights
+	light01.draw();
+	light02.draw(false);
+  // Object
+  ball01.draw();
 	glutSwapBuffers();
 }
 
+// Gets called on idle. Used for animation.
 void animate()
 {
-	light01.moveY(0.001);
-	light01.moveX(-0.002);
-	light01.changeColor(Green, 0.001);
-	glutPostRedisplay();
+  if (doAnimate)
+  {
+    // Action! :)
+    static float degree = 0.0;
+    degree += 0.01;
+  	light01.setPosition(3.0 * sin(degree), 3.0 * cos(degree), 1.0 * cos (degree), 0.0);
+  	glutPostRedisplay();
+  }
 }

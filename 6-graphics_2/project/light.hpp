@@ -1,5 +1,5 @@
 /*
- * 
+ * A lighting object
  */
 
 #ifndef LIGHT_HPP
@@ -21,7 +21,7 @@ class light: public object
 	// construct
     light(GLenum num, GLenum mod)
     {
-		// initialize 
+		// initialize
 		number = num;
 		model = mod;
 		for (int i = 0; i < 4; i++)
@@ -33,24 +33,25 @@ class light: public object
 	// distruct
     ~light()
     {
-		glDisable(number);
-	}
+    glDisable(number);
+	  }
 
-	// Use the lighting (affect the scene)
-	void affect(bool show = true)
+	// Draw the lighting (affect the scene)
+	void draw(bool show = true)
 	{
 		glPushMatrix();
+    // Draw a wire sphere around the light source to indicate it's position
 		if (show)
 		{
 			glTranslatef(position[0], position[1], position[2]);
-			glColor4f(1.0, 1.0, 1.0, 1.0); 
+			glColor4f(1.0, 1.0, 1.0, 1.0);
 			glutWireSphere(0.05, 8, 8);
 		}
 		glPopMatrix();
-		glLightfv(number, GL_POSITION, position);
-		glLightfv(number, model, color); // set properties
-		glEnable(number); // enable this light
+		glLightfv(number, GL_POSITION, position); // Set position
+		glLightfv(number, model, color); // Set properties
+		glEnable(number); // Enable this light
 	}
 };
-  
+
 #endif
