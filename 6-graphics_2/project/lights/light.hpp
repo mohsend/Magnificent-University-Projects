@@ -33,14 +33,14 @@ class light: public object
 	// distruct
     ~light()
     {
-    glDisable(number);
-	  }
+		glDisable(number);
+	}
 
 	// Draw the lighting (affect the scene)
 	void draw(bool show = true)
 	{
 		glPushMatrix();
-    // Draw a wire sphere around the light source to indicate it's position
+		// Draw a wire sphere around the light source to indicate it's position
 		if (show)
 		{
 			glTranslatef(position[0], position[1], position[2]);

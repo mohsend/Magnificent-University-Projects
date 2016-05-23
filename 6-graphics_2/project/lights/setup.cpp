@@ -10,16 +10,13 @@ void setup()
    current = &light01;
    glClearColor(0.0, 0.0, 0.0, 0.0);
    glEnable(GL_DEPTH_TEST); // Enable depth testing.
-
-   // Turn on OpenGL lighting.
-   glEnable(GL_LIGHTING);
+   glEnable(GL_LIGHTING); // Turn on OpenGL lighting.
 
    GLfloat globAmb[] = { 0.2, 0.2, 0.2, 1.0 };
    glLightModelfv(GL_LIGHT_MODEL_AMBIENT, globAmb); // Global ambient light.
    glLightModeli(GL_LIGHT_MODEL_LOCAL_VIEWER, GL_TRUE); // Enable local viewpoint
 
-   // Cull back faces.
-   glEnable(GL_CULL_FACE);
+   glEnable(GL_CULL_FACE); // Cull back faces.
    glCullFace(GL_BACK);
 }
 

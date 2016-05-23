@@ -36,7 +36,6 @@ int main(int argc, char **argv)
    glutDisplayFunc(drawScene);
    glutReshapeFunc(resize);
    glutKeyboardFunc(keyInput);
-   glutSpecialFunc(specialKeyInput);
    glutIdleFunc(animate);
    glutMainLoop();
 
@@ -49,13 +48,13 @@ void drawScene()
 	glClear (GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glLoadIdentity();
 
-  // Camera
+	// Camera
 	cam.look();
 	// Lights
-	light01.draw();
-	light02.draw(false);
-  // Object
-  ball01.draw();
+	light01.draw(); // Diffuse
+	light02.draw(false); // Ambient
+	// Object
+	ball01.draw();
 	glutSwapBuffers();
 }
 

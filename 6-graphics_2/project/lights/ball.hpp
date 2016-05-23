@@ -18,45 +18,41 @@ class ball: public object
 {
   private:
     GLdouble radius;
-    GLfloat color[4];
   public:
     ball(GLdouble r = 1.0)
     {
-  	for (int i = 0; i < 4; i++)
-  	{
-  		position[i] = 0.0;
-  		color[i] = 0.6;
-  	}
-  	radius = r;
+		for (int i = 0; i < 4; i++)
+		{
+			position[i] = 0.0;
+			color[i] = 0.6;
+		}
+		radius = r;
     }
+    
     ~ball() {}
+    
     void draw()
     {
     	static float a = 1.0; // Blue ambient reflectance.
     	static float d = 1.0; // Blue diffuse reflectance.
-    	static float s = 1.0; // White specular reflectance.
     	static float h = 10.0; // Shininess.
-    	static float e = 0.0; // Blue emittance.
+    	static float e = 0.1; // Red emittance.
     	static float t = 0.0; // Quadratic attenuation factor.
     	float matAmb[] = {0.0, 0.0, a, 1.0};
     	float matDif[] = {0.0, 0.0, d, 1.0};
-    	float matSpec[] = { s, s, s, 1.0 };
     	float matShine[] = { h };
-    	float matEmission[] = {0.0, 0.0, e, 1.0};
+    	float matEmission[] = {e, 0.0, e, 1.0};
 
-      glPushMatrix();
     	// Material properties of sphere.
     	glMaterialfv(GL_FRONT, GL_AMBIENT, color);
     	glMaterialfv(GL_FRONT, GL_DIFFUSE, color);
-    	glMaterialfv(GL_FRONT, GL_SPECULAR, matSpec);
     	glMaterialfv(GL_FRONT, GL_SHININESS, matShine);
     	glMaterialfv(GL_FRONT, GL_EMISSION, matEmission);
+    	
     	// Sphere
-
     	glTranslatef(position[0], position[1], position[2]); // Move the sphere.
     	glutSolidSphere(radius, 30, 30);
     	glLoadIdentity();
-      glPopMatrix();
     }
 };
 

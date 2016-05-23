@@ -47,14 +47,6 @@ void printInteraction(char what)
 	cout << "///////////////////////////////" << endl;
 }
 
-// Callback routine for non-ASCII key entry.
-void specialKeyInput(int key, int x, int y)
-{
-   if (key == GLUT_KEY_UP) ;
-   if (key == GLUT_KEY_DOWN) ;
-   glutPostRedisplay();
-}
-
 // Gets called when user presses a keyboard key
 void keyInput(unsigned char key, int x, int y)
 {
@@ -116,7 +108,10 @@ void keyInput(unsigned char key, int x, int y)
 	  case 'i':
 	  case 'I':
  		 current->moveZ(+0.1);
-     break;
+	  break;
+	  case ' ':
+ 		 doAnimate = !doAnimate;
+	  break;
    }
    glutPostRedisplay();
 }
@@ -127,9 +122,9 @@ void createMenu(void)
 
     glutAddMenuEntry("Modify Camera", 1);
     glutAddMenuEntry("Modify Ball", 2);
-    glutAddMenuEntry("Modify Deffuse Light", 3);
-    glutAddMenuEntry("Modify Ambeint Light", 4);
-		glutAddMenuEntry("Toggle Animation", 5);
+    glutAddMenuEntry("Modify Diffuse Light", 3);
+    glutAddMenuEntry("Modify Ambient Light", 4);
+	glutAddMenuEntry("Toggle Animation", 5);
     glutAddMenuEntry("Quit", 0);
     glutAttachMenu(GLUT_RIGHT_BUTTON);
 }
@@ -166,11 +161,4 @@ void menu (int sel)
 			printInteraction(0x03);
 		break;
 	}
-}
-
-// Draws a bitmap character string.
-void writeBitmapString(void *font, char *string)
-{
-   char *c;
-   for (c = string; *c != '\0'; c++) glutBitmapCharacter(font, *c);
 }

@@ -30,11 +30,9 @@ extern bool doAnimate;
 
 // io.cpp
 void printInteraction(char what);
-void specialKeyInput(int key, int x, int y);
 void keyInput(unsigned char key, int x, int y);
-void floatToString(char * destStr, int precision, float val);
 void createMenu();
-void menu (int sel);
+void menu (int);
 
 // setup.cpp
 void setup();
