@@ -75,7 +75,7 @@ void keyboard(unsigned char key, int a, int b)
     break;
     case('m'):
     case('M'):
-      mode++;
+      mode = (mode == 3)? 1 : mode+1;
     break;
     case 27:	// Escape key
       exit(0);
@@ -91,6 +91,6 @@ void instructions()
 	cout << "  use X to iterate through colors." << endl;
 	cout << "  use AWSD to move rotation vector." << endl;
 	cout << "  use < > to increese or decreese the number of slices on sphere." << endl;
-  cout << "  use M to change coloring mode" << endl;
+	cout << "  use M to change coloring mode" << endl;
 	cout << "  use Spacebar to toggle animation." << endl;
 }
