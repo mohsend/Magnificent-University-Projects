@@ -28,7 +28,8 @@ double rz = 0.0;
 int degrees = 0; // Rotation degree
 bool doAnimate = true; // Animation
 int sections = 37; // Number of sections (slices) of the sphere
-int mode = 3; // 0: gradual color change, 1: sudden color change
+int colormode = 3; // 1: sudden change, 2: gradual change, 3: both 
+int drawmode = 6; // 0: GL_POINTS, 1: GL_LINES, ...
 
 void keyboard(unsigned char key, int a, int b)
 {
@@ -75,7 +76,11 @@ void keyboard(unsigned char key, int a, int b)
     break;
     case('m'):
     case('M'):
-      mode = (mode == 3)? 1 : mode+1;
+      colormode = (colormode == 3)? 1 : colormode + 1;
+    break;
+    case('n'):
+    case('N'):
+      drawmode = (drawmode == 9)? 0 : drawmode + 1;
     break;
     case 27:	// Escape key
       exit(0);
@@ -91,6 +96,7 @@ void instructions()
 	cout << "  use X to iterate through colors." << endl;
 	cout << "  use AWSD to move rotation vector." << endl;
 	cout << "  use < > to increese or decreese the number of slices on sphere." << endl;
-	cout << "  use M to change coloring mode" << endl;
+	cout << "  use M to iterate through coloring modes." << endl;
+	cout << "  use N to iterate through drawing modes." << endl;
 	cout << "  use Spacebar to toggle animation." << endl;
 }

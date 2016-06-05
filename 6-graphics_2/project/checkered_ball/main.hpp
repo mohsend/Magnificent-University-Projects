@@ -34,7 +34,8 @@ extern int degrees;
 
 extern bool doAnimate;
 extern int sections;
-extern int mode;
+extern int colormode;
+extern int drawmode;
 
 // Colors
 const GLfloat color[][3] = {

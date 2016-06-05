@@ -19,7 +19,7 @@ int main(int argc, char** argv)
 	init();
 	instructions();
 	glutMainLoop();
-
+	
 	return 0;
 }
 
@@ -49,16 +49,16 @@ void checkeredSphere (float R, int slices)
 			poly[10] = R*cos(P*u)*sin(2.0*P*(v+t));
 			poly[11] = R*sin(P*u);
 
-			if (mode & 1)
+			if (colormode & 1)
 			{
 				if (c) glColor3fv(color[c1]);
 				else glColor3fv(color[c2]);
 				c = !c; // toggles between colors
 			}
 
-			glBegin(GL_QUADS);
+			glBegin(drawmode);
 				for (int i = 0; i <= 9; i += 3) {
-					if (mode & 2)
+					if (colormode & 2)
 					{
 						if (c) glColor3fv(color[c1]);
 						else glColor3fv(color[c2]);
