@@ -68,6 +68,9 @@ if (condition) {
 	// other statements 2
 } else if (condition3) {
 	// other statements 3
+	if (nested_if_condition) {
+		// nested if statements
+	}
 } else {
 	// else statements
 }
@@ -89,6 +92,9 @@ for (bool i = true; con && i ; i = false) {
 con = !con && (condition3);
 for (bool i = true; con && i ; i = false) {
 	// other statements 3
+	for (bool i = true; nested_if_condition && i ; i = false) {
+		// nested if statements
+	}
 } 
 
 con = !con;
