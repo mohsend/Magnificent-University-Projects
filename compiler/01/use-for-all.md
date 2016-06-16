@@ -105,11 +105,11 @@ for (bool i = true; con && i ; i = false) {
 
 ## Nesting
 
-Obviously we can nest these control statements as much as we please, the for loops then will be nested accourdingly.
+Obviously we can nest these control statements as much as we please, the for loops then will be nested accordingly.
 
 ## After thought
 
-If I where to choose a subset of statements I probably would have chosen `while` because of a much simpler structure it's much simpler to implement than `for`, All other statements can also be reproduced as well.
+If I were to choose a subset of statements I probably would have chosen `while` because of a much simpler structure it's much simpler to implement in assembly than `for`, All other statements can also be reproduced as well.
 
 A `for` loop can be written as:
 
