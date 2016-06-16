@@ -49,16 +49,16 @@ end
 # nil string
 puts ""
 
-# all possible sunsequences
-def number_of_sunsequences(len)
+# all possible subsequences
+def number_of_subsequences(len)
 	if (len == 1) then
 		return 2;
 	end
-	return len * number_of_sunsequences(len - 1)
+	return len * number_of_subsequences(len - 1)
 end
-num = number_of_sunsequences(len)
+num = number_of_subsequences(len)
 
 puts "========"
-puts "'#{str}' has #{num} sunsequences."
-puts "All the sunsequences:"
+puts "'#{str}' has #{num} subsequences."
+puts "All the subsequences:"
 puts "???"
