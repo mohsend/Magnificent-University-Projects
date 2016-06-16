@@ -22,7 +22,7 @@ Can be written as:
 
 ```c
 for ( ; condition; ) {
-	
+	// statements
 }
 ```
 
