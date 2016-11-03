@@ -8,5 +8,5 @@ Example codes for this course can be found [in this repository](https://github.c
 
 The 2 programs I wrote for our project are:
 
-- [Checkered Ball](projects/checkered_ball/)
-- [Lights](projects/lights/)
+- [Checkered Ball](project/checkered_ball/)
+- [Lights](project/lights/)
