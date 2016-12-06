@@ -2,7 +2,7 @@
 
 - [Proteus circuit file](decade_counter.pdsprj)
 
-![Screenshot of simulation running](binary_counter.png)
+![Screenshot of simulation running](decade_counter.png)
 
 # Binary counter
 
