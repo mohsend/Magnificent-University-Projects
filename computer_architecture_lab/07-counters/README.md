@@ -15,3 +15,9 @@
 - [Proteus circuit file](24hour_clock.pdsprj)
 
 ![Screenshot of simulation running](24hour_clock.png)
+
+# 24-hour clock with hour and minute set buttons
+
+- [Proteus circuit file](24hour_clock_setable.pdsprj)
+
+![Screenshot of simulation running](24hour_clock_setable.png)
