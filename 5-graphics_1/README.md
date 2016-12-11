@@ -57,6 +57,7 @@ $ gcc "code_file.cpp" -framework GLUT -framework OpenGL
 Follow [this guide](https://www3.ntu.edu.sg/home/ehchua/programming/opengl/HowTo_OpenGL_C.html) to install and use `gcc` and 'freeglut' on `Cygwin` or `MinGW` on windows or compile using 'Visual C++'. 
 
 ### Microsoft Visual Studio .net
+
 First of all [install freeGLUT3 libraries](http://freeglut.sourceforge.net/) for VS.net
 
 Add this line on top of the code if you want to compile in Visual Studio.net:
