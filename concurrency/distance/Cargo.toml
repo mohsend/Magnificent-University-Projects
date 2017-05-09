@@ -1,0 +1,7 @@
+[package]
+name = "distance"
+version = "0.1.0"
+authors = ["Mohsen Dastjerdi Zade <me@mehsen.com>"]
+
+[dependencies]
+rand = "0.3"
