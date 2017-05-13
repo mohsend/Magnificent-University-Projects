@@ -1,9 +1,11 @@
 extern crate rand;
 
 use std::fmt;
-use rand::Rng;
+
+static number_of_points: isize = 10;
 
 // Define 'Point' Structure
+#[derive(Debug, Copy, Clone)]
 struct Point {
     x: f64,
     y: f64,
@@ -26,19 +28,18 @@ impl fmt::Display for Point {
     }
 }
 
-fn closest(list: &[Point]) -> f64 {
+fn closest(list: &[Point]) -> Option<(Point, Point, f64)> {
     //ref mut nearest = &list[0];
-    let mut shortest = std::f64::MAX;
+    let mut shortest = (Point::new(0.0, 0.0), Point::new(0.0, 0.0), std::f64::MAX);
 
     for point in &list[1..list.len()] {
-        let distancesqured = (list[0].x - point.x) * (list[0].x - point.x)
-         + (list[0].y - point.y) * (list[0].y - point.y);
-        if distancesqured < shortest {
-            shortest = distancesqured;
-            //nearest = &point;
+        let distance = ((list[0].x - point.x) * (list[0].x - point.x)
+         + (list[0].y - point.y) * (list[0].y - point.y)).sqrt();
+        if distance < shortest.2 {
+            shortest = (list[0], *point, distance);
         }
     }
-    shortest
+    if shortest.2 == std::f64::MAX { None } else { Some(shortest) }
 }
 
 // Main thread
@@ -46,18 +47,16 @@ fn main() {
     // Define mutable vector for 'Point's
     let mut points: Vec<Point> = Vec::new();
 
-    // Populate 'points' vector with 10 random 'Point's
-    for i in 0..10 {
+    // Populate 'points' vector with 'number_of_points' random 'Point's
+    for i in 0..number_of_points {
         points.push(Point::new(rand::random::<f64>(), rand::random::<f64>()));
     }
 
     for i in 0..points.len() {
         // Claculate the distance between the current 'Point' and the rest
-        let closer = closest(&points[i..points.len()]);
-        println!("{}", closer);
-    }
-
-    for point in &points {
-        println!("{}", point);
+        match closest(&points[i..points.len()]) {
+            None => {},
+            Some(v) => println!("| {} - {} | = {}", v.0, v.1, v.2)
+        }
     }
 }
