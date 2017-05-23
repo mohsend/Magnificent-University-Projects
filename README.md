@@ -2,7 +2,7 @@
 
 ## What is this?
 
-I study CS in IAUCTB and here I share every practice and example code (mostly C/C++) I wrote. These codes are not practical and have educational purposes only.
+I study CS in IAUCTB and here I share every practice and example code (mostly C/C++) I wrote. These codes samples not practical and have educational purposes only.
 
 For more information refer to each course's own readme.
 
@@ -12,4 +12,4 @@ You can help by sending a pull-request for new code or improving the existing on
 
 ## Licence
 
-Copyright &copy; 2014 - 2016 [Mohsen Dastjerdi Zade](https://github.com/mohsend) released under the terms and coditions of [MIT licence](LICENSE).
+Copyright &copy; 2014 - 2017 [Mohsen Dastjerdi Zade](https://github.com/mohsend) released under the terms and coditions of [MIT licence](LICENSE).
