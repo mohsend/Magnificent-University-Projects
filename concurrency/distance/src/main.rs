@@ -1,14 +1,15 @@
 extern crate rand;
+use std::thread;
 
 use std::fmt;
 
 static number_of_points: isize = 10;
 
 // Define 'Point' Structure
-#[derive(Debug, Copy, Clone)]
+#[derive(Copy, Clone)]
 struct Point {
     x: f64,
-    y: f64,
+    y: f64
 }
 
 // Implement 'new' method for 'Point' struct
@@ -54,9 +55,11 @@ fn main() {
 
     for i in 0..points.len() {
         // Claculate the distance between the current 'Point' and the rest
-        match closest(&points[i..points.len()]) {
-            None => {},
-            Some(v) => println!("| {} - {} | = {}", v.0, v.1, v.2)
-        }
+
+            match closest(&points[i..points.len()]) {
+                None => {},
+                Some(v) => println!("| {} - {} | = {}", v.0, v.1, v.2)
+            }
     }
+
 }
