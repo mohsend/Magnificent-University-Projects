@@ -19,21 +19,21 @@ CDSEG SEGMENT
   ; main code starts here
   
   ; initialize
-  MOV CX, 10
-  MOV DI, 00
-  MOV AX, 00
-  MOV DX, 01
+  MOV CX, 10 ; counter register
+  MOV DI, 00 ; Data segment pointer
+  MOV AX, 00 ; First fibbo number
+  MOV DX, 01 ; Second fibbo number
   
   loop1:
-    ADD DX, AX
-    MOV [DI], DX
+    ADD DX, AX ; DX = AX + DX (next fibbo number)
+    MOV [DI], DX ; Store in memory
+    INC DI ; Move pointer one word
     INC DI
+    ADD AX, DX ; AX = AX + DX (Second next fibbo number)
+    MOV [DI], AX ; Store in memory
+    INC DI ; Move pointer one word
     INC DI
-    ADD AX, DX
-    MOV [DI], AX
-    INC DI
-    INC DI
-    LOOP loop1
+    LOOP loop1 ; CX--, jump to 'loop1' unless CX == 0
   
   ; end (terminate) program
   terminate:
